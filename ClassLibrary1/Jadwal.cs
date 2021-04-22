@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notegram
+namespace ClassLibrary1
 {
-    class ToDoList
+    class Jadwal
     {
-        
     }
 }
