@@ -8,5 +8,14 @@ namespace ClassLibrary1
 {
     public class Mahasiswa
     {
+        public void Login()
+        {
+
+        }
+
+        public void Logout()
+        {
+
+        }
     }
 }
