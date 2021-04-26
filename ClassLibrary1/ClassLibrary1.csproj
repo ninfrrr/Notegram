@@ -47,7 +47,14 @@
     <Reference Include="System.Xml"/>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Agenda.cs" />
+    <Compile Include="Jadwal.cs" />
+    <Compile Include="Mahasiswa.cs" />
+    <Compile Include="Matakuliah.cs" />
+    <Compile Include="PR.cs" />
+    <Compile Include="Reminder.cs" />
+    <Compile Include="ToDoList.cs" />
+    <Compile Include="kuis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
