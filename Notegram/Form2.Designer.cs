@@ -41,6 +41,8 @@ namespace Notegram
             this.lblJamMulai = new System.Windows.Forms.Label();
             this.lblHari = new System.Windows.Forms.Label();
             this.lblNama = new System.Windows.Forms.Label();
+            this.lblWarna = new System.Windows.Forms.Label();
+            this.cmbWarna = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.gbTambahMatkul.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +79,8 @@ namespace Notegram
             // 
             // gbTambahMatkul
             // 
+            this.gbTambahMatkul.Controls.Add(this.cmbWarna);
+            this.gbTambahMatkul.Controls.Add(this.lblWarna);
             this.gbTambahMatkul.Controls.Add(this.btnBuat);
             this.gbTambahMatkul.Controls.Add(this.cmbHari);
             this.gbTambahMatkul.Controls.Add(this.tbNamaMatkul);
@@ -93,7 +97,7 @@ namespace Notegram
             // 
             // btnBuat
             // 
-            this.btnBuat.Location = new System.Drawing.Point(75, 152);
+            this.btnBuat.Location = new System.Drawing.Point(72, 165);
             this.btnBuat.Name = "btnBuat";
             this.btnBuat.Size = new System.Drawing.Size(75, 23);
             this.btnBuat.TabIndex = 6;
@@ -146,11 +150,29 @@ namespace Notegram
             // lblNama
             // 
             this.lblNama.AutoSize = true;
+            this.lblNama.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblNama.Location = new System.Drawing.Point(6, 32);
             this.lblNama.Name = "lblNama";
             this.lblNama.Size = new System.Drawing.Size(38, 13);
             this.lblNama.TabIndex = 0;
             this.lblNama.Text = "Nama:";
+            // 
+            // lblWarna
+            // 
+            this.lblWarna.AutoSize = true;
+            this.lblWarna.Location = new System.Drawing.Point(6, 137);
+            this.lblWarna.Name = "lblWarna";
+            this.lblWarna.Size = new System.Drawing.Size(42, 13);
+            this.lblWarna.TabIndex = 7;
+            this.lblWarna.Text = "Warna:";
+            // 
+            // cmbWarna
+            // 
+            this.cmbWarna.FormattingEnabled = true;
+            this.cmbWarna.Location = new System.Drawing.Point(72, 134);
+            this.cmbWarna.Name = "cmbWarna";
+            this.cmbWarna.Size = new System.Drawing.Size(113, 21);
+            this.cmbWarna.TabIndex = 8;
             // 
             // Form2
             // 
@@ -186,5 +208,7 @@ namespace Notegram
         private System.Windows.Forms.TextBox tbNamaMatkul;
         private System.Windows.Forms.Button btnBuat;
         private System.Windows.Forms.ComboBox cmbHari;
+        private System.Windows.Forms.ComboBox cmbWarna;
+        private System.Windows.Forms.Label lblWarna;
     }
 }

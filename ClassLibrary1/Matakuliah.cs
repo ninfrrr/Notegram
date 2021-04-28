@@ -11,10 +11,10 @@ namespace ClassLibrary1
     {
         int _id;
         string _nama;
-        // ? warna;
         int _hari;
         // DateTime? _waktuMulai;
         // DateTime? _waktuSelesai;
+        string _warna;
         List<string> _dosen;
         List<Agenda> _daftarAgenda;
         Reminder _reminder;
@@ -23,6 +23,11 @@ namespace ClassLibrary1
         {
             get { return _nama; }
             set { _nama = value; }
+        }
+        public string Warna
+        {
+            get { return _warna; }
+            set { _warna = value; }
         }
         public MataKuliah(string nama)
         {

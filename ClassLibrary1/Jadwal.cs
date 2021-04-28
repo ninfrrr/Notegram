@@ -34,12 +34,12 @@ namespace ClassLibrary1
         }
 
         // Metode yg dikomen di bawah hanya untuk memastikan program berjalan lancar
-        public void ShowMataKuliah()
-        {
-            foreach (MataKuliah matkul in _daftarMatkul)
-            {
-                MessageBox.Show(matkul.Nama);
-            }
-        }
+        //public void ShowMataKuliah()
+        //{
+        //    foreach (MataKuliah matkul in _daftarMatkul)
+        //    {
+        //        MessageBox.Show(matkul.Nama);
+        //    }
+        //}
     }
 }
