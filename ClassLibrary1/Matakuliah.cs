@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    class Matakuliah
+    public class MataKuliah
     {
+        int _id;
+        string _nama;
+        // ? warna;
+        int _hari;
+        // DateTime? _waktuMulai;
+        // DateTime? _waktuSelesai;
+        List<string> _dosen;
+        List<Agenda> _daftarAgenda;
+        Reminder _reminder;
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    class PR
-    {
+    public class PR
+    {   
+        //DateTime? _deadline;
+        public PR(MataKuliah mataKuliah)
+        {
+            
+        }
     }
 }
