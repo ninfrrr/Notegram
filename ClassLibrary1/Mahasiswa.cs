@@ -11,6 +11,7 @@ namespace ClassLibrary1
         string _nama;
         string _password;
         ToDoList _toDoList;
+        public ListJadwal _listJadwal;
 
         public string Nama
         {
@@ -20,13 +21,21 @@ namespace ClassLibrary1
         {
             get; set;
         }
-        public ToDoList ToDoList
-        {
-            get; set;
-        }
-        public void Login()
-        {
 
+        public Mahasiswa(string nama, string password)
+        {
+            this.Nama = nama;
+            this.Password = password;
+            _toDoList = new ToDoList();
+            _listJadwal = new ListJadwal();
+        }
+        public bool Login(string password)
+        {
+            // Kode Metode ini nantinya harus diubah
+            if (this.Password == password)
+                return true;
+            else
+                return false;
         }
 
         public void Logout()

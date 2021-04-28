@@ -34,13 +34,13 @@ namespace Notegram
             this.toDoListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbTambahMatkul = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBuat = new System.Windows.Forms.Button();
+            this.cmbHari = new System.Windows.Forms.ComboBox();
+            this.tbNamaMatkul = new System.Windows.Forms.TextBox();
             this.lblJamSelesai = new System.Windows.Forms.Label();
             this.lblJamMulai = new System.Windows.Forms.Label();
             this.lblHari = new System.Windows.Forms.Label();
             this.lblNama = new System.Windows.Forms.Label();
-            this.cmbHari = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.gbTambahMatkul.SuspendLayout();
             this.SuspendLayout();
@@ -77,9 +77,9 @@ namespace Notegram
             // 
             // gbTambahMatkul
             // 
-            this.gbTambahMatkul.Controls.Add(this.button1);
+            this.gbTambahMatkul.Controls.Add(this.btnBuat);
             this.gbTambahMatkul.Controls.Add(this.cmbHari);
-            this.gbTambahMatkul.Controls.Add(this.textBox1);
+            this.gbTambahMatkul.Controls.Add(this.tbNamaMatkul);
             this.gbTambahMatkul.Controls.Add(this.lblJamSelesai);
             this.gbTambahMatkul.Controls.Add(this.lblJamMulai);
             this.gbTambahMatkul.Controls.Add(this.lblHari);
@@ -91,12 +91,30 @@ namespace Notegram
             this.gbTambahMatkul.TabStop = false;
             this.gbTambahMatkul.Text = "Tambah Mata Kuliah";
             // 
-            // textBox1
+            // btnBuat
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 20);
-            this.textBox1.TabIndex = 4;
+            this.btnBuat.Location = new System.Drawing.Point(75, 152);
+            this.btnBuat.Name = "btnBuat";
+            this.btnBuat.Size = new System.Drawing.Size(75, 23);
+            this.btnBuat.TabIndex = 6;
+            this.btnBuat.Text = "Buat";
+            this.btnBuat.UseVisualStyleBackColor = true;
+            this.btnBuat.Click += new System.EventHandler(this.btnBuat_Click);
+            // 
+            // cmbHari
+            // 
+            this.cmbHari.FormattingEnabled = true;
+            this.cmbHari.Location = new System.Drawing.Point(72, 55);
+            this.cmbHari.Name = "cmbHari";
+            this.cmbHari.Size = new System.Drawing.Size(113, 21);
+            this.cmbHari.TabIndex = 5;
+            // 
+            // tbNamaMatkul
+            // 
+            this.tbNamaMatkul.Location = new System.Drawing.Point(72, 29);
+            this.tbNamaMatkul.Name = "tbNamaMatkul";
+            this.tbNamaMatkul.Size = new System.Drawing.Size(113, 20);
+            this.tbNamaMatkul.TabIndex = 4;
             // 
             // lblJamSelesai
             // 
@@ -134,23 +152,6 @@ namespace Notegram
             this.lblNama.TabIndex = 0;
             this.lblNama.Text = "Nama:";
             // 
-            // cmbHari
-            // 
-            this.cmbHari.FormattingEnabled = true;
-            this.cmbHari.Location = new System.Drawing.Point(72, 55);
-            this.cmbHari.Name = "cmbHari";
-            this.cmbHari.Size = new System.Drawing.Size(113, 21);
-            this.cmbHari.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(75, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buat";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,8 +183,8 @@ namespace Notegram
         private System.Windows.Forms.Label lblHari;
         private System.Windows.Forms.Label lblNama;
         private System.Windows.Forms.Label lblJamSelesai;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbNamaMatkul;
+        private System.Windows.Forms.Button btnBuat;
         private System.Windows.Forms.ComboBox cmbHari;
     }
 }
