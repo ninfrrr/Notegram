@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notegram", "Notegram\Notegram.csproj", "{8D07687A-A89C-4C70-BDD6-182F78057913}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{b99b61a9-0306-488e-a7a0-54d5ac7799d3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{B99B61A9-0306-488E-A7A0-54D5AC7799D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{8D07687A-A89C-4C70-BDD6-182F78057913}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D07687A-A89C-4C70-BDD6-182F78057913}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D07687A-A89C-4C70-BDD6-182F78057913}.Release|Any CPU.Build.0 = Release|Any CPU
-		{b99b61a9-0306-488e-a7a0-54d5ac7799d3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{b99b61a9-0306-488e-a7a0-54d5ac7799d3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{b99b61a9-0306-488e-a7a0-54d5ac7799d3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{b99b61a9-0306-488e-a7a0-54d5ac7799d3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B99B61A9-0306-488E-A7A0-54D5AC7799D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B99B61A9-0306-488E-A7A0-54D5AC7799D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B99B61A9-0306-488E-A7A0-54D5AC7799D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B99B61A9-0306-488E-A7A0-54D5AC7799D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

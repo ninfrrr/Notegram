@@ -8,5 +8,16 @@ namespace ClassLibrary1
 {
     public class ToDoList
     {
+        List<Agenda> _toDo;
+
+        public void AddAgenda()
+        {
+
+        }
+        
+        public void RemoveAgenda() 
+        {
+
+        }
     }
 }

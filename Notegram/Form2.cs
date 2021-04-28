@@ -16,5 +16,15 @@ namespace Notegram
         {
             InitializeComponent();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            cmbHari.Items.Add("Senin");
+            cmbHari.Items.Add("Selasa");
+            cmbHari.Items.Add("Rabu");
+            cmbHari.Items.Add("Kamis");
+            cmbHari.Items.Add("Jumat");
+            cmbHari.Items.Add("Sabtu");
+        }
     }
 }
