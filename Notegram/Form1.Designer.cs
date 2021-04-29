@@ -39,6 +39,7 @@ namespace Notegram
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSignup = new System.Windows.Forms.Button();
+            this.lblHapusNanti = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +87,7 @@ namespace Notegram
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(151, 112);
+            this.btnLogin.Location = new System.Drawing.Point(151, 114);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 5;
@@ -122,11 +123,22 @@ namespace Notegram
             this.btnSignup.Text = "Sign up";
             this.btnSignup.UseVisualStyleBackColor = true;
             // 
+            // lblHapusNanti
+            // 
+            this.lblHapusNanti.AutoSize = true;
+            this.lblHapusNanti.Font = new System.Drawing.Font("Adobe Arabic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHapusNanti.Location = new System.Drawing.Point(127, 100);
+            this.lblHapusNanti.Name = "lblHapusNanti";
+            this.lblHapusNanti.Size = new System.Drawing.Size(141, 14);
+            this.lblHapusNanti.TabIndex = 9;
+            this.lblHapusNanti.Text = "pass: ILY3000, nanti lbl ni dihapus";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(277, 232);
+            this.Controls.Add(this.lblHapusNanti);
             this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -156,6 +168,7 @@ namespace Notegram
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSignup;
+        private System.Windows.Forms.Label lblHapusNanti;
     }
 }
 

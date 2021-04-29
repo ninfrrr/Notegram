@@ -20,49 +20,47 @@ namespace Notegram
         // PERLU DIUBAH
         Jadwal jadwal1 = new Jadwal("Mingguan");
 
-        // Instance MataKuliah yang akan dibuat
-        MataKuliah matkul1;
-
         public Form2(Mahasiswa mahasiswa)
         {
             InitializeComponent();
             this.mahasiswa1 = mahasiswa;
-            mahasiswa1._listJadwal.AddJadwal(jadwal1);
+            mahasiswa1._listJadwal.AddJadwalToList(jadwal1);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            cmbHari.Items.Add("Senin");
-            cmbHari.Items.Add("Selasa");
-            cmbHari.Items.Add("Rabu");
-            cmbHari.Items.Add("Kamis");
-            cmbHari.Items.Add("Jumat");
-            cmbHari.Items.Add("Sabtu");
-            cmbHari.Items.Add("Minggu");
+            //cmbHari.Items.Add("Senin");
+            //cmbHari.Items.Add("Selasa");
+            //cmbHari.Items.Add("Rabu");
+            //cmbHari.Items.Add("Kamis");
+            //cmbHari.Items.Add("Jumat");
+            //cmbHari.Items.Add("Sabtu");
+            //cmbHari.Items.Add("Minggu");
 
-            cmbWarna.Items.Add("Merah");
-            cmbWarna.Items.Add("Merah Tua");
-            cmbWarna.Items.Add("Pink");
-            cmbWarna.Items.Add("Oranye");
-            cmbWarna.Items.Add("Kuning");
-            cmbWarna.Items.Add("Krem");
-            cmbWarna.Items.Add("Tosca");
-            cmbWarna.Items.Add("Hijau");
-            cmbWarna.Items.Add("Hijau Tua");
-            cmbWarna.Items.Add("Biru");
-            cmbWarna.Items.Add("Dongker");
-            cmbWarna.Items.Add("Ungu");
-            cmbWarna.Items.Add("Abu-Abu");
-            cmbWarna.Items.Add("Coklat");
+            //cmbWarna.Items.Add("Merah");
+            //cmbWarna.Items.Add("Merah Tua");
+            //cmbWarna.Items.Add("Pink");
+            //cmbWarna.Items.Add("Oranye");
+            //cmbWarna.Items.Add("Kuning");
+            //cmbWarna.Items.Add("Krem");
+            //cmbWarna.Items.Add("Tosca");
+            //cmbWarna.Items.Add("Hijau");
+            //cmbWarna.Items.Add("Hijau Tua");
+            //cmbWarna.Items.Add("Biru");
+            //cmbWarna.Items.Add("Dongker");
+            //cmbWarna.Items.Add("Ungu");
+            //cmbWarna.Items.Add("Abu-Abu");
+            //cmbWarna.Items.Add("Coklat");
         }
-
 
         private void btnBuat_Click(object sender, EventArgs e)
         {
+            // Instance MataKuliah yang akan dibuat
+            MataKuliah matkul1;
             if (tbNamaMatkul.Text != "" && cmbHari.Text != "")
             {
                 matkul1 = new MataKuliah(tbNamaMatkul.Text, KodeHari(cmbHari.Text), KodeWarna(cmbWarna.Text));
-                jadwal1.AddMataKuliah(matkul1);
+                jadwal1.AddMataKuliahToJadwal(matkul1);
                 KosongkanTextBox();
 
                 // Kode yg dikomen di bawah hanya untuk memastikan program berjalan dengan semestinya
@@ -71,12 +69,14 @@ namespace Notegram
             else
                 MessageBox.Show("Nama, Hari, Jam Mulai, dan Jam Selesai wajib diisi");
         }
+
         private void KosongkanTextBox()
         {
             tbNamaMatkul.Text = "";
             cmbHari.Text = "";
             cmbWarna.Text = "";
         }
+
         private int KodeHari(string hari)
         {
             switch(hari)
@@ -99,6 +99,7 @@ namespace Notegram
                     return 1;
             }
         }
+
         private string KodeWarna(string warna)
         {
             switch (warna)

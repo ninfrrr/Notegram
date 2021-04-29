@@ -10,7 +10,7 @@ namespace ClassLibrary1
     public class Jadwal
     {
         string _nama;
-        List<MataKuliah> _daftarMatkul;
+        List<MataKuliah> _jadwalMatkul;
 
         public string Nama
         {
@@ -23,11 +23,11 @@ namespace ClassLibrary1
         public Jadwal(string nama)
         {
             this.Nama = nama;
-            _daftarMatkul = new List<MataKuliah>();
+            this._jadwalMatkul = new List<MataKuliah>();
         }
-        public void AddMataKuliah(MataKuliah mataKuliah)
+        public void AddMataKuliahToJadwal(MataKuliah mataKuliah)
         {
-            _daftarMatkul.Add(mataKuliah);
+            this._jadwalMatkul.Add(mataKuliah);
 
             // Kode yg dikomen di bawah hanya utk memastikan program berjalan lancar
             //MessageBox.Show($"Berhasil menambahkan {mataKuliah.Nama} ke Jadwal {this.Nama}");

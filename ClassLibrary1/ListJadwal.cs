@@ -13,11 +13,11 @@ namespace ClassLibrary1
         
         public ListJadwal()
         {
-            _list = new List<Jadwal>();
+            this._list = new List<Jadwal>();
         }
-        public void AddJadwal(Jadwal jadwal)
+        public void AddJadwalToList(Jadwal jadwal)
         {
-            _list.Add(jadwal);
+            this._list.Add(jadwal);
         }
     }
 }

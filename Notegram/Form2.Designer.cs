@@ -34,6 +34,8 @@ namespace Notegram
             this.toDoListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbTambahMatkul = new System.Windows.Forms.GroupBox();
+            this.cmbWarna = new System.Windows.Forms.ComboBox();
+            this.lblWarna = new System.Windows.Forms.Label();
             this.btnBuat = new System.Windows.Forms.Button();
             this.cmbHari = new System.Windows.Forms.ComboBox();
             this.tbNamaMatkul = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@ namespace Notegram
             this.lblJamMulai = new System.Windows.Forms.Label();
             this.lblHari = new System.Windows.Forms.Label();
             this.lblNama = new System.Windows.Forms.Label();
-            this.lblWarna = new System.Windows.Forms.Label();
-            this.cmbWarna = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.gbTambahMatkul.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +95,37 @@ namespace Notegram
             this.gbTambahMatkul.TabStop = false;
             this.gbTambahMatkul.Text = "Tambah Mata Kuliah";
             // 
+            // cmbWarna
+            // 
+            this.cmbWarna.FormattingEnabled = true;
+            this.cmbWarna.Items.AddRange(new object[] {
+            "Merah Tua",
+            "Pink",
+            "Oranye",
+            "Kuning",
+            "Krem",
+            "Tosca",
+            "Hijau",
+            "Hijau Tua",
+            "Biru",
+            "Dongker",
+            "Ungu",
+            "Abu-Abu",
+            "Coklat"});
+            this.cmbWarna.Location = new System.Drawing.Point(72, 134);
+            this.cmbWarna.Name = "cmbWarna";
+            this.cmbWarna.Size = new System.Drawing.Size(113, 21);
+            this.cmbWarna.TabIndex = 8;
+            // 
+            // lblWarna
+            // 
+            this.lblWarna.AutoSize = true;
+            this.lblWarna.Location = new System.Drawing.Point(6, 137);
+            this.lblWarna.Name = "lblWarna";
+            this.lblWarna.Size = new System.Drawing.Size(42, 13);
+            this.lblWarna.TabIndex = 7;
+            this.lblWarna.Text = "Warna:";
+            // 
             // btnBuat
             // 
             this.btnBuat.Location = new System.Drawing.Point(72, 165);
@@ -108,6 +139,13 @@ namespace Notegram
             // cmbHari
             // 
             this.cmbHari.FormattingEnabled = true;
+            this.cmbHari.Items.AddRange(new object[] {
+            "Senin",
+            "Selasa",
+            "Rabu",
+            "Jumat",
+            "Sabtu",
+            "Minggu"});
             this.cmbHari.Location = new System.Drawing.Point(72, 55);
             this.cmbHari.Name = "cmbHari";
             this.cmbHari.Size = new System.Drawing.Size(113, 21);
@@ -156,23 +194,6 @@ namespace Notegram
             this.lblNama.Size = new System.Drawing.Size(38, 13);
             this.lblNama.TabIndex = 0;
             this.lblNama.Text = "Nama:";
-            // 
-            // lblWarna
-            // 
-            this.lblWarna.AutoSize = true;
-            this.lblWarna.Location = new System.Drawing.Point(6, 137);
-            this.lblWarna.Name = "lblWarna";
-            this.lblWarna.Size = new System.Drawing.Size(42, 13);
-            this.lblWarna.TabIndex = 7;
-            this.lblWarna.Text = "Warna:";
-            // 
-            // cmbWarna
-            // 
-            this.cmbWarna.FormattingEnabled = true;
-            this.cmbWarna.Location = new System.Drawing.Point(72, 134);
-            this.cmbWarna.Name = "cmbWarna";
-            this.cmbWarna.Size = new System.Drawing.Size(113, 21);
-            this.cmbWarna.TabIndex = 8;
             // 
             // Form2
             // 
