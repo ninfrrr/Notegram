@@ -27,32 +27,6 @@ namespace Notegram
             mahasiswa1._listJadwal.AddJadwalToList(jadwal1);
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            //cmbHari.Items.Add("Senin");
-            //cmbHari.Items.Add("Selasa");
-            //cmbHari.Items.Add("Rabu");
-            //cmbHari.Items.Add("Kamis");
-            //cmbHari.Items.Add("Jumat");
-            //cmbHari.Items.Add("Sabtu");
-            //cmbHari.Items.Add("Minggu");
-
-            //cmbWarna.Items.Add("Merah");
-            //cmbWarna.Items.Add("Merah Tua");
-            //cmbWarna.Items.Add("Pink");
-            //cmbWarna.Items.Add("Oranye");
-            //cmbWarna.Items.Add("Kuning");
-            //cmbWarna.Items.Add("Krem");
-            //cmbWarna.Items.Add("Tosca");
-            //cmbWarna.Items.Add("Hijau");
-            //cmbWarna.Items.Add("Hijau Tua");
-            //cmbWarna.Items.Add("Biru");
-            //cmbWarna.Items.Add("Dongker");
-            //cmbWarna.Items.Add("Ungu");
-            //cmbWarna.Items.Add("Abu-Abu");
-            //cmbWarna.Items.Add("Coklat");
-        }
-
         private void btnBuat_Click(object sender, EventArgs e)
         {
             // Instance MataKuliah yang akan dibuat

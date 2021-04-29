@@ -40,7 +40,7 @@ namespace ClassLibrary1
             this._hari = hari;
             this.Warna = warna;
             // Kode yg dikomen di bawah hanya utk memastikan program berjalan lancar
-            MessageBox.Show($"Berhasil membuat Mata Kuliah {this.Nama} pada hari {this.Hari} berwarna {this.Warna}");
+            //MessageBox.Show($"Berhasil membuat Mata Kuliah {this.Nama} pada hari {this.Hari} berwarna {this.Warna}");
         }
         public void AddAgendaToDaftar(Agenda agenda)
         {

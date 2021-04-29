@@ -126,10 +126,10 @@ namespace Notegram
             // lblHapusNanti
             // 
             this.lblHapusNanti.AutoSize = true;
-            this.lblHapusNanti.Font = new System.Drawing.Font("Adobe Arabic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHapusNanti.Location = new System.Drawing.Point(127, 100);
+            this.lblHapusNanti.Font = new System.Drawing.Font("Adobe Arabic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHapusNanti.Location = new System.Drawing.Point(116, 99);
             this.lblHapusNanti.Name = "lblHapusNanti";
-            this.lblHapusNanti.Size = new System.Drawing.Size(141, 14);
+            this.lblHapusNanti.Size = new System.Drawing.Size(164, 16);
             this.lblHapusNanti.TabIndex = 9;
             this.lblHapusNanti.Text = "pass: ILY3000, nanti lbl ni dihapus";
             // 

@@ -111,7 +111,8 @@ namespace Notegram
             "Dongker",
             "Ungu",
             "Abu-Abu",
-            "Coklat"});
+            "Coklat",
+            "Hitam"});
             this.cmbWarna.Location = new System.Drawing.Point(72, 134);
             this.cmbWarna.Name = "cmbWarna";
             this.cmbWarna.Size = new System.Drawing.Size(113, 21);
@@ -205,7 +206,6 @@ namespace Notegram
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
             this.Text = "Notegram";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gbTambahMatkul.ResumeLayout(false);
