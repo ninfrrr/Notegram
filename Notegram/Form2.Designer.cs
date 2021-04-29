@@ -103,6 +103,7 @@ namespace Notegram
             // 
             // cmbWarna
             // 
+            this.cmbWarna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWarna.FormattingEnabled = true;
             this.cmbWarna.Items.AddRange(new object[] {
             "Merah Tua",
@@ -145,6 +146,7 @@ namespace Notegram
             // 
             // cmbHari
             // 
+            this.cmbHari.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHari.FormattingEnabled = true;
             this.cmbHari.Items.AddRange(new object[] {
             "Senin",
@@ -230,6 +232,7 @@ namespace Notegram
             this.Controls.Add(this.gbTambahMatkul);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Notegram";
             this.Load += new System.EventHandler(this.Form2_Load);

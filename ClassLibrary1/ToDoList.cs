@@ -10,12 +10,12 @@ namespace ClassLibrary1
     {
         List<Agenda> _toDo;
 
-        public void AddAgenda()
+        public void AddAgendaKeToDOList()
         {
 
         }
         
-        public void RemoveAgenda() 
+        public void RemoveAgendaDariToDoList() 
         {
 
         }
