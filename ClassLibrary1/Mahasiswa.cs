@@ -11,6 +11,8 @@ namespace ClassLibrary1
         string _nama;
         string _password;
         ToDoList _toDoList;
+
+        // PERLU DIUBAH KE PRIVATE
         public ListJadwal _listJadwal;
 
         public string Nama

@@ -24,17 +24,23 @@ namespace ClassLibrary1
             get { return _nama; }
             set { _nama = value; }
         }
+        public int Hari
+        { 
+            get { return _hari; } 
+            set { _hari = value; }
+        }
         public string Warna
         {
             get { return _warna; }
             set { _warna = value; }
         }
-        public MataKuliah(string nama)
+        public MataKuliah(string nama, int hari, string warna)
         {
             this.Nama = nama;
-
+            this._hari = hari;
+            this.Warna = warna;
             // Kode yg dikomen di bawah hanya utk memastikan program berjalan lancar
-            //MessageBox.Show($"Berhasil membuat Mata Kuliah {this.Nama}");
+            //MessageBox.Show($"Berhasil membuat Mata Kuliah {this.Nama} pada hari {this.Hari} berwarna {this.Warna}");
         }
     }
 }

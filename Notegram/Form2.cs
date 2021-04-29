@@ -38,6 +38,7 @@ namespace Notegram
             cmbHari.Items.Add("Kamis");
             cmbHari.Items.Add("Jumat");
             cmbHari.Items.Add("Sabtu");
+            cmbHari.Items.Add("Minggu");
 
             cmbWarna.Items.Add("Merah");
             cmbWarna.Items.Add("Merah Tua");
@@ -55,12 +56,12 @@ namespace Notegram
             cmbWarna.Items.Add("Coklat");
         }
 
+
         private void btnBuat_Click(object sender, EventArgs e)
         {
             if (tbNamaMatkul.Text != "" && cmbHari.Text != "")
             {
-                matkul1 = new MataKuliah(tbNamaMatkul.Text);
-                matkul1.Warna = KodeWarna(cmbWarna.Text);
+                matkul1 = new MataKuliah(tbNamaMatkul.Text, KodeHari(cmbHari.Text), KodeWarna(cmbWarna.Text));
                 jadwal1.AddMataKuliah(matkul1);
                 KosongkanTextBox();
 
@@ -76,38 +77,63 @@ namespace Notegram
             cmbHari.Text = "";
             cmbWarna.Text = "";
         }
+        private int KodeHari(string hari)
+        {
+            switch(hari)
+            {
+                case "Senin":
+                    return 1;
+                case "Selasa":
+                    return 2;
+                case "Rabu":
+                    return 3;
+                case "Kamis":
+                    return 4;
+                case "Jumat":
+                    return 5;
+                case "Sabtu":
+                    return 6;
+                case "Minggu":
+                    return 7;
+                default:
+                    return 1;
+            }
+        }
         private string KodeWarna(string warna)
         {
-            if (warna == "Merah")
-                return "#d63031";
-            else if (warna == "Merah Tua")
-                return "#c0392b";
-            else if (warna == "Pink")
-                return "#e84393";
-            else if (warna == "Oranye")
-                return "#f39c12";
-            else if (warna == "Kuning")
-                return "#f1c40f";
-            else if (warna == "Krem")
-                return "#fdcb6e";
-            else if (warna == "Tosca")
-                return "#81ecec";
-            else if (warna == "Hijau")
-                return "#2ecc71";
-            else if (warna == "Hijau Tua")
-                return "#00b894";
-            else if (warna == "Biru")
-                return "#3498db";
-            else if (warna == "Dongker")
-                return "#273c75";
-            else if (warna == "Ungu")
-                return "#9c88ff";
-            else if (warna == "Abu-Abu")
-                return "#7f8c8d";
-            else if (warna == "Coklat")
-                return "#d35400";
-            else
-                return "#2d3436";
+            switch (warna)
+            {
+                case "Merah":
+                    return "#d63031";
+                case "Merah Tua":
+                    return "#c0392b";
+                case "Pink":
+                    return "#e84393";
+                case "Oranye":
+                    return "#f39c12";
+                case "Kuning":
+                    return "#f1c40f";
+                case "Krem":
+                    return "#fdcb6e";
+                case "Tosca":
+                    return "#81ecec";
+                case "Hijau":
+                    return "#2ecc71";
+                case "Hijau Tua":
+                    return "#00b894";
+                case "Biru":
+                    return "#3498db";
+                case "Dongker":
+                    return "#273c75";
+                case "Ungu":
+                    return "#9c88ff";
+                case "Abu-Abu":
+                    return "#7f8c8d";
+                case "Coklat":
+                    return "#d35400";
+                default:
+                    return "#2d3436"; //warna hitam
+            }
         }
     }
 }
