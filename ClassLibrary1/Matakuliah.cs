@@ -44,7 +44,7 @@ namespace ClassLibrary1
         }
         public void AddAgendaToDaftar(Agenda agenda)
         {
-
+            this._daftarAgenda.Add(agenda);
         }
         public void SetReminderMeeting()
         {

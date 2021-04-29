@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class PR
+    public class PR : Agenda
     {   
         //DateTime? _deadline;
         public PR(MataKuliah mataKuliah)
         {
-            
+            this._tipe = "PR";
+            this._mataKuliah = mataKuliah;
+            mataKuliah.AddAgendaToDaftar(this);
         }
     }
 }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class kuis : Agenda
+    public class Kuis : Agenda
     {
+        public Kuis (MataKuliah mataKuliah)
+        {
+            this._tipe = "Kuis";
+            this._mataKuliah = mataKuliah;
+            mataKuliah.AddAgendaToDaftar(this);
+        }
     }
 }

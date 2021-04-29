@@ -43,8 +43,11 @@ namespace Notegram
             this.lblJamMulai = new System.Windows.Forms.Label();
             this.lblHari = new System.Windows.Forms.Label();
             this.lblNama = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblNamaJadwal = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gbTambahMatkul.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -67,12 +70,15 @@ namespace Notegram
             // 
             // toDoListToolStripMenuItem
             // 
+            this.toDoListToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toDoListToolStripMenuItem.Name = "toDoListToolStripMenuItem";
             this.toDoListToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.toDoListToolStripMenuItem.Text = "To-Do List";
+            this.toDoListToolStripMenuItem.Click += new System.EventHandler(this.toDoListToolStripMenuItem_Click);
             // 
             // akunToolStripMenuItem
             // 
+            this.akunToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
             this.akunToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.akunToolStripMenuItem.Text = "Akun";
@@ -129,7 +135,7 @@ namespace Notegram
             // 
             // btnBuat
             // 
-            this.btnBuat.Location = new System.Drawing.Point(72, 165);
+            this.btnBuat.Location = new System.Drawing.Point(72, 161);
             this.btnBuat.Name = "btnBuat";
             this.btnBuat.Size = new System.Drawing.Size(75, 23);
             this.btnBuat.TabIndex = 6;
@@ -196,20 +202,42 @@ namespace Notegram
             this.lblNama.TabIndex = 0;
             this.lblNama.Text = "Nama:";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 73);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(437, 248);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // lblNamaJadwal
+            // 
+            this.lblNamaJadwal.AutoSize = true;
+            this.lblNamaJadwal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNamaJadwal.Location = new System.Drawing.Point(22, 36);
+            this.lblNamaJadwal.Name = "lblNamaJadwal";
+            this.lblNamaJadwal.Size = new System.Drawing.Size(137, 30);
+            this.lblNamaJadwal.TabIndex = 3;
+            this.lblNamaJadwal.Text = "Nama Jadwal";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 380);
+            this.Controls.Add(this.lblNamaJadwal);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gbTambahMatkul);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
             this.Text = "Notegram";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gbTambahMatkul.ResumeLayout(false);
             this.gbTambahMatkul.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +259,7 @@ namespace Notegram
         private System.Windows.Forms.ComboBox cmbHari;
         private System.Windows.Forms.ComboBox cmbWarna;
         private System.Windows.Forms.Label lblWarna;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblNamaJadwal;
     }
 }

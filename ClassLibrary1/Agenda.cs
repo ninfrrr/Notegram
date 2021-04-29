@@ -8,12 +8,14 @@ namespace ClassLibrary1
 {
     public abstract class Agenda
     {
-        int _id;
-        string _judul;
-        string _mataKuliah;
-        string _tipe;
-        bool _sudahDikerjakan;
-        string _keterangan;
-        Reminder _reminder;
+        protected int _id;
+        protected string _judul;
+        protected MataKuliah _mataKuliah;
+        protected string _tipe;
+        protected bool _sudahDikerjakan;
+        protected string _keterangan;
+        protected Reminder _reminder;
+
+        
     }
 }

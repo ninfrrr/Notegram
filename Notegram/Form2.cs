@@ -110,5 +110,16 @@ namespace Notegram
                     return "#2d3436"; //warna hitam
             }
         }
+
+        private void toDoListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            lblNamaJadwal.Text = jadwal1.Nama;
+        }
     }
 }
