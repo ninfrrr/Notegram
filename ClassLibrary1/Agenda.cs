@@ -16,6 +16,7 @@ namespace ClassLibrary1
         protected string _keterangan;
         protected Reminder _reminder;
 
-        
+        //akses data dari database
+        //masukkan fungsi tambah, edit, hapus data database
     }
 }
