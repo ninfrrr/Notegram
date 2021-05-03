@@ -42,32 +42,40 @@ namespace Notegram
             // lblCari
             // 
             this.lblCari.AutoSize = true;
-            this.lblCari.Location = new System.Drawing.Point(35, 33);
+            this.lblCari.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCari.Location = new System.Drawing.Point(28, 34);
+            this.lblCari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(31, 13);
+            this.lblCari.Size = new System.Drawing.Size(60, 23);
             this.lblCari.TabIndex = 0;
             this.lblCari.Text = "Cari :";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 30);
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(114, 31);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(497, 20);
+            this.textBox1.Size = new System.Drawing.Size(661, 32);
             this.textBox1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 64);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 79);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(604, 295);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(805, 363);
             this.dataGridView1.TabIndex = 2;
             // 
             // btnTambah
             // 
-            this.btnTambah.Location = new System.Drawing.Point(86, 371);
+            this.btnTambah.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTambah.Location = new System.Drawing.Point(82, 455);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(75, 23);
+            this.btnTambah.Size = new System.Drawing.Size(100, 28);
             this.btnTambah.TabIndex = 3;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = true;
@@ -75,9 +83,11 @@ namespace Notegram
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(288, 371);
+            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(384, 457);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.Size = new System.Drawing.Size(100, 28);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -85,9 +95,11 @@ namespace Notegram
             // 
             // btnHapus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(488, 371);
+            this.btnHapus.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHapus.Location = new System.Drawing.Point(651, 457);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(75, 23);
+            this.btnHapus.Size = new System.Drawing.Size(100, 28);
             this.btnHapus.TabIndex = 5;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
@@ -96,17 +108,19 @@ namespace Notegram
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 405);
+            this.label1.Location = new System.Drawing.Point(111, 498);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 13);
+            this.label1.Size = new System.Drawing.Size(398, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "ntar tambah dan edit bakal bawa form ini menuju form agenda";
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 427);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(120)))), ((int)(((byte)(166)))));
+            this.ClientSize = new System.Drawing.Size(837, 526);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnEdit);
@@ -114,6 +128,7 @@ namespace Notegram
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblCari);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.Text = "To-Do List";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -121,5 +121,15 @@ namespace Notegram
         {
             lblNamaJadwal.Text = jadwal1.Nama;
         }
+
+        private void gbTambahMatkul_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
