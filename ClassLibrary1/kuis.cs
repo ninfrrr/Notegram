@@ -8,7 +8,7 @@ namespace ClassLibrary1
 {
     public class Kuis : Agenda
     {
-        public Kuis (MataKuliah mataKuliah)
+        public Kuis (Matkul mataKuliah)
         {
             this._tipe = "Kuis";
             this._mataKuliah = mataKuliah;

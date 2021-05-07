@@ -10,22 +10,22 @@ namespace ClassLibrary1
     public class Jadwal
     {
         string _nama;
-        List<MataKuliah> _jadwalMatkul;
+        List<Matkul> _jadwalMatkul;
 
         public string Nama
         {
             get; set;
         }
-        public List<MataKuliah> DaftarMatkul
+        public List<Matkul> DaftarMatkul
         {
             get; set;
         }
         public Jadwal(string nama)
         {
             this.Nama = nama;
-            this._jadwalMatkul = new List<MataKuliah>();
+            this._jadwalMatkul = new List<Matkul>();
         }
-        public void AddMataKuliahToJadwal(MataKuliah mataKuliah)
+        public void AddMataKuliahToJadwal(Matkul mataKuliah)
         {
             this._jadwalMatkul.Add(mataKuliah);
 

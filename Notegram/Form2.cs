@@ -8,12 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary1;
+using System.Data.SqlClient;
 
 namespace Notegram
 {
     public partial class Form2 : Form
     {
-        Mahasiswa mahasiswa1;
+        //Mahasiswa mahasiswa1;
+        int idCount;
+        DataTable datatable;
+        string path = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\NotegramDB.mdf;integrated security=True;MultipleActiveResultSets=True;";
+        MataKuliah mataKuliah;
 
         // Setiap masuk ke Form 2, 1 jadwal sudah terbuat dengan otomatis
         // Kalau nanti mau membuat jadwal lain, bisa juga dilakukan dgn tombol tambah jadwal
@@ -23,94 +28,78 @@ namespace Notegram
         public Form2(Mahasiswa mahasiswa)
         {
             InitializeComponent();
-            this.mahasiswa1 = mahasiswa;
-            mahasiswa1._listJadwal.AddJadwalToList(jadwal1);
+            idCount = 0;
+            btnEdit.Enabled = false;
+            btnHapus.Enabled = false;
+            //this.mahasiswa1 = mahasiswa;
+            //mahasiswa1._listJadwal.AddJadwalToList(jadwal1);
         }
 
         private void btnBuat_Click(object sender, EventArgs e)
         {
-            // Instance MataKuliah yang akan dibuat
-            MataKuliah matkul1;
-            if (tbNamaMatkul.Text != "" && cmbHari.Text != "")
+            idCount++;
+            if (tbNamaMatkul.Text != "" && cmbHari.Text != "" && tbJamMulai.Text != "" && tbJamSelesai.Text != "")
             {
-                matkul1 = new MataKuliah(tbNamaMatkul.Text, KodeHari(cmbHari.Text), KodeWarna(cmbWarna.Text));
-                jadwal1.AddMataKuliahToJadwal(matkul1);
-                KosongkanTextBox();
-
-                // Kode yg dikomen di bawah hanya untuk memastikan program berjalan dengan semestinya
-                //mahasiswa1._listJadwal._list[0].ShowMataKuliah();
+                
+                try
+                {
+                    TimeSpan jamMulai = TimeSpan.Parse(tbJamMulai.Text);
+                    TimeSpan jamSelesai = TimeSpan.Parse(tbJamSelesai.Text);
+                    using(var db = new NotegramDBModel())
+                    {
+                        MataKuliah newMataKuliah = new MataKuliah
+                        {
+                            Id = idCount,
+                            Nama = tbNamaMatkul.Text,
+                            Hari = Ubah.KodeHari(cmbHari.Text),
+                            Jam_Mulai = jamMulai,
+                            Jam_Selesai = jamSelesai,
+                            Warna = Ubah.KodeWarna(cmbWarna.Text),
+                        };
+                        db.MataKuliahs.Add(newMataKuliah);
+                        db.SaveChanges();
+                    }
+                    TampilkanDataGridViewMatkul();
+                    MessageBox.Show($"Berhasil menambahkan mata kuliah");
+                    KosongkanTextBox();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
                 MessageBox.Show("Nama, Hari, Jam Mulai, dan Jam Selesai wajib diisi");
         }
+        void TampilkanDataGridViewMatkul()
+        {
+            try
+            {
+                datatable = new DataTable();
+                using (SqlConnection conn = new SqlConnection(path))
+                {
+                    string query = "SELECT Nama, Hari, Jam_Mulai, Jam_Selesai FROM MataKuliah ORDER BY Hari, Jam_Mulai";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.Fill(datatable);
+                    dgvMatkul.DataSource = datatable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        
         private void KosongkanTextBox()
         {
             tbNamaMatkul.Text = "";
-            cmbHari.Text = "";
-            cmbWarna.Text = "";
-        }
+            cmbHari.SelectedIndex = -1;
+            tbJamMulai.Text = "";
+            tbJamSelesai.Text = "";
+            cmbWarna.SelectedIndex=-1;
 
-        private int KodeHari(string hari)
-        {
-            switch(hari)
-            {
-                case "Senin":
-                    return 1;
-                case "Selasa":
-                    return 2;
-                case "Rabu":
-                    return 3;
-                case "Kamis":
-                    return 4;
-                case "Jumat":
-                    return 5;
-                case "Sabtu":
-                    return 6;
-                case "Minggu":
-                    return 7;
-                default:
-                    return 1;
-            }
         }
-
-        private string KodeWarna(string warna)
-        {
-            switch (warna)
-            {
-                case "Merah":
-                    return "#d63031";
-                case "Merah Tua":
-                    return "#c0392b";
-                case "Pink":
-                    return "#e84393";
-                case "Oranye":
-                    return "#f39c12";
-                case "Kuning":
-                    return "#f1c40f";
-                case "Krem":
-                    return "#fdcb6e";
-                case "Tosca":
-                    return "#81ecec";
-                case "Hijau":
-                    return "#2ecc71";
-                case "Hijau Tua":
-                    return "#00b894";
-                case "Biru":
-                    return "#3498db";
-                case "Dongker":
-                    return "#273c75";
-                case "Ungu":
-                    return "#9c88ff";
-                case "Abu-Abu":
-                    return "#7f8c8d";
-                case "Coklat":
-                    return "#d35400";
-                default:
-                    return "#2d3436"; //warna hitam
-            }
-        }
-
         private void toDoListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
@@ -122,14 +111,61 @@ namespace Notegram
             lblNamaJadwal.Text = jadwal1.Nama;
         }
 
-        private void gbTambahMatkul_Enter(object sender, EventArgs e)
+        private void dgvMatkul_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            tbNamaMatkul.Text = dgvMatkul.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //cmbHari.Text = Ubah.NamaHari(dgvMatkul.Rows[e.RowIndex].Cells[1].ToString());
+            tbJamMulai.Text = dgvMatkul.Rows[e.RowIndex].Cells[2].Value.ToString();
+            tbJamSelesai.Text = dgvMatkul.Rows[e.RowIndex].Cells[3].Value.ToString();
+            //cmbWarna.Text = Ubah.StringWarna(dgvMatkul.Rows[e.RowIndex].Cells[4].Value.ToString());
+            btnEdit.Enabled = true;
+            btnHapus.Enabled = true;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnHapus_Click(object sender, EventArgs e)
         {
+            HapusMataKuliah();
+        }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Silakan menunggu pengembangan fitur 'Edit' berikutnya ^_^");
+            //EditMataKuliah();
+        }
+        private void EditMataKuliah()
+        {
+            TimeSpan jamMulai = TimeSpan.Parse(tbJamMulai.Text);
+            TimeSpan jamSelesai = TimeSpan.Parse(tbJamSelesai.Text);
+            using (var db = new NotegramDBModel())
+            {
+                var ganti = db.MataKuliahs.SingleOrDefault(k => k.Nama == mataKuliah.Nama);
+                if (tbNamaMatkul.Text != "" && cmbHari.Text != "" && tbJamMulai.Text != "" && tbJamSelesai.Text != "")
+                {
+                    ganti.Nama = tbNamaMatkul.Text;
+                    ganti.Hari = Ubah.KodeHari(cmbHari.Text);
+                    ganti.Jam_Mulai = jamMulai;
+                    ganti.Jam_Selesai = jamSelesai;
+                    ganti.Warna = Ubah.KodeWarna(cmbWarna.Text);
+                    db.SaveChanges();
+                    MessageBox.Show("Mata kuliah berhasil diedit");
+                }
+                else
+                {
+                    MessageBox.Show("Nama, Hari, Jam Mulai, dan Jam Selesai wajib diisi");
+                }
+            }
+        }
+        private void HapusMataKuliah()
+        {
+            using (var db = new NotegramDBModel())
+            {
+                db.MataKuliahs.RemoveRange(db.MataKuliahs.Where(item => item.Nama == tbNamaMatkul.Text));
+                db.SaveChanges();
+                KosongkanTextBox();
+                TampilkanDataGridViewMatkul();
+                btnEdit.Enabled = false;
+                btnHapus.Enabled = false;
+            }
         }
     }
 }

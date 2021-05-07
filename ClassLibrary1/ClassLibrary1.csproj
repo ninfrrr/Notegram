@@ -46,12 +46,13 @@
     <Compile Include="Jadwal.cs" />
     <Compile Include="ListJadwal.cs" />
     <Compile Include="Mahasiswa.cs" />
-    <Compile Include="MataKuliah.cs" />
+    <Compile Include="Matkul.cs" />
     <Compile Include="PR.cs" />
     <Compile Include="Reminder.cs" />
     <Compile Include="ToDoList.cs" />
     <Compile Include="Kuis.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ubah.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

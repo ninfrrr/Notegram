@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace ClassLibrary1
 {
-    public class MataKuliah
+    public class Matkul
     {
         int _id;
         string _nama;
         int _hari;
-        // DateTime? _waktuMulai;
-        // DateTime? _waktuSelesai;
+        TimeSpan _waktuMulai;
+        TimeSpan _waktuSelesai;
         string _warna;
         List<string> _dosen;
         List<Agenda> _daftarAgenda;
@@ -34,13 +34,27 @@ namespace ClassLibrary1
             get { return _warna; }
             set { _warna = value; }
         }
-        public MataKuliah(string nama, int hari, string warna)
+
+        public TimeSpan WaktuMulai
         {
-            this.Nama = nama;
+            get { return _waktuMulai; }
+            set { _waktuMulai = value; }
+        }
+        public TimeSpan WaktuSelesai
+        {
+            get { return _waktuSelesai; }
+            set { _waktuSelesai = value; }
+        }
+
+        public Matkul(string nama, int hari, string warna, TimeSpan waktuMulai, TimeSpan waktuSelesai)
+        {
+            this._nama = nama;
             this._hari = hari;
-            this.Warna = warna;
+            this._warna = warna;
+            this._waktuMulai = waktuMulai;
+            this._waktuSelesai = waktuSelesai;
             // Kode yg dikomen di bawah hanya utk memastikan program berjalan lancar
-            //MessageBox.Show($"Berhasil membuat Mata Kuliah {this.Nama} pada hari {this.Hari} berwarna {this.Warna}");
+            MessageBox.Show($"Berhasil membuat Mata Kuliah {this.Nama} pada hari {this.Hari} mulai {this.WaktuMulai.ToString()} & selesai {this.WaktuSelesai.ToString()} berwarna {this.Warna}");
         }
         public void AddAgendaToDaftar(Agenda agenda)
         {

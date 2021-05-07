@@ -33,7 +33,12 @@ namespace Notegram
             this.jadwalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toDoListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gbTambahMatkul = new System.Windows.Forms.GroupBox();
+            this.gbMataKuliah = new System.Windows.Forms.GroupBox();
+            this.btnHapus = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.tbJamSelesai = new System.Windows.Forms.TextBox();
+            this.tbJamMulai = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbWarna = new System.Windows.Forms.ComboBox();
             this.lblWarna = new System.Windows.Forms.Label();
             this.btnBuat = new System.Windows.Forms.Button();
@@ -43,13 +48,12 @@ namespace Notegram
             this.lblJamMulai = new System.Windows.Forms.Label();
             this.lblHari = new System.Windows.Forms.Label();
             this.lblNama = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMatkul = new System.Windows.Forms.DataGridView();
             this.lblNamaJadwal = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            this.gbTambahMatkul.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gbMataKuliah.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatkul)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -62,22 +66,21 @@ namespace Notegram
             this.akunToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(921, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(752, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // jadwalToolStripMenuItem
             // 
             this.jadwalToolStripMenuItem.Name = "jadwalToolStripMenuItem";
-            this.jadwalToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.jadwalToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.jadwalToolStripMenuItem.Text = "Jadwal";
             // 
             // toDoListToolStripMenuItem
             // 
             this.toDoListToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toDoListToolStripMenuItem.Name = "toDoListToolStripMenuItem";
-            this.toDoListToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.toDoListToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.toDoListToolStripMenuItem.Text = "To-Do List";
             this.toDoListToolStripMenuItem.Click += new System.EventHandler(this.toDoListToolStripMenuItem_Click);
             // 
@@ -85,31 +88,77 @@ namespace Notegram
             // 
             this.akunToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
-            this.akunToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
+            this.akunToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.akunToolStripMenuItem.Text = "Akun";
             // 
-            // gbTambahMatkul
+            // gbMataKuliah
             // 
-            this.gbTambahMatkul.Controls.Add(this.pictureBox1);
-            this.gbTambahMatkul.Controls.Add(this.cmbWarna);
-            this.gbTambahMatkul.Controls.Add(this.lblWarna);
-            this.gbTambahMatkul.Controls.Add(this.btnBuat);
-            this.gbTambahMatkul.Controls.Add(this.cmbHari);
-            this.gbTambahMatkul.Controls.Add(this.tbNamaMatkul);
-            this.gbTambahMatkul.Controls.Add(this.lblJamSelesai);
-            this.gbTambahMatkul.Controls.Add(this.lblJamMulai);
-            this.gbTambahMatkul.Controls.Add(this.lblHari);
-            this.gbTambahMatkul.Controls.Add(this.lblNama);
-            this.gbTambahMatkul.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTambahMatkul.Location = new System.Drawing.Point(650, 34);
-            this.gbTambahMatkul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbTambahMatkul.Name = "gbTambahMatkul";
-            this.gbTambahMatkul.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbTambahMatkul.Size = new System.Drawing.Size(276, 433);
-            this.gbTambahMatkul.TabIndex = 1;
-            this.gbTambahMatkul.TabStop = false;
-            this.gbTambahMatkul.Text = "Tambah Mata Kuliah";
-            this.gbTambahMatkul.Enter += new System.EventHandler(this.gbTambahMatkul_Enter);
+            this.gbMataKuliah.Controls.Add(this.btnHapus);
+            this.gbMataKuliah.Controls.Add(this.btnEdit);
+            this.gbMataKuliah.Controls.Add(this.tbJamSelesai);
+            this.gbMataKuliah.Controls.Add(this.tbJamMulai);
+            this.gbMataKuliah.Controls.Add(this.pictureBox1);
+            this.gbMataKuliah.Controls.Add(this.cmbWarna);
+            this.gbMataKuliah.Controls.Add(this.lblWarna);
+            this.gbMataKuliah.Controls.Add(this.btnBuat);
+            this.gbMataKuliah.Controls.Add(this.cmbHari);
+            this.gbMataKuliah.Controls.Add(this.tbNamaMatkul);
+            this.gbMataKuliah.Controls.Add(this.lblJamSelesai);
+            this.gbMataKuliah.Controls.Add(this.lblJamMulai);
+            this.gbMataKuliah.Controls.Add(this.lblHari);
+            this.gbMataKuliah.Controls.Add(this.lblNama);
+            this.gbMataKuliah.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMataKuliah.Location = new System.Drawing.Point(488, 28);
+            this.gbMataKuliah.Name = "gbMataKuliah";
+            this.gbMataKuliah.Size = new System.Drawing.Size(264, 352);
+            this.gbMataKuliah.TabIndex = 1;
+            this.gbMataKuliah.TabStop = false;
+            this.gbMataKuliah.Text = "Mata Kuliah";
+            // 
+            // btnHapus
+            // 
+            this.btnHapus.Location = new System.Drawing.Point(187, 219);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(72, 32);
+            this.btnHapus.TabIndex = 13;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseVisualStyleBackColor = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(100, 219);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(81, 32);
+            this.btnEdit.TabIndex = 12;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // tbJamSelesai
+            // 
+            this.tbJamSelesai.Location = new System.Drawing.Point(116, 140);
+            this.tbJamSelesai.Name = "tbJamSelesai";
+            this.tbJamSelesai.Size = new System.Drawing.Size(136, 27);
+            this.tbJamSelesai.TabIndex = 11;
+            // 
+            // tbJamMulai
+            // 
+            this.tbJamMulai.Location = new System.Drawing.Point(116, 106);
+            this.tbJamMulai.Name = "tbJamMulai";
+            this.tbJamMulai.Size = new System.Drawing.Size(136, 27);
+            this.tbJamMulai.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Notegram.Properties.Resources.jadwal;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 256);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(240, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // cmbWarna
             // 
@@ -130,28 +179,25 @@ namespace Notegram
             "Abu-Abu",
             "Coklat",
             "Hitam"});
-            this.cmbWarna.Location = new System.Drawing.Point(109, 213);
-            this.cmbWarna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbWarna.Location = new System.Drawing.Point(116, 173);
             this.cmbWarna.Name = "cmbWarna";
-            this.cmbWarna.Size = new System.Drawing.Size(149, 31);
+            this.cmbWarna.Size = new System.Drawing.Size(136, 29);
             this.cmbWarna.TabIndex = 8;
             // 
             // lblWarna
             // 
             this.lblWarna.AutoSize = true;
-            this.lblWarna.Location = new System.Drawing.Point(21, 217);
-            this.lblWarna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWarna.Location = new System.Drawing.Point(16, 176);
             this.lblWarna.Name = "lblWarna";
-            this.lblWarna.Size = new System.Drawing.Size(78, 23);
+            this.lblWarna.Size = new System.Drawing.Size(66, 21);
             this.lblWarna.TabIndex = 7;
             this.lblWarna.Text = "Warna:";
             // 
             // btnBuat
             // 
-            this.btnBuat.Location = new System.Drawing.Point(109, 280);
-            this.btnBuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuat.Location = new System.Drawing.Point(19, 219);
             this.btnBuat.Name = "btnBuat";
-            this.btnBuat.Size = new System.Drawing.Size(100, 28);
+            this.btnBuat.Size = new System.Drawing.Size(75, 32);
             this.btnBuat.TabIndex = 6;
             this.btnBuat.Text = "Buat";
             this.btnBuat.UseVisualStyleBackColor = true;
@@ -165,50 +211,46 @@ namespace Notegram
             "Senin",
             "Selasa",
             "Rabu",
+            "Kamis",
             "Jumat",
             "Sabtu",
             "Minggu"});
-            this.cmbHari.Location = new System.Drawing.Point(109, 89);
-            this.cmbHari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbHari.Location = new System.Drawing.Point(116, 72);
             this.cmbHari.Name = "cmbHari";
-            this.cmbHari.Size = new System.Drawing.Size(149, 31);
+            this.cmbHari.Size = new System.Drawing.Size(136, 29);
             this.cmbHari.TabIndex = 5;
             // 
             // tbNamaMatkul
             // 
-            this.tbNamaMatkul.Location = new System.Drawing.Point(109, 49);
-            this.tbNamaMatkul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNamaMatkul.Location = new System.Drawing.Point(116, 40);
             this.tbNamaMatkul.Name = "tbNamaMatkul";
-            this.tbNamaMatkul.Size = new System.Drawing.Size(149, 32);
+            this.tbNamaMatkul.Size = new System.Drawing.Size(136, 27);
             this.tbNamaMatkul.TabIndex = 4;
             // 
             // lblJamSelesai
             // 
             this.lblJamSelesai.AutoSize = true;
-            this.lblJamSelesai.Location = new System.Drawing.Point(21, 172);
-            this.lblJamSelesai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblJamSelesai.Location = new System.Drawing.Point(16, 143);
             this.lblJamSelesai.Name = "lblJamSelesai";
-            this.lblJamSelesai.Size = new System.Drawing.Size(130, 23);
+            this.lblJamSelesai.Size = new System.Drawing.Size(103, 21);
             this.lblJamSelesai.TabIndex = 3;
             this.lblJamSelesai.Text = "Jam Selesai:";
             // 
             // lblJamMulai
             // 
             this.lblJamMulai.AutoSize = true;
-            this.lblJamMulai.Location = new System.Drawing.Point(21, 131);
-            this.lblJamMulai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblJamMulai.Location = new System.Drawing.Point(16, 109);
             this.lblJamMulai.Name = "lblJamMulai";
-            this.lblJamMulai.Size = new System.Drawing.Size(115, 23);
+            this.lblJamMulai.Size = new System.Drawing.Size(94, 21);
             this.lblJamMulai.TabIndex = 2;
             this.lblJamMulai.Text = "Jam Mulai:";
             // 
             // lblHari
             // 
             this.lblHari.AutoSize = true;
-            this.lblHari.Location = new System.Drawing.Point(21, 92);
-            this.lblHari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHari.Location = new System.Drawing.Point(16, 75);
             this.lblHari.Name = "lblHari";
-            this.lblHari.Size = new System.Drawing.Size(52, 23);
+            this.lblHari.Size = new System.Drawing.Size(44, 21);
             this.lblHari.TabIndex = 1;
             this.lblHari.Text = "Hari:";
             // 
@@ -216,67 +258,53 @@ namespace Notegram
             // 
             this.lblNama.AutoSize = true;
             this.lblNama.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblNama.Location = new System.Drawing.Point(21, 52);
-            this.lblNama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNama.Location = new System.Drawing.Point(16, 42);
             this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(77, 23);
+            this.lblNama.Size = new System.Drawing.Size(63, 21);
             this.lblNama.TabIndex = 0;
             this.lblNama.Text = "Nama:";
             // 
-            // dataGridView1
+            // dgvMatkul
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 86);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(583, 305);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvMatkul.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMatkul.Location = new System.Drawing.Point(15, 70);
+            this.dgvMatkul.Name = "dgvMatkul";
+            this.dgvMatkul.RowHeadersWidth = 51;
+            this.dgvMatkul.Size = new System.Drawing.Size(437, 248);
+            this.dgvMatkul.TabIndex = 2;
+            this.dgvMatkul.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatkul_CellDoubleClick);
             // 
             // lblNamaJadwal
             // 
             this.lblNamaJadwal.AutoSize = true;
             this.lblNamaJadwal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNamaJadwal.Location = new System.Drawing.Point(13, 34);
-            this.lblNamaJadwal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNamaJadwal.Location = new System.Drawing.Point(10, 28);
             this.lblNamaJadwal.Name = "lblNamaJadwal";
-            this.lblNamaJadwal.Size = new System.Drawing.Size(176, 37);
+            this.lblNamaJadwal.Size = new System.Drawing.Size(137, 30);
             this.lblNamaJadwal.TabIndex = 3;
             this.lblNamaJadwal.Text = "Nama Jadwal";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Notegram.Properties.Resources.jadwal;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 315);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(233, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(124)))), ((int)(((byte)(153)))));
-            this.ClientSize = new System.Drawing.Size(921, 468);
+            this.ClientSize = new System.Drawing.Size(752, 380);
             this.Controls.Add(this.lblNamaJadwal);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.gbTambahMatkul);
+            this.Controls.Add(this.dgvMatkul);
+            this.Controls.Add(this.gbMataKuliah);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Notegram";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.gbTambahMatkul.ResumeLayout(false);
-            this.gbTambahMatkul.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.gbMataKuliah.ResumeLayout(false);
+            this.gbMataKuliah.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatkul)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +316,7 @@ namespace Notegram
         private System.Windows.Forms.ToolStripMenuItem jadwalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toDoListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem akunToolStripMenuItem;
-        private System.Windows.Forms.GroupBox gbTambahMatkul;
+        private System.Windows.Forms.GroupBox gbMataKuliah;
         private System.Windows.Forms.Label lblJamMulai;
         private System.Windows.Forms.Label lblHari;
         private System.Windows.Forms.Label lblNama;
@@ -298,8 +326,12 @@ namespace Notegram
         private System.Windows.Forms.ComboBox cmbHari;
         private System.Windows.Forms.ComboBox cmbWarna;
         private System.Windows.Forms.Label lblWarna;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMatkul;
         private System.Windows.Forms.Label lblNamaJadwal;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox tbJamSelesai;
+        private System.Windows.Forms.TextBox tbJamMulai;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnHapus;
     }
 }

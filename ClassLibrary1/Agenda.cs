@@ -10,7 +10,7 @@ namespace ClassLibrary1
     {
         protected int _id;
         protected string _judul;
-        protected MataKuliah _mataKuliah;
+        protected Matkul _mataKuliah;
         protected string _tipe;
         protected bool _sudahDikerjakan;
         protected string _keterangan;

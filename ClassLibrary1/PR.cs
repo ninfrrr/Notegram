@@ -9,7 +9,7 @@ namespace ClassLibrary1
     public class PR : Agenda
     {   
         //DateTime? _deadline;
-        public PR(MataKuliah mataKuliah)
+        public PR(Matkul mataKuliah)
         {
             this._tipe = "PR";
             this._mataKuliah = mataKuliah;
