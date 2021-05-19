@@ -25,7 +25,7 @@ namespace Notegram
         // PERLU DIUBAH
         Jadwal jadwal1 = new Jadwal("Mingguan");
 
-        public Form2(Mahasiswa mahasiswa)
+        public Form2()
         {
             InitializeComponent();
             idCount = 0;

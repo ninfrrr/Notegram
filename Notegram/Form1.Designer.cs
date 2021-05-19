@@ -1,4 +1,4 @@
-﻿
+﻿/*
 namespace Notegram
 {
     partial class Form1
@@ -186,3 +186,4 @@ namespace Notegram
     }
 }
 
+*/

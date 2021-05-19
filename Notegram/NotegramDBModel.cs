@@ -14,6 +14,8 @@ namespace Notegram
 
         public virtual DbSet<MataKuliah> MataKuliahs { get; set; }
 
+        public virtual DbSet<ClassLibrary1.ToDoLists> ToDoLists { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
