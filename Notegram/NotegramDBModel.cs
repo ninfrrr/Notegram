@@ -8,14 +8,12 @@ namespace Notegram
     public partial class NotegramDBModel : DbContext
     {
         public NotegramDBModel()
-            : base("name=NgDBModel")
+            : base("name=NotegramDBModel")
         {
         }
 
         public virtual DbSet<MataKuliah> MataKuliahs { get; set; }
-
         public virtual DbSet<ToDoList> ToDoList { get; set; }
-        //public virtual DbSet<ClassLibrary1.ToDoLists> ToDoLists { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

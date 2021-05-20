@@ -9,7 +9,6 @@ namespace Notegram
     [Table("MataKuliah")]
     public partial class MataKuliah
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NotegramDBDataSet" targetNamespace="http://tempuri.org/NotegramDBDataSet.xsd" xmlns:mstns="http://tempuri.org/NotegramDBDataSet.xsd" xmlns="http://tempuri.org/NotegramDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NotegramDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NotegramDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Notegram.Properties.Settings.GlobalReference.Default.NotegramDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MataKuliahTableAdapter" GeneratorDataComponentClassName="MataKuliahTableAdapter" Name="MataKuliah" UserDataComponentName="MataKuliahTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NotegramDBConnectionString (Settings)" DbObjectName="dbo.MataKuliah" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nama, Hari, Jam_Mulai, Jam_Selesai FROM dbo.MataKuliah</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nama" DataSetColumn="Nama" />
+              <Mapping SourceColumn="Hari" DataSetColumn="Hari" />
+              <Mapping SourceColumn="Jam_Mulai" DataSetColumn="Jam_Mulai" />
+              <Mapping SourceColumn="Jam_Selesai" DataSetColumn="Jam_Selesai" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NotegramDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NotegramDBDataSet" msprop:Generator_UserDSName="NotegramDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MataKuliah" msprop:Generator_TableClassName="MataKuliahDataTable" msprop:Generator_TableVarName="tableMataKuliah" msprop:Generator_TablePropName="MataKuliah" msprop:Generator_RowDeletingName="MataKuliahRowDeleting" msprop:Generator_RowChangingName="MataKuliahRowChanging" msprop:Generator_RowEvHandlerName="MataKuliahRowChangeEventHandler" msprop:Generator_RowDeletedName="MataKuliahRowDeleted" msprop:Generator_UserTableName="MataKuliah" msprop:Generator_RowChangedName="MataKuliahRowChanged" msprop:Generator_RowEvArgName="MataKuliahRowChangeEvent" msprop:Generator_RowClassName="MataKuliahRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nama" msprop:Generator_ColumnVarNameInTable="columnNama" msprop:Generator_ColumnPropNameInRow="Nama" msprop:Generator_ColumnPropNameInTable="NamaColumn" msprop:Generator_UserColumnName="Nama">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hari" msprop:Generator_ColumnVarNameInTable="columnHari" msprop:Generator_ColumnPropNameInRow="Hari" msprop:Generator_ColumnPropNameInTable="HariColumn" msprop:Generator_UserColumnName="Hari" type="xs:int" />
+              <xs:element name="Jam_Mulai" msprop:Generator_ColumnVarNameInTable="columnJam_Mulai" msprop:Generator_ColumnPropNameInRow="Jam_Mulai" msprop:Generator_ColumnPropNameInTable="Jam_MulaiColumn" msprop:Generator_UserColumnName="Jam_Mulai" type="xs:duration" />
+              <xs:element name="Jam_Selesai" msprop:Generator_ColumnVarNameInTable="columnJam_Selesai" msprop:Generator_ColumnPropNameInRow="Jam_Selesai" msprop:Generator_ColumnPropNameInTable="Jam_SelesaiColumn" msprop:Generator_UserColumnName="Jam_Selesai" type="xs:duration" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

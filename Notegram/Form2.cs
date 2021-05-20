@@ -14,30 +14,17 @@ namespace Notegram
 {
     public partial class Form2 : Form
     {
-        //Mahasiswa mahasiswa1;
-        int idCount;
-        DataTable datatable;
-        string path = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\NotegramDB.mdf;integrated security=True;MultipleActiveResultSets=True;";
         MataKuliah mataKuliah;
-
-        // Setiap masuk ke Form 2, 1 jadwal sudah terbuat dengan otomatis
-        // Kalau nanti mau membuat jadwal lain, bisa juga dilakukan dgn tombol tambah jadwal
-        // PERLU DIUBAH
-        Jadwal jadwal1 = new Jadwal("Mingguan");
 
         public Form2()
         {
             InitializeComponent();
-            idCount = 0;
             btnEdit.Enabled = false;
             btnHapus.Enabled = false;
-            //this.mahasiswa1 = mahasiswa;
-            //mahasiswa1._listJadwal.AddJadwalToList(jadwal1);
         }
 
         private void btnBuat_Click(object sender, EventArgs e)
         {
-            idCount++;
             if (tbNamaMatkul.Text != "" && cmbHari.Text != "" && tbJamMulai.Text != "" && tbJamSelesai.Text != "")
             {
                 
@@ -49,7 +36,6 @@ namespace Notegram
                     {
                         MataKuliah newMataKuliah = new MataKuliah
                         {
-                            Id = idCount,
                             Nama = tbNamaMatkul.Text,
                             Hari = Ubah.KodeHari(cmbHari.Text),
                             Jam_Mulai = jamMulai,
@@ -59,8 +45,7 @@ namespace Notegram
                         db.MataKuliahs.Add(newMataKuliah);
                         db.SaveChanges();
                     }
-                    TampilkanDataGridViewMatkul();
-                    MessageBox.Show($"Berhasil menambahkan mata kuliah");
+                    this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
                     KosongkanTextBox();
                 }
                 catch(Exception ex)
@@ -71,34 +56,16 @@ namespace Notegram
             else
                 MessageBox.Show("Nama, Hari, Jam Mulai, dan Jam Selesai wajib diisi");
         }
-        void TampilkanDataGridViewMatkul()
-        {
-            try
-            {
-                datatable = new DataTable();
-                using (SqlConnection conn = new SqlConnection(path))
-                {
-                    string query = "SELECT Nama, Hari, Jam_Mulai, Jam_Selesai FROM MataKuliah ORDER BY Hari, Jam_Mulai";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    adapter.Fill(datatable);
-                    dgvMatkul.DataSource = datatable;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        
+                
         private void KosongkanTextBox()
         {
             tbNamaMatkul.Text = "";
             cmbHari.SelectedIndex = -1;
-            tbJamMulai.Text = "";
-            tbJamSelesai.Text = "";
+            tbJamMulai.ForeColor = Color.Gray;
+            tbJamMulai.Text = "HH:MM";
+            tbJamSelesai.ForeColor = Color.Gray;
+            tbJamSelesai.Text = "HH:MM";
             cmbWarna.SelectedIndex=-1;
-
         }
         private void toDoListToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -108,11 +75,26 @@ namespace Notegram
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            lblNamaJadwal.Text = jadwal1.Nama;
+            List<Color> lstColor = new List<Color>();
+            foreach (Control c in gbMataKuliah.Controls)
+                lstColor.Add(c.ForeColor);
+            gbMataKuliah.ForeColor = Color.White;
+            int index = 0;
+
+            foreach (Control c in gbMataKuliah.Controls)
+            {
+                c.ForeColor = lstColor[index];
+                index++;
+            }
+            // TODO: This line of code loads data into the 'notegramDBDataSet.MataKuliah' table. You can move, or remove it, as needed.
+            this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
         }
 
-        private void dgvMatkul_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvMatkul_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            tbJamMulai.ForeColor = Color.Black;
+            tbJamSelesai.ForeColor = Color.Black;
+            
             tbNamaMatkul.Text = dgvMatkul.Rows[e.RowIndex].Cells[0].Value.ToString();
             //cmbHari.Text = Ubah.NamaHari(dgvMatkul.Rows[e.RowIndex].Cells[1].ToString());
             tbJamMulai.Text = dgvMatkul.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -162,10 +144,22 @@ namespace Notegram
                 db.MataKuliahs.RemoveRange(db.MataKuliahs.Where(item => item.Nama == tbNamaMatkul.Text));
                 db.SaveChanges();
                 KosongkanTextBox();
-                TampilkanDataGridViewMatkul();
+                this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
                 btnEdit.Enabled = false;
                 btnHapus.Enabled = false;
             }
+        }
+
+        private void tbJamMulai_Click(object sender, EventArgs e)
+        {
+            tbJamMulai.Text = "";
+            tbJamMulai.ForeColor = Color.Black;
+        }
+
+        private void tbJamSelesai_Click(object sender, EventArgs e)
+        {
+            tbJamSelesai.Text = "";
+            tbJamSelesai.ForeColor = Color.Black;
         }
     }
 }

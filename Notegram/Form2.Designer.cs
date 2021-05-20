@@ -29,6 +29,7 @@ namespace Notegram
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.jadwalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toDoListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,11 +50,19 @@ namespace Notegram
             this.lblHari = new System.Windows.Forms.Label();
             this.lblNama = new System.Windows.Forms.Label();
             this.dgvMatkul = new System.Windows.Forms.DataGridView();
-            this.lblNamaJadwal = new System.Windows.Forms.Label();
+            this.mataKuliahBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.notegramDBDataSet = new Notegram.NotegramDBDataSet();
+            this.mataKuliahTableAdapter = new Notegram.NotegramDBDataSetTableAdapters.MataKuliahTableAdapter();
+            this.namaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hariDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jamMulaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jamSelesaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.gbMataKuliah.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatkul)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mataKuliahBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notegramDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -72,8 +81,10 @@ namespace Notegram
             // 
             // jadwalToolStripMenuItem
             // 
+            this.jadwalToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jadwalToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.jadwalToolStripMenuItem.Name = "jadwalToolStripMenuItem";
-            this.jadwalToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.jadwalToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.jadwalToolStripMenuItem.Text = "Jadwal";
             // 
             // toDoListToolStripMenuItem
@@ -137,17 +148,23 @@ namespace Notegram
             // 
             // tbJamSelesai
             // 
+            this.tbJamSelesai.ForeColor = System.Drawing.Color.Gray;
             this.tbJamSelesai.Location = new System.Drawing.Point(116, 140);
             this.tbJamSelesai.Name = "tbJamSelesai";
             this.tbJamSelesai.Size = new System.Drawing.Size(136, 27);
             this.tbJamSelesai.TabIndex = 11;
+            this.tbJamSelesai.Text = "HH:MM";
+            this.tbJamSelesai.Click += new System.EventHandler(this.tbJamSelesai_Click);
             // 
             // tbJamMulai
             // 
+            this.tbJamMulai.ForeColor = System.Drawing.Color.Gray;
             this.tbJamMulai.Location = new System.Drawing.Point(116, 106);
             this.tbJamMulai.Name = "tbJamMulai";
             this.tbJamMulai.Size = new System.Drawing.Size(136, 27);
             this.tbJamMulai.TabIndex = 10;
+            this.tbJamMulai.Text = "HH:MM";
+            this.tbJamMulai.Click += new System.EventHandler(this.tbJamMulai_Click);
             // 
             // pictureBox1
             // 
@@ -187,6 +204,7 @@ namespace Notegram
             // lblWarna
             // 
             this.lblWarna.AutoSize = true;
+            this.lblWarna.ForeColor = System.Drawing.Color.White;
             this.lblWarna.Location = new System.Drawing.Point(16, 176);
             this.lblWarna.Name = "lblWarna";
             this.lblWarna.Size = new System.Drawing.Size(66, 21);
@@ -230,6 +248,7 @@ namespace Notegram
             // lblJamSelesai
             // 
             this.lblJamSelesai.AutoSize = true;
+            this.lblJamSelesai.ForeColor = System.Drawing.Color.White;
             this.lblJamSelesai.Location = new System.Drawing.Point(16, 143);
             this.lblJamSelesai.Name = "lblJamSelesai";
             this.lblJamSelesai.Size = new System.Drawing.Size(103, 21);
@@ -239,6 +258,7 @@ namespace Notegram
             // lblJamMulai
             // 
             this.lblJamMulai.AutoSize = true;
+            this.lblJamMulai.ForeColor = System.Drawing.Color.White;
             this.lblJamMulai.Location = new System.Drawing.Point(16, 109);
             this.lblJamMulai.Name = "lblJamMulai";
             this.lblJamMulai.Size = new System.Drawing.Size(94, 21);
@@ -248,6 +268,7 @@ namespace Notegram
             // lblHari
             // 
             this.lblHari.AutoSize = true;
+            this.lblHari.ForeColor = System.Drawing.Color.White;
             this.lblHari.Location = new System.Drawing.Point(16, 75);
             this.lblHari.Name = "lblHari";
             this.lblHari.Size = new System.Drawing.Size(44, 21);
@@ -257,7 +278,7 @@ namespace Notegram
             // lblNama
             // 
             this.lblNama.AutoSize = true;
-            this.lblNama.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblNama.ForeColor = System.Drawing.Color.White;
             this.lblNama.Location = new System.Drawing.Point(16, 42);
             this.lblNama.Name = "lblNama";
             this.lblNama.Size = new System.Drawing.Size(63, 21);
@@ -266,23 +287,65 @@ namespace Notegram
             // 
             // dgvMatkul
             // 
+            this.dgvMatkul.AllowUserToAddRows = false;
+            this.dgvMatkul.AllowUserToDeleteRows = false;
+            this.dgvMatkul.AutoGenerateColumns = false;
             this.dgvMatkul.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMatkul.Location = new System.Drawing.Point(15, 70);
+            this.dgvMatkul.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.namaDataGridViewTextBoxColumn,
+            this.hariDataGridViewTextBoxColumn,
+            this.jamMulaiDataGridViewTextBoxColumn,
+            this.jamSelesaiDataGridViewTextBoxColumn});
+            this.dgvMatkul.DataSource = this.mataKuliahBindingSource;
+            this.dgvMatkul.Location = new System.Drawing.Point(12, 39);
             this.dgvMatkul.Name = "dgvMatkul";
+            this.dgvMatkul.ReadOnly = true;
             this.dgvMatkul.RowHeadersWidth = 51;
-            this.dgvMatkul.Size = new System.Drawing.Size(437, 248);
+            this.dgvMatkul.Size = new System.Drawing.Size(453, 248);
             this.dgvMatkul.TabIndex = 2;
-            this.dgvMatkul.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatkul_CellDoubleClick);
+            this.dgvMatkul.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatkul_CellClick);
             // 
-            // lblNamaJadwal
+            // mataKuliahBindingSource
             // 
-            this.lblNamaJadwal.AutoSize = true;
-            this.lblNamaJadwal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNamaJadwal.Location = new System.Drawing.Point(10, 28);
-            this.lblNamaJadwal.Name = "lblNamaJadwal";
-            this.lblNamaJadwal.Size = new System.Drawing.Size(137, 30);
-            this.lblNamaJadwal.TabIndex = 3;
-            this.lblNamaJadwal.Text = "Nama Jadwal";
+            this.mataKuliahBindingSource.DataMember = "MataKuliah";
+            this.mataKuliahBindingSource.DataSource = this.notegramDBDataSet;
+            // 
+            // notegramDBDataSet
+            // 
+            this.notegramDBDataSet.DataSetName = "NotegramDBDataSet";
+            this.notegramDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mataKuliahTableAdapter
+            // 
+            this.mataKuliahTableAdapter.ClearBeforeFill = true;
+            // 
+            // namaDataGridViewTextBoxColumn
+            // 
+            this.namaDataGridViewTextBoxColumn.DataPropertyName = "Nama";
+            this.namaDataGridViewTextBoxColumn.HeaderText = "Nama";
+            this.namaDataGridViewTextBoxColumn.Name = "namaDataGridViewTextBoxColumn";
+            this.namaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hariDataGridViewTextBoxColumn
+            // 
+            this.hariDataGridViewTextBoxColumn.DataPropertyName = "Hari";
+            this.hariDataGridViewTextBoxColumn.HeaderText = "Hari";
+            this.hariDataGridViewTextBoxColumn.Name = "hariDataGridViewTextBoxColumn";
+            this.hariDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jamMulaiDataGridViewTextBoxColumn
+            // 
+            this.jamMulaiDataGridViewTextBoxColumn.DataPropertyName = "Jam_Mulai";
+            this.jamMulaiDataGridViewTextBoxColumn.HeaderText = "Jam Mulai";
+            this.jamMulaiDataGridViewTextBoxColumn.Name = "jamMulaiDataGridViewTextBoxColumn";
+            this.jamMulaiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jamSelesaiDataGridViewTextBoxColumn
+            // 
+            this.jamSelesaiDataGridViewTextBoxColumn.DataPropertyName = "Jam_Selesai";
+            this.jamSelesaiDataGridViewTextBoxColumn.HeaderText = "Jam Selesai";
+            this.jamSelesaiDataGridViewTextBoxColumn.Name = "jamSelesaiDataGridViewTextBoxColumn";
+            this.jamSelesaiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form2
             // 
@@ -290,7 +353,6 @@ namespace Notegram
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(124)))), ((int)(((byte)(153)))));
             this.ClientSize = new System.Drawing.Size(752, 380);
-            this.Controls.Add(this.lblNamaJadwal);
             this.Controls.Add(this.dgvMatkul);
             this.Controls.Add(this.gbMataKuliah);
             this.Controls.Add(this.menuStrip1);
@@ -305,6 +367,8 @@ namespace Notegram
             this.gbMataKuliah.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatkul)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mataKuliahBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notegramDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,11 +391,17 @@ namespace Notegram
         private System.Windows.Forms.ComboBox cmbWarna;
         private System.Windows.Forms.Label lblWarna;
         private System.Windows.Forms.DataGridView dgvMatkul;
-        private System.Windows.Forms.Label lblNamaJadwal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tbJamSelesai;
         private System.Windows.Forms.TextBox tbJamMulai;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnHapus;
+        private NotegramDBDataSet notegramDBDataSet;
+        private System.Windows.Forms.BindingSource mataKuliahBindingSource;
+        private NotegramDBDataSetTableAdapters.MataKuliahTableAdapter mataKuliahTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hariDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jamMulaiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jamSelesaiDataGridViewTextBoxColumn;
     }
 }

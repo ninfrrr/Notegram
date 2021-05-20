@@ -63,6 +63,16 @@ namespace Notegram.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_H25 {
+            get {
+                object obj = ResourceManager.GetObject("edit H25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jadwal {
             get {
                 object obj = ResourceManager.GetObject("jadwal", resourceCulture);
