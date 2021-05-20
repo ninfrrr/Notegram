@@ -8,7 +8,7 @@ namespace Notegram
     public partial class NotegramDBModel : DbContext
     {
         public NotegramDBModel()
-            : base("name=NotegramDBModel")
+            : base("name=NgDBModel")
         {
         }
 
