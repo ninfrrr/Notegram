@@ -67,23 +67,23 @@ namespace ClassLibrary1
                     return "#2d3436"; //warna hitam
             }
         }
-        public static string NamaHari(string kode)
+        public static string NamaHari(int kode)
         {
             switch (kode)
             {
-                case "1":
+                case 1:
                     return "Senin";
-                case "2":
+                case 2:
                     return "Selasa";
-                case "3":
+                case 3:
                     return "Rabu";
-                case "4":
+                case 4:
                     return "Kamis";
-                case "5":
+                case 5:
                     return "Jumat";
-                case "6":
+                case 6:
                     return "Sabtu";
-                case "7":
+                case 7:
                     return "Minggu";
                 default:
                     return "Senin";
