@@ -88,6 +88,8 @@ namespace Notegram
             }
             // TODO: This line of code loads data into the 'notegramDBDataSet.MataKuliah' table. You can move, or remove it, as needed.
             this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+            Notegram.BalloonTipText = "Application is minimized";
+            Notegram.BalloonTipTitle = "Notegram";
         }
 
         private void dgvMatkul_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -160,6 +162,28 @@ namespace Notegram
         {
             tbJamSelesai.Text = "";
             tbJamSelesai.ForeColor = Color.Black;
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowInTaskbar = true;
+            Notegram.Visible = false;
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                ShowIcon = false;
+                Notegram.Visible = true;
+                Notegram.ShowBalloonTip(1000);
+            }
+        }
+
+        private void tbJamMulai_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
