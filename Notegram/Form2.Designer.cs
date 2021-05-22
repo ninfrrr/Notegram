@@ -36,8 +36,8 @@ namespace Notegram
             this.toDoListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbMataKuliah = new System.Windows.Forms.GroupBox();
+            this.btnBatal = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.tbJamSelesai = new System.Windows.Forms.TextBox();
             this.tbJamMulai = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -108,8 +108,8 @@ namespace Notegram
             // 
             // gbMataKuliah
             // 
+            this.gbMataKuliah.Controls.Add(this.btnBatal);
             this.gbMataKuliah.Controls.Add(this.btnHapus);
-            this.gbMataKuliah.Controls.Add(this.btnEdit);
             this.gbMataKuliah.Controls.Add(this.tbJamSelesai);
             this.gbMataKuliah.Controls.Add(this.tbJamMulai);
             this.gbMataKuliah.Controls.Add(this.pictureBox1);
@@ -130,25 +130,25 @@ namespace Notegram
             this.gbMataKuliah.TabStop = false;
             this.gbMataKuliah.Text = "Mata Kuliah";
             // 
+            // btnBatal
+            // 
+            this.btnBatal.Location = new System.Drawing.Point(187, 219);
+            this.btnBatal.Name = "btnBatal";
+            this.btnBatal.Size = new System.Drawing.Size(72, 32);
+            this.btnBatal.TabIndex = 13;
+            this.btnBatal.Text = "Batal";
+            this.btnBatal.UseVisualStyleBackColor = true;
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
+            // 
             // btnHapus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(187, 219);
+            this.btnHapus.Location = new System.Drawing.Point(100, 219);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(72, 32);
-            this.btnHapus.TabIndex = 13;
+            this.btnHapus.Size = new System.Drawing.Size(81, 32);
+            this.btnHapus.TabIndex = 12;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(100, 219);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(81, 32);
-            this.btnEdit.TabIndex = 12;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // tbJamSelesai
             // 
@@ -159,6 +159,7 @@ namespace Notegram
             this.tbJamSelesai.TabIndex = 11;
             this.tbJamSelesai.Text = "HH:MM";
             this.tbJamSelesai.Click += new System.EventHandler(this.tbJamSelesai_Click);
+            this.tbJamSelesai.Leave += new System.EventHandler(this.tbJamSelesai_Leave);
             // 
             // tbJamMulai
             // 
@@ -169,6 +170,7 @@ namespace Notegram
             this.tbJamMulai.TabIndex = 10;
             this.tbJamMulai.Text = "HH:MM";
             this.tbJamMulai.Click += new System.EventHandler(this.tbJamMulai_Click);
+            this.tbJamMulai.Leave += new System.EventHandler(this.tbJamMulai_Leave);
             // 
             // pictureBox1
             // 
@@ -410,8 +412,8 @@ namespace Notegram
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox tbJamSelesai;
         private System.Windows.Forms.TextBox tbJamMulai;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnHapus;
+        private System.Windows.Forms.Button btnBatal;
         private NotegramDBDataSet notegramDBDataSet;
         private System.Windows.Forms.BindingSource mataKuliahBindingSource;
         private NotegramDBDataSetTableAdapters.MataKuliahTableAdapter mataKuliahTableAdapter;

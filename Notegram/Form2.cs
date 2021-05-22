@@ -15,46 +15,21 @@ namespace Notegram
     public partial class Form2 : Form
     {
         MataKuliah mataKuliah;
-
+        enum Mode { Buat, Edit}
+        Mode mode;
         public Form2()
         {
             InitializeComponent();
-            btnEdit.Enabled = false;
             btnHapus.Enabled = false;
+            mode = Mode.Buat;
         }
 
         private void btnBuat_Click(object sender, EventArgs e)
         {
-            if (tbNamaMatkul.Text != "" && cmbHari.Text != "" && tbJamMulai.Text != "" && tbJamSelesai.Text != "")
-            {
-                
-                try
-                {
-                    TimeSpan jamMulai = TimeSpan.Parse(tbJamMulai.Text);
-                    TimeSpan jamSelesai = TimeSpan.Parse(tbJamSelesai.Text);
-                    using(var db = new NotegramDBModel())
-                    {
-                        mataKuliah = new MataKuliah
-                        {
-                            Nama = tbNamaMatkul.Text,
-                            Hari = Ubah.KodeHari(cmbHari.Text),
-                            Jam_Mulai = jamMulai,
-                            Jam_Selesai = jamSelesai,
-                            Warna = Ubah.KodeWarna(cmbWarna.Text),
-                        };
-                        db.MataKuliahs.Add(mataKuliah);
-                        db.SaveChanges();
-                    }
-                    this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
-                    KosongkanTextBox();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-                MessageBox.Show("Nama, Hari, Jam Mulai, dan Jam Selesai wajib diisi");
+            if (mode == Mode.Buat)
+                BuatMataKuliah();
+            else if (mode == Mode.Edit)
+                EditMataKuliah();
         }
                 
         private void KosongkanTextBox()
@@ -66,6 +41,10 @@ namespace Notegram
             tbJamSelesai.ForeColor = Color.Gray;
             tbJamSelesai.Text = "HH:MM";
             cmbWarna.SelectedIndex=-1;
+
+            mode = Mode.Buat;
+            btnBuat.Text = "Buat";
+            btnHapus.Enabled = false;
         }
         private void toDoListToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -90,8 +69,6 @@ namespace Notegram
                 index++;
             }
 
-            // TODO: This line of code loads data into the 'notegramDBDataSet.MataKuliah' table. You can move, or remove it, as needed.
-            this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
             Notegram.BalloonTipText = "Application is minimized";
             Notegram.BalloonTipTitle = "Notegram";
         }
@@ -106,15 +83,17 @@ namespace Notegram
             using(var db = new NotegramDBModel())
             {
                 var pilih = db.MataKuliahs.SingleOrDefault(item => item.Nama == tbNamaMatkul.Text);
+                string jamMulai = pilih.Jam_Mulai.ToString();
+                jamMulai = jamMulai.Substring(0, 5);
+                string jamSelesai = pilih.Jam_Selesai.ToString();
+                jamSelesai = jamSelesai.Substring(0, 5);
+
                 cmbHari.SelectedItem = Ubah.NamaHari(pilih.Hari);
-                tbJamMulai.Text = pilih.Jam_Mulai.ToString();
-                tbJamSelesai.Text = pilih.Jam_Selesai.ToString();
+                tbJamMulai.Text = jamMulai;
+                tbJamSelesai.Text = jamSelesai;
                 cmbWarna.SelectedItem = Ubah.StringWarna(pilih.Warna);
             }
-            btnBuat.Enabled = false;
-            btnEdit.Enabled = true;
-            btnHapus.Enabled = true;
-
+            
             mataKuliah = new MataKuliah()
             {
                 Nama = tbNamaMatkul.Text,
@@ -122,6 +101,16 @@ namespace Notegram
                 Jam_Mulai = TimeSpan.Parse(tbJamMulai.Text),
                 Jam_Selesai = TimeSpan.Parse(tbJamSelesai.Text)
             };
+
+            mode = Mode.Edit;
+            btnBuat.Text = "Edit";
+            btnHapus.Enabled = true;
+            btnBatal.Enabled = true;
+        }
+
+        private void btnBatal_Click(object sender, EventArgs e)
+        {
+            KosongkanTextBox();
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -129,13 +118,42 @@ namespace Notegram
             HapusMataKuliah();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void BuatMataKuliah()
         {
-            EditMataKuliah();
+            if (tbNamaMatkul.Text != "HH:MM" && cmbHari.Text != "HH:MM" && tbJamMulai.Text != "HH:MM" && tbJamSelesai.Text != "HH:MM")
+            {
+
+                try
+                {
+                    TimeSpan jamMulai = TimeSpan.Parse(tbJamMulai.Text);
+                    TimeSpan jamSelesai = TimeSpan.Parse(tbJamSelesai.Text);
+                    using (var db = new NotegramDBModel())
+                    {
+                        mataKuliah = new MataKuliah
+                        {
+                            Nama = tbNamaMatkul.Text,
+                            Hari = Ubah.KodeHari(cmbHari.Text),
+                            Jam_Mulai = jamMulai,
+                            Jam_Selesai = jamSelesai,
+                            Warna = Ubah.KodeWarna(cmbWarna.Text),
+                        };
+                        db.MataKuliahs.Add(mataKuliah);
+                        db.SaveChanges();
+                    }
+                    this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+                    KosongkanTextBox();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+                MessageBox.Show("Nama, Hari, Jam Mulai, dan Jam Selesai wajib diisi");
         }
         private void EditMataKuliah()
         {
-            if (tbNamaMatkul.Text != "" && cmbHari.Text != "" && tbJamMulai.Text != "" && tbJamSelesai.Text != "")
+            if (tbNamaMatkul.Text != "" && cmbHari.Text != "" && tbJamMulai.Text != "HH:MM" && tbJamSelesai.Text != "HH:MM")
             {
                 TimeSpan jamMulai = TimeSpan.Parse(tbJamMulai.Text);
                 TimeSpan jamSelesai = TimeSpan.Parse(tbJamSelesai.Text);
@@ -150,7 +168,8 @@ namespace Notegram
                     db.SaveChanges();
                 }
                 this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
-                MessageBox.Show("Mata kuliah berhasil diedit");
+                MessageBox.Show("Mata kuliah berhasil diperbarui");
+                KosongkanTextBox();
             }
             else
             {
@@ -165,21 +184,27 @@ namespace Notegram
                 db.SaveChanges();
                 KosongkanTextBox();
                 this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
-                btnEdit.Enabled = false;
                 btnHapus.Enabled = false;
+                btnBatal.Enabled = false;
             }
         }
 
         private void tbJamMulai_Click(object sender, EventArgs e)
         {
-            tbJamMulai.Text = "";
-            tbJamMulai.ForeColor = Color.Black;
+            if(tbJamMulai.Text == "HH:MM")
+            {
+                tbJamMulai.Text = "";
+                tbJamMulai.ForeColor = Color.Black;
+            }
         }
 
         private void tbJamSelesai_Click(object sender, EventArgs e)
         {
-            tbJamSelesai.Text = "";
-            tbJamSelesai.ForeColor = Color.Black;
+            if(tbJamSelesai.Text == "HH:MM")
+            { 
+                tbJamSelesai.Text = "";
+                tbJamSelesai.ForeColor = Color.Black;
+            }
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -196,6 +221,24 @@ namespace Notegram
                 ShowIcon = false;
                 Notegram.Visible = true;
                 Notegram.ShowBalloonTip(1000);
+            }
+        }
+
+        private void tbJamMulai_Leave(object sender, EventArgs e)
+        {
+            if(tbJamMulai.Text == "")
+            {
+                tbJamMulai.ForeColor = Color.Gray;
+                tbJamMulai.Text = "HH:MM";
+            }
+        }
+
+        private void tbJamSelesai_Leave(object sender, EventArgs e)
+        {
+            if (tbJamSelesai.Text == "")
+            {
+                tbJamSelesai.ForeColor = Color.Gray;
+                tbJamSelesai.Text = "HH:MM";
             }
         }
     }
