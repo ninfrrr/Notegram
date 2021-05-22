@@ -184,20 +184,16 @@ namespace Notegram
             this.cmbWarna.FormattingEnabled = true;
             this.cmbWarna.Items.AddRange(new object[] {
             "Merah",
-            "Merah Tua",
             "Pink",
-            "Oranye",
-            "Kuning",
             "Krem",
+            "Kuning",
+            "Oranye",
             "Tosca",
             "Hijau",
-            "Hijau Tua",
             "Biru",
-            "Dongker",
             "Ungu",
             "Abu-Abu",
-            "Coklat",
-            "Hitam"});
+            "Putih"});
             this.cmbWarna.Location = new System.Drawing.Point(116, 173);
             this.cmbWarna.Name = "cmbWarna";
             this.cmbWarna.Size = new System.Drawing.Size(136, 29);
@@ -296,7 +292,7 @@ namespace Notegram
             this.dgvMatkul.Name = "dgvMatkul";
             this.dgvMatkul.ReadOnly = true;
             this.dgvMatkul.RowHeadersWidth = 51;
-            this.dgvMatkul.Size = new System.Drawing.Size(453, 248);
+            this.dgvMatkul.Size = new System.Drawing.Size(453, 259);
             this.dgvMatkul.TabIndex = 2;
             this.dgvMatkul.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatkul_CellClick);
             // 
