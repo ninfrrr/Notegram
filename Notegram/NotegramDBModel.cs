@@ -11,7 +11,6 @@ namespace Notegram
             : base("name=NgDBModel")
         {
         }
-
         public virtual DbSet<MataKuliah> MataKuliahs { get; set; }
         public virtual DbSet<ToDoList> ToDoList { get; set; }
 

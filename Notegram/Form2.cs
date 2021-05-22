@@ -17,6 +17,8 @@ namespace Notegram
         MataKuliah mataKuliah;
         enum Mode { Buat, Edit}
         Mode mode;
+        DataTable datatable;
+        string path = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\NotegramDB.mdf;integrated security=True;MultipleActiveResultSets=True;";
         public Form2()
         {
             InitializeComponent();
@@ -55,7 +57,8 @@ namespace Notegram
         private void Form2_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'notegramDBDataSet.MataKuliah' table. You can move, or remove it, as needed.
-            this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+            //this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+            TampilkanDataGridViewMatkul();
 
             List<Color> lstColor = new List<Color>();
             foreach (Control c in gbMataKuliah.Controls)
@@ -75,37 +78,45 @@ namespace Notegram
 
         private void dgvMatkul_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbJamMulai.ForeColor = Color.Black;
-            tbJamSelesai.ForeColor = Color.Black;
-            
-            tbNamaMatkul.Text = dgvMatkul.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            using(var db = new NotegramDBModel())
+            try
             {
-                var pilih = db.MataKuliahs.SingleOrDefault(item => item.Nama == tbNamaMatkul.Text);
-                string jamMulai = pilih.Jam_Mulai.ToString();
-                jamMulai = jamMulai.Substring(0, 5);
-                string jamSelesai = pilih.Jam_Selesai.ToString();
-                jamSelesai = jamSelesai.Substring(0, 5);
+                tbJamMulai.ForeColor = Color.Black;
+                tbJamSelesai.ForeColor = Color.Black;
 
-                cmbHari.SelectedItem = Ubah.NamaHari(pilih.Hari);
-                tbJamMulai.Text = jamMulai;
-                tbJamSelesai.Text = jamSelesai;
-                cmbWarna.SelectedItem = Ubah.StringWarna(pilih.Warna);
+                tbNamaMatkul.Text = dgvMatkul.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                using (var db = new NotegramDBModel())
+                {
+                    var pilih = db.MataKuliahs.SingleOrDefault(item => item.Nama == tbNamaMatkul.Text);
+                    string jamMulai = pilih.Jam_Mulai.ToString();
+                    jamMulai = jamMulai.Substring(0, 5);
+                    string jamSelesai = pilih.Jam_Selesai.ToString();
+                    jamSelesai = jamSelesai.Substring(0, 5);
+
+                    cmbHari.SelectedItem = pilih.Hari;
+                    tbJamMulai.Text = jamMulai;
+                    tbJamSelesai.Text = jamSelesai;
+                    cmbWarna.SelectedItem = Ubah.StringWarna(pilih.Warna);
+                }
+
+                mataKuliah = new MataKuliah()
+                {
+                    Nama = tbNamaMatkul.Text,
+                    Hari = cmbHari.Text,
+                    Jam_Mulai = TimeSpan.Parse(tbJamMulai.Text),
+                    Jam_Selesai = TimeSpan.Parse(tbJamSelesai.Text)
+                };
+
+                mode = Mode.Edit;
+                btnBuat.Text = "Edit";
+                btnHapus.Enabled = true;
+                btnBatal.Enabled = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             
-            mataKuliah = new MataKuliah()
-            {
-                Nama = tbNamaMatkul.Text,
-                Hari = Ubah.KodeHari(cmbHari.Text),
-                Jam_Mulai = TimeSpan.Parse(tbJamMulai.Text),
-                Jam_Selesai = TimeSpan.Parse(tbJamSelesai.Text)
-            };
-
-            mode = Mode.Edit;
-            btnBuat.Text = "Edit";
-            btnHapus.Enabled = true;
-            btnBatal.Enabled = true;
         }
 
         private void btnBatal_Click(object sender, EventArgs e)
@@ -132,7 +143,8 @@ namespace Notegram
                         mataKuliah = new MataKuliah
                         {
                             Nama = tbNamaMatkul.Text,
-                            Hari = Ubah.KodeHari(cmbHari.Text),
+                            Hari_ID = Ubah.KodeHari(cmbHari.Text),
+                            Hari = cmbHari.Text,
                             Jam_Mulai = jamMulai,
                             Jam_Selesai = jamSelesai,
                             Warna = Ubah.KodeWarna(cmbWarna.Text),
@@ -140,7 +152,8 @@ namespace Notegram
                         db.MataKuliahs.Add(mataKuliah);
                         db.SaveChanges();
                     }
-                    this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+                    //this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+                    TampilkanDataGridViewMatkul();
                     KosongkanTextBox();
                 }
                 catch (Exception ex)
@@ -161,13 +174,15 @@ namespace Notegram
                 {
                     var ganti = db.MataKuliahs.SingleOrDefault(item => item.Nama == mataKuliah.Nama);
                     ganti.Nama = tbNamaMatkul.Text;
-                    ganti.Hari = Ubah.KodeHari(cmbHari.Text);
+                    ganti.Hari_ID = Ubah.KodeHari(cmbHari.Text);
+                    ganti.Hari = cmbHari.Text;
                     ganti.Jam_Mulai = jamMulai;
                     ganti.Jam_Selesai = jamSelesai;
                     ganti.Warna = Ubah.KodeWarna(cmbWarna.Text);
                     db.SaveChanges();
                 }
-                this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+                //this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+                TampilkanDataGridViewMatkul();
                 MessageBox.Show("Mata kuliah berhasil diperbarui");
                 KosongkanTextBox();
             }
@@ -183,9 +198,49 @@ namespace Notegram
                 db.MataKuliahs.RemoveRange(db.MataKuliahs.Where(item => item.Nama == tbNamaMatkul.Text));
                 db.SaveChanges();
                 KosongkanTextBox();
-                this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+                //this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
+                TampilkanDataGridViewMatkul();
                 btnHapus.Enabled = false;
                 btnBatal.Enabled = false;
+            }
+        }
+
+        void TampilkanDataGridViewMatkul()
+        {
+            try
+            {
+                datatable = new DataTable();
+                using (SqlConnection conn = new SqlConnection(path))
+                {
+                    string query = "SELECT Nama, Hari, Jam_Mulai, Jam_Selesai FROM MataKuliah ORDER BY Hari_ID, Jam_Mulai";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.Fill(datatable);
+                    dgvMatkul.DataSource = datatable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            foreach (DataGridViewRow row in dgvMatkul.Rows)
+            {
+                try
+                {
+                    Color color;
+                    using (var db = new NotegramDBModel())
+                    {
+                        string matkul = row.Cells[0].Value.ToString();
+                        var ambilWarna = db.MataKuliahs.SingleOrDefault(item => item.Nama == matkul);
+                        string warna = ambilWarna.Warna;
+                        color = ColorTranslator.FromHtml(warna);
+                    }
+                    row.DefaultCellStyle.BackColor = color;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            
             }
         }
 

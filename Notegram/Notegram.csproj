@@ -106,11 +106,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NotegramDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NotegramDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NotegramDBDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="NotegramDBModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,17 +142,6 @@
     </None>
     <None Include="NotegramDBDataSet.xss">
       <DependentUpon>NotegramDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="NotegramDBDataSet1.xsc">
-      <DependentUpon>NotegramDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="NotegramDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>NotegramDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="NotegramDBDataSet1.xss">
-      <DependentUpon>NotegramDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

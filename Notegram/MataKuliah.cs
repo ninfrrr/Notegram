@@ -15,7 +15,11 @@ namespace Notegram
         [StringLength(50)]
         public string Nama { get; set; }
 
-        public int Hari { get; set; }
+        public int Hari_ID { get; set; }
+
+        [Required]
+        [StringLength(6)]
+        public string Hari { get; set; }
 
         public TimeSpan Jam_Mulai { get; set; }
 
