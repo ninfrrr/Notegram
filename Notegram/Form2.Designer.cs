@@ -34,7 +34,6 @@ namespace Notegram
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.jadwalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toDoListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbMataKuliah = new System.Windows.Forms.GroupBox();
             this.btnBatal = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
@@ -69,8 +68,7 @@ namespace Notegram
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.jadwalToolStripMenuItem,
-            this.toDoListToolStripMenuItem,
-            this.akunToolStripMenuItem});
+            this.toDoListToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -93,13 +91,6 @@ namespace Notegram
             this.toDoListToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.toDoListToolStripMenuItem.Text = "To-Do List";
             this.toDoListToolStripMenuItem.Click += new System.EventHandler(this.toDoListToolStripMenuItem_Click);
-            // 
-            // akunToolStripMenuItem
-            // 
-            this.akunToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
-            this.akunToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.akunToolStripMenuItem.Text = "Akun";
             // 
             // gbMataKuliah
             // 
@@ -191,6 +182,7 @@ namespace Notegram
             "Tosca",
             "Hijau",
             "Biru",
+            "Nila",
             "Ungu",
             "Abu-Abu",
             "Putih"});
@@ -326,6 +318,7 @@ namespace Notegram
             this.Controls.Add(this.dgvMatkul);
             this.Controls.Add(this.gbMataKuliah);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form2";
@@ -350,7 +343,6 @@ namespace Notegram
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem jadwalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toDoListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem akunToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbMataKuliah;
         private System.Windows.Forms.Label lblJamMulai;
         private System.Windows.Forms.Label lblHari;

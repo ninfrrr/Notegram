@@ -51,8 +51,10 @@ namespace ClassLibrary1
                     return "#55efc4";
                 case "Biru":
                     return "#74b9ff";
-                case "Ungu":
+                case "Nila":
                     return "#9c88ff";
+                case "Ungu":
+                    return "#ee99fc";
                 case "Abu-Abu":
                     return "#dfe6e9";
                 default:
@@ -80,6 +82,8 @@ namespace ClassLibrary1
                 case "#74b9ff":
                     return "Biru";
                 case "#9c88ff":
+                    return "Nila";
+                case "#ee99fc":
                     return "Ungu";
                 case "dfe6e9":
                     return "Abu-Abu";
