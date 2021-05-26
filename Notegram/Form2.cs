@@ -19,11 +19,72 @@ namespace Notegram
         Mode mode;
         DataTable datatable;
         string path = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\NotegramDB.mdf;integrated security=True;MultipleActiveResultSets=True;";
+        string[] paletWarna = new string[] { "Putih","Merah", "Pink", "Oranye", "Kuning", "Krem", "Tosca", "Hijau", "Biru", "Nila", "Ungu", "Abu-Abu" };
+
         public Form2()
         {
             InitializeComponent();
+            cmbWarna.DataSource = paletWarna;
             btnHapus.Enabled = false;
             mode = Mode.Buat;
+        }
+
+        private void cmbWarna_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Font font = new Font("Century Gothic", 12);
+            Color color = new Color();
+            try
+            {
+                switch (e.Index)
+                {
+                    case 0:
+                        color = ColorTranslator.FromHtml("#ffffff");
+                        break;
+                    case 1:
+                        color = ColorTranslator.FromHtml("#ff7675");
+                        break;
+                    case 2:
+                        color = ColorTranslator.FromHtml("#ffcccc");
+                        break;
+                    case 3:
+                        color = ColorTranslator.FromHtml("#ffc048");
+                        break;
+                    case 4:
+                        color = ColorTranslator.FromHtml("#ffeb3b");
+                        break;
+                    case 5:
+                        color = ColorTranslator.FromHtml("#ffeaa7");
+                        break;
+                    case 6:
+                        color = ColorTranslator.FromHtml("#81ecec");
+                        break;
+                    case 7:
+                        color = ColorTranslator.FromHtml("#55efc4");
+                        break;
+                    case 8:
+                        color = ColorTranslator.FromHtml("#74b9ff");
+                        break;
+                    case 9:
+                        color = ColorTranslator.FromHtml("#9c88ff");
+                        break;
+                    case 10:
+                        color = ColorTranslator.FromHtml("#ee99fc");
+                        break;
+                    case 11:
+                        color = ColorTranslator.FromHtml("#dfe6e9");
+                        break;
+                }
+                e.DrawBackground();
+                Rectangle rectangle = new Rectangle(2, e.Bounds.Top + 2, e.Bounds.Height, e.Bounds.Height - 4);
+                e.Graphics.FillRectangle(new SolidBrush(color), rectangle);
+                e.Graphics.DrawString(paletWarna[e.Index], font, Brushes.Black, new Rectangle(e.Bounds.X + rectangle.Width, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
+                e.DrawFocusRectangle();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btnBuat_Click(object sender, EventArgs e)
@@ -42,7 +103,7 @@ namespace Notegram
             tbJamMulai.Text = "HH:MM";
             tbJamSelesai.ForeColor = Color.Gray;
             tbJamSelesai.Text = "HH:MM";
-            cmbWarna.SelectedIndex=-1;
+            cmbWarna.SelectedIndex=0;
 
             mode = Mode.Buat;
             btnBuat.Text = "Buat";

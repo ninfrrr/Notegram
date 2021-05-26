@@ -171,25 +171,27 @@ namespace Notegram
             // 
             // cmbWarna
             // 
+            this.cmbWarna.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbWarna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWarna.FormattingEnabled = true;
-            this.cmbWarna.Items.AddRange(new object[] {
-            "Merah",
-            "Pink",
-            "Krem",
-            "Kuning",
-            "Oranye",
-            "Tosca",
-            "Hijau",
-            "Biru",
-            "Nila",
-            "Ungu",
-            "Abu-Abu",
-            "Putih"});
+            //this.cmbWarna.Items.AddRange(new object[] {
+            //"Merah",
+            //"Pink",
+            //"Krem",
+            //"Kuning",
+            //"Oranye",
+            //"Tosca",
+            //"Hijau",
+            //"Biru",
+            //"Nila",
+            //"Ungu",
+            //"Abu-Abu",
+            //"Putih"});
             this.cmbWarna.Location = new System.Drawing.Point(116, 173);
             this.cmbWarna.Name = "cmbWarna";
-            this.cmbWarna.Size = new System.Drawing.Size(136, 29);
+            this.cmbWarna.Size = new System.Drawing.Size(136, 28);
             this.cmbWarna.TabIndex = 8;
+            this.cmbWarna.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cmbWarna_DrawItem);
             // 
             // lblWarna
             // 
