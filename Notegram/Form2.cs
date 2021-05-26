@@ -117,8 +117,6 @@ namespace Notegram
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'notegramDBDataSet.MataKuliah' table. You can move, or remove it, as needed.
-            //this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
             TampilkanDataGridViewMatkul();
 
             List<Color> lstColor = new List<Color>();
@@ -213,7 +211,6 @@ namespace Notegram
                         db.MataKuliahs.Add(mataKuliah);
                         db.SaveChanges();
                     }
-                    //this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
                     TampilkanDataGridViewMatkul();
                     KosongkanTextBox();
                 }
@@ -242,7 +239,6 @@ namespace Notegram
                     ganti.Warna = Ubah.KodeWarna(cmbWarna.Text);
                     db.SaveChanges();
                 }
-                //this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
                 TampilkanDataGridViewMatkul();
                 MessageBox.Show("Mata kuliah berhasil diperbarui");
                 KosongkanTextBox();
@@ -259,7 +255,6 @@ namespace Notegram
                 db.MataKuliahs.RemoveRange(db.MataKuliahs.Where(item => item.Nama == tbNamaMatkul.Text));
                 db.SaveChanges();
                 KosongkanTextBox();
-                //this.mataKuliahTableAdapter.Fill(this.notegramDBDataSet.MataKuliah);
                 TampilkanDataGridViewMatkul();
                 btnHapus.Enabled = false;
                 btnBatal.Enabled = false;

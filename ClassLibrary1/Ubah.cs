@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+
 
 namespace ClassLibrary1
 {
@@ -73,7 +75,7 @@ namespace ClassLibrary1
                     return "Oranye";
                 case "#ffeb3b":
                     return "Kuning";
-                case "ffeaa7":
+                case "#ffeaa7":
                     return "Krem";
                 case "#81ecec":
                     return "Tosca";
@@ -85,11 +87,12 @@ namespace ClassLibrary1
                     return "Nila";
                 case "#ee99fc":
                     return "Ungu";
-                case "dfe6e9":
+                case "#dfe6e9":
                     return "Abu-Abu";
                 default:
                     return "Putih";
             }
         }
+        
     }
 }

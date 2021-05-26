@@ -50,16 +50,11 @@ namespace Notegram
             this.lblHari = new System.Windows.Forms.Label();
             this.lblNama = new System.Windows.Forms.Label();
             this.dgvMatkul = new System.Windows.Forms.DataGridView();
-            this.mataKuliahBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.notegramDBDataSet = new Notegram.NotegramDBDataSet();
-            this.mataKuliahTableAdapter = new Notegram.NotegramDBDataSetTableAdapters.MataKuliahTableAdapter();
             this.Notegram = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.gbMataKuliah.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatkul)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mataKuliahBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notegramDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -174,24 +169,11 @@ namespace Notegram
             this.cmbWarna.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbWarna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWarna.FormattingEnabled = true;
-            //this.cmbWarna.Items.AddRange(new object[] {
-            //"Merah",
-            //"Pink",
-            //"Krem",
-            //"Kuning",
-            //"Oranye",
-            //"Tosca",
-            //"Hijau",
-            //"Biru",
-            //"Nila",
-            //"Ungu",
-            //"Abu-Abu",
-            //"Putih"});
             this.cmbWarna.Location = new System.Drawing.Point(116, 173);
             this.cmbWarna.Name = "cmbWarna";
             this.cmbWarna.Size = new System.Drawing.Size(136, 28);
             this.cmbWarna.TabIndex = 8;
-            this.cmbWarna.DrawItem += new System.Windows.Forms.DrawItemEventHandler(cmbWarna_DrawItem);
+            this.cmbWarna.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmbWarna_DrawItem);
             // 
             // lblWarna
             // 
@@ -290,20 +272,6 @@ namespace Notegram
             this.dgvMatkul.TabIndex = 2;
             this.dgvMatkul.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatkul_CellClick);
             // 
-            // mataKuliahBindingSource
-            // 
-            this.mataKuliahBindingSource.DataMember = "MataKuliah";
-            this.mataKuliahBindingSource.DataSource = this.notegramDBDataSet;
-            // 
-            // notegramDBDataSet
-            // 
-            this.notegramDBDataSet.DataSetName = "NotegramDBDataSet";
-            this.notegramDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mataKuliahTableAdapter
-            // 
-            this.mataKuliahTableAdapter.ClearBeforeFill = true;
-            // 
             // Notegram
             // 
             this.Notegram.Icon = ((System.Drawing.Icon)(resources.GetObject("Notegram.Icon")));
@@ -333,8 +301,6 @@ namespace Notegram
             this.gbMataKuliah.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatkul)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mataKuliahBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.notegramDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,9 +327,6 @@ namespace Notegram
         private System.Windows.Forms.TextBox tbJamMulai;
         private System.Windows.Forms.Button btnHapus;
         private System.Windows.Forms.Button btnBatal;
-        private NotegramDBDataSet notegramDBDataSet;
-        private System.Windows.Forms.BindingSource mataKuliahBindingSource;
-        private NotegramDBDataSetTableAdapters.MataKuliahTableAdapter mataKuliahTableAdapter;
         private System.Windows.Forms.NotifyIcon Notegram;
     }
 }
