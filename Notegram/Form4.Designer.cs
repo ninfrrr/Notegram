@@ -236,9 +236,9 @@ namespace Notegram
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Notegram.Properties.Resources.judulagenda1;
-            this.pictureBox2.Location = new System.Drawing.Point(237, 35);
+            this.pictureBox2.Location = new System.Drawing.Point(640, 22);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(371, 115);
+            this.pictureBox2.Size = new System.Drawing.Size(539, 115);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
@@ -246,9 +246,9 @@ namespace Notegram
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Notegram.Properties.Resources.todolist;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(488, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(219, 138);
+            this.pictureBox1.Size = new System.Drawing.Size(120, 138);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;

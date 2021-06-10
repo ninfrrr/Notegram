@@ -105,18 +105,18 @@ namespace Notegram
             this.gbMataKuliah.Controls.Add(this.lblHari);
             this.gbMataKuliah.Controls.Add(this.lblNama);
             this.gbMataKuliah.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMataKuliah.Location = new System.Drawing.Point(706, 50);
+            this.gbMataKuliah.Location = new System.Drawing.Point(718, 51);
             this.gbMataKuliah.Margin = new System.Windows.Forms.Padding(4);
             this.gbMataKuliah.Name = "gbMataKuliah";
             this.gbMataKuliah.Padding = new System.Windows.Forms.Padding(4);
-            this.gbMataKuliah.Size = new System.Drawing.Size(550, 696);
+            this.gbMataKuliah.Size = new System.Drawing.Size(538, 605);
             this.gbMataKuliah.TabIndex = 1;
             this.gbMataKuliah.TabStop = false;
             this.gbMataKuliah.Text = "Mata Kuliah";
             // 
             // btnBatal
             // 
-            this.btnBatal.Location = new System.Drawing.Point(193, 594);
+            this.btnBatal.Location = new System.Drawing.Point(191, 539);
             this.btnBatal.Margin = new System.Windows.Forms.Padding(4);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(155, 58);
@@ -127,7 +127,7 @@ namespace Notegram
             // 
             // btnHapus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(357, 479);
+            this.btnHapus.Location = new System.Drawing.Point(357, 462);
             this.btnHapus.Margin = new System.Windows.Forms.Padding(4);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(155, 58);
@@ -185,7 +185,7 @@ namespace Notegram
             // 
             // btnBuat
             // 
-            this.btnBuat.Location = new System.Drawing.Point(15, 479);
+            this.btnBuat.Location = new System.Drawing.Point(15, 462);
             this.btnBuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuat.Name = "btnBuat";
             this.btnBuat.Size = new System.Drawing.Size(155, 58);
@@ -269,12 +269,12 @@ namespace Notegram
             this.dgvMatkul.AllowUserToAddRows = false;
             this.dgvMatkul.AllowUserToDeleteRows = false;
             this.dgvMatkul.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMatkul.Location = new System.Drawing.Point(37, 248);
+            this.dgvMatkul.Location = new System.Drawing.Point(28, 235);
             this.dgvMatkul.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMatkul.Name = "dgvMatkul";
             this.dgvMatkul.ReadOnly = true;
             this.dgvMatkul.RowHeadersWidth = 51;
-            this.dgvMatkul.Size = new System.Drawing.Size(651, 498);
+            this.dgvMatkul.Size = new System.Drawing.Size(651, 421);
             this.dgvMatkul.TabIndex = 2;
             this.dgvMatkul.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatkul_CellClick);
             // 
@@ -311,7 +311,7 @@ namespace Notegram
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(124)))), ((int)(((byte)(153)))));
-            this.ClientSize = new System.Drawing.Size(1269, 759);
+            this.ClientSize = new System.Drawing.Size(1269, 679);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dgvMatkul);
             this.Controls.Add(this.gbMataKuliah);

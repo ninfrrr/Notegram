@@ -121,7 +121,7 @@ namespace Notegram
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(151)))), ((int)(((byte)(163)))));
-            this.ClientSize = new System.Drawing.Size(966, 691);
+            this.ClientSize = new System.Drawing.Size(997, 691);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnEdit);
