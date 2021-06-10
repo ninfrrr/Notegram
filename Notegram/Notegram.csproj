@@ -177,6 +177,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>NotegramDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\judulagenda1.png" />
+    <None Include="Resources\judulagenda.png" />
+    <None Include="Resources\judultodolist.png" />
+    <None Include="Resources\judul.png" />
     <None Include="Resources\edit H25.png" />
   </ItemGroup>
   <ItemGroup>

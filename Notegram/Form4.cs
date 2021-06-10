@@ -77,6 +77,8 @@ namespace Notegram
         private void btnList_Click(object sender, EventArgs e)
         {
             //pindah ke todolist
+            Form3 listfunc = new Form3();
+            listfunc.Show();
         }
 
     }

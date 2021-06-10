@@ -39,7 +39,6 @@ namespace Notegram
             this.btnHapus = new System.Windows.Forms.Button();
             this.tbJamSelesai = new System.Windows.Forms.TextBox();
             this.tbJamMulai = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbWarna = new System.Windows.Forms.ComboBox();
             this.lblWarna = new System.Windows.Forms.Label();
             this.btnBuat = new System.Windows.Forms.Button();
@@ -51,10 +50,13 @@ namespace Notegram
             this.lblNama = new System.Windows.Forms.Label();
             this.dgvMatkul = new System.Windows.Forms.DataGridView();
             this.Notegram = new System.Windows.Forms.NotifyIcon(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.gbMataKuliah.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatkul)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,8 +68,8 @@ namespace Notegram
             this.toDoListToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(752, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1269, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,14 +78,14 @@ namespace Notegram
             this.jadwalToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jadwalToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.jadwalToolStripMenuItem.Name = "jadwalToolStripMenuItem";
-            this.jadwalToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.jadwalToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.jadwalToolStripMenuItem.Text = "Jadwal";
             // 
             // toDoListToolStripMenuItem
             // 
             this.toDoListToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toDoListToolStripMenuItem.Name = "toDoListToolStripMenuItem";
-            this.toDoListToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.toDoListToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.toDoListToolStripMenuItem.Text = "To-Do List";
             this.toDoListToolStripMenuItem.Click += new System.EventHandler(this.toDoListToolStripMenuItem_Click);
             // 
@@ -93,7 +95,6 @@ namespace Notegram
             this.gbMataKuliah.Controls.Add(this.btnHapus);
             this.gbMataKuliah.Controls.Add(this.tbJamSelesai);
             this.gbMataKuliah.Controls.Add(this.tbJamMulai);
-            this.gbMataKuliah.Controls.Add(this.pictureBox1);
             this.gbMataKuliah.Controls.Add(this.cmbWarna);
             this.gbMataKuliah.Controls.Add(this.lblWarna);
             this.gbMataKuliah.Controls.Add(this.btnBuat);
@@ -103,19 +104,22 @@ namespace Notegram
             this.gbMataKuliah.Controls.Add(this.lblJamMulai);
             this.gbMataKuliah.Controls.Add(this.lblHari);
             this.gbMataKuliah.Controls.Add(this.lblNama);
-            this.gbMataKuliah.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMataKuliah.Location = new System.Drawing.Point(488, 28);
+            this.gbMataKuliah.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMataKuliah.Location = new System.Drawing.Point(706, 50);
+            this.gbMataKuliah.Margin = new System.Windows.Forms.Padding(4);
             this.gbMataKuliah.Name = "gbMataKuliah";
-            this.gbMataKuliah.Size = new System.Drawing.Size(264, 352);
+            this.gbMataKuliah.Padding = new System.Windows.Forms.Padding(4);
+            this.gbMataKuliah.Size = new System.Drawing.Size(550, 696);
             this.gbMataKuliah.TabIndex = 1;
             this.gbMataKuliah.TabStop = false;
             this.gbMataKuliah.Text = "Mata Kuliah";
             // 
             // btnBatal
             // 
-            this.btnBatal.Location = new System.Drawing.Point(187, 219);
+            this.btnBatal.Location = new System.Drawing.Point(193, 594);
+            this.btnBatal.Margin = new System.Windows.Forms.Padding(4);
             this.btnBatal.Name = "btnBatal";
-            this.btnBatal.Size = new System.Drawing.Size(72, 32);
+            this.btnBatal.Size = new System.Drawing.Size(155, 58);
             this.btnBatal.TabIndex = 13;
             this.btnBatal.Text = "Batal";
             this.btnBatal.UseVisualStyleBackColor = true;
@@ -123,9 +127,10 @@ namespace Notegram
             // 
             // btnHapus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(100, 219);
+            this.btnHapus.Location = new System.Drawing.Point(357, 479);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(4);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(81, 32);
+            this.btnHapus.Size = new System.Drawing.Size(155, 58);
             this.btnHapus.TabIndex = 12;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
@@ -134,9 +139,10 @@ namespace Notegram
             // tbJamSelesai
             // 
             this.tbJamSelesai.ForeColor = System.Drawing.Color.Gray;
-            this.tbJamSelesai.Location = new System.Drawing.Point(116, 140);
+            this.tbJamSelesai.Location = new System.Drawing.Point(278, 311);
+            this.tbJamSelesai.Margin = new System.Windows.Forms.Padding(4);
             this.tbJamSelesai.Name = "tbJamSelesai";
-            this.tbJamSelesai.Size = new System.Drawing.Size(136, 27);
+            this.tbJamSelesai.Size = new System.Drawing.Size(236, 48);
             this.tbJamSelesai.TabIndex = 11;
             this.tbJamSelesai.Text = "HH:MM";
             this.tbJamSelesai.Click += new System.EventHandler(this.tbJamSelesai_Click);
@@ -145,33 +151,24 @@ namespace Notegram
             // tbJamMulai
             // 
             this.tbJamMulai.ForeColor = System.Drawing.Color.Gray;
-            this.tbJamMulai.Location = new System.Drawing.Point(116, 106);
+            this.tbJamMulai.Location = new System.Drawing.Point(278, 227);
+            this.tbJamMulai.Margin = new System.Windows.Forms.Padding(4);
             this.tbJamMulai.Name = "tbJamMulai";
-            this.tbJamMulai.Size = new System.Drawing.Size(136, 27);
+            this.tbJamMulai.Size = new System.Drawing.Size(236, 48);
             this.tbJamMulai.TabIndex = 10;
             this.tbJamMulai.Text = "HH:MM";
             this.tbJamMulai.Click += new System.EventHandler(this.tbJamMulai_Click);
             this.tbJamMulai.Leave += new System.EventHandler(this.tbJamMulai_Leave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Notegram.Properties.Resources.jadwal;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 256);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // cmbWarna
             // 
             this.cmbWarna.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbWarna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWarna.FormattingEnabled = true;
-            this.cmbWarna.Location = new System.Drawing.Point(116, 173);
+            this.cmbWarna.Location = new System.Drawing.Point(278, 385);
+            this.cmbWarna.Margin = new System.Windows.Forms.Padding(4);
             this.cmbWarna.Name = "cmbWarna";
-            this.cmbWarna.Size = new System.Drawing.Size(136, 28);
+            this.cmbWarna.Size = new System.Drawing.Size(234, 49);
             this.cmbWarna.TabIndex = 8;
             this.cmbWarna.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmbWarna_DrawItem);
             // 
@@ -179,17 +176,19 @@ namespace Notegram
             // 
             this.lblWarna.AutoSize = true;
             this.lblWarna.ForeColor = System.Drawing.Color.White;
-            this.lblWarna.Location = new System.Drawing.Point(16, 176);
+            this.lblWarna.Location = new System.Drawing.Point(8, 388);
+            this.lblWarna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWarna.Name = "lblWarna";
-            this.lblWarna.Size = new System.Drawing.Size(66, 21);
+            this.lblWarna.Size = new System.Drawing.Size(132, 40);
             this.lblWarna.TabIndex = 7;
             this.lblWarna.Text = "Warna:";
             // 
             // btnBuat
             // 
-            this.btnBuat.Location = new System.Drawing.Point(19, 219);
+            this.btnBuat.Location = new System.Drawing.Point(15, 479);
+            this.btnBuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuat.Name = "btnBuat";
-            this.btnBuat.Size = new System.Drawing.Size(75, 32);
+            this.btnBuat.Size = new System.Drawing.Size(155, 58);
             this.btnBuat.TabIndex = 6;
             this.btnBuat.Text = "Buat";
             this.btnBuat.UseVisualStyleBackColor = true;
@@ -207,25 +206,28 @@ namespace Notegram
             "Jumat",
             "Sabtu",
             "Minggu"});
-            this.cmbHari.Location = new System.Drawing.Point(116, 72);
+            this.cmbHari.Location = new System.Drawing.Point(278, 148);
+            this.cmbHari.Margin = new System.Windows.Forms.Padding(4);
             this.cmbHari.Name = "cmbHari";
-            this.cmbHari.Size = new System.Drawing.Size(136, 29);
+            this.cmbHari.Size = new System.Drawing.Size(236, 48);
             this.cmbHari.TabIndex = 5;
             // 
             // tbNamaMatkul
             // 
-            this.tbNamaMatkul.Location = new System.Drawing.Point(116, 40);
+            this.tbNamaMatkul.Location = new System.Drawing.Point(278, 71);
+            this.tbNamaMatkul.Margin = new System.Windows.Forms.Padding(4);
             this.tbNamaMatkul.Name = "tbNamaMatkul";
-            this.tbNamaMatkul.Size = new System.Drawing.Size(136, 27);
+            this.tbNamaMatkul.Size = new System.Drawing.Size(239, 48);
             this.tbNamaMatkul.TabIndex = 4;
             // 
             // lblJamSelesai
             // 
             this.lblJamSelesai.AutoSize = true;
             this.lblJamSelesai.ForeColor = System.Drawing.Color.White;
-            this.lblJamSelesai.Location = new System.Drawing.Point(16, 143);
+            this.lblJamSelesai.Location = new System.Drawing.Point(8, 311);
+            this.lblJamSelesai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJamSelesai.Name = "lblJamSelesai";
-            this.lblJamSelesai.Size = new System.Drawing.Size(103, 21);
+            this.lblJamSelesai.Size = new System.Drawing.Size(211, 40);
             this.lblJamSelesai.TabIndex = 3;
             this.lblJamSelesai.Text = "Jam Selesai:";
             // 
@@ -233,9 +235,10 @@ namespace Notegram
             // 
             this.lblJamMulai.AutoSize = true;
             this.lblJamMulai.ForeColor = System.Drawing.Color.White;
-            this.lblJamMulai.Location = new System.Drawing.Point(16, 109);
+            this.lblJamMulai.Location = new System.Drawing.Point(8, 230);
+            this.lblJamMulai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJamMulai.Name = "lblJamMulai";
-            this.lblJamMulai.Size = new System.Drawing.Size(94, 21);
+            this.lblJamMulai.Size = new System.Drawing.Size(191, 40);
             this.lblJamMulai.TabIndex = 2;
             this.lblJamMulai.Text = "Jam Mulai:";
             // 
@@ -243,9 +246,10 @@ namespace Notegram
             // 
             this.lblHari.AutoSize = true;
             this.lblHari.ForeColor = System.Drawing.Color.White;
-            this.lblHari.Location = new System.Drawing.Point(16, 75);
+            this.lblHari.Location = new System.Drawing.Point(8, 148);
+            this.lblHari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHari.Name = "lblHari";
-            this.lblHari.Size = new System.Drawing.Size(44, 21);
+            this.lblHari.Size = new System.Drawing.Size(89, 40);
             this.lblHari.TabIndex = 1;
             this.lblHari.Text = "Hari:";
             // 
@@ -253,9 +257,10 @@ namespace Notegram
             // 
             this.lblNama.AutoSize = true;
             this.lblNama.ForeColor = System.Drawing.Color.White;
-            this.lblNama.Location = new System.Drawing.Point(16, 42);
+            this.lblNama.Location = new System.Drawing.Point(8, 71);
+            this.lblNama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(63, 21);
+            this.lblNama.Size = new System.Drawing.Size(126, 40);
             this.lblNama.TabIndex = 0;
             this.lblNama.Text = "Nama:";
             // 
@@ -264,11 +269,12 @@ namespace Notegram
             this.dgvMatkul.AllowUserToAddRows = false;
             this.dgvMatkul.AllowUserToDeleteRows = false;
             this.dgvMatkul.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMatkul.Location = new System.Drawing.Point(12, 39);
+            this.dgvMatkul.Location = new System.Drawing.Point(37, 248);
+            this.dgvMatkul.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMatkul.Name = "dgvMatkul";
             this.dgvMatkul.ReadOnly = true;
             this.dgvMatkul.RowHeadersWidth = 51;
-            this.dgvMatkul.Size = new System.Drawing.Size(453, 259);
+            this.dgvMatkul.Size = new System.Drawing.Size(651, 498);
             this.dgvMatkul.TabIndex = 2;
             this.dgvMatkul.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatkul_CellClick);
             // 
@@ -279,17 +285,41 @@ namespace Notegram
             this.Notegram.Visible = true;
             this.Notegram.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Notegram.Properties.Resources.judul;
+            this.pictureBox2.Location = new System.Drawing.Point(214, 51);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(474, 161);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Notegram.Properties.Resources.jadwal;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 66);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(124)))), ((int)(((byte)(153)))));
-            this.ClientSize = new System.Drawing.Size(752, 380);
+            this.ClientSize = new System.Drawing.Size(1269, 759);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dgvMatkul);
             this.Controls.Add(this.gbMataKuliah);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Notegram";
@@ -299,8 +329,9 @@ namespace Notegram
             this.menuStrip1.PerformLayout();
             this.gbMataKuliah.ResumeLayout(false);
             this.gbMataKuliah.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatkul)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +359,6 @@ namespace Notegram
         private System.Windows.Forms.Button btnHapus;
         private System.Windows.Forms.Button btnBatal;
         private System.Windows.Forms.NotifyIcon Notegram;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
