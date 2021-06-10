@@ -43,6 +43,8 @@ namespace Notegram
         private void btnEdit_Click(object sender, EventArgs e)
         {
             //pergi ke form agenda
+            Form4 formagenda = new Form4();
+            formagenda.Show();
         }
     }
 }
