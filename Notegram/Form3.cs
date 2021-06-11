@@ -18,10 +18,12 @@ namespace Notegram
             InitializeComponent();
         }
 
+        Agenda c = new Agenda();
+
         private void btnHapus_Click(object sender, EventArgs e)
         {
 
-            /*bool success = fungsi-hapus-data-dari-database();
+            bool success = c.Delete(c);
             if (success == true)
             {
                 MessageBox.Show("List berhasil dihapus.");
@@ -30,21 +32,30 @@ namespace Notegram
             else
             {
                 MessageBox.Show("List gagal dihapus. Coba lagi");
-            }*/
+            }
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            //pergi ke form agenda
             Form4 formagenda = new Form4();
             formagenda.Show();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //pergi ke form agenda
             Form4 formagenda = new Form4();
             formagenda.Show();
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            checkBox_sudahDikerjakan.Text = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+            dtp_deadLine.Text = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+            cb_tipe.Text = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+            tb_judul.Text = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+            tb_mataKuliah.Text = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+            tb_keterangan.Text = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
         }
     }
 }

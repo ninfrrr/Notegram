@@ -11,20 +11,17 @@ namespace ClassLibrary1
 {
     public abstract class Agenda
     {
-        protected int _id;
-        protected string _judul;
-        protected Matkul _mataKuliah;
-        protected string _tipe;
-        protected bool _sudahDikerjakan;
-        protected string _keterangan;
-        protected Reminder _reminder;
-        protected string _deadLine;
+        protected int _id { get; set; }
+        protected string _judul { get; set; }
+        protected Matkul _mataKuliah { get; set; }
+        protected string _tipe { get; set; }
+        protected bool _sudahDikerjakan { get; set; }
+        protected string _keterangan { get; set; }
+        protected Reminder _reminder { get; set; }
+        protected string _deadLine { get; set; }
 
 
-        //akses data dari database
-        //masukkan fungsi tambah, edit, hapus data database
 
-        
         static string myNgDBModel = ConfigurationManager.ConnectionStrings["NgDBModel"].ConnectionString;
 
         public DataTable Select()
