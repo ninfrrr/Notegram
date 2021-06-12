@@ -12,14 +12,14 @@ namespace Notegram
         {
         }
         public virtual DbSet<MataKuliah> MataKuliahs { get; set; }
-        public virtual DbSet<ToDoList> ToDoList { get; set; }
+        //public virtual DbSet<ClassLibrary1.ToDoLists> ToDoList { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ToDoList>()
-                .Property(e => e.Status)
-                .IsFixedLength()
-                .IsUnicode(false);
+            //modelBuilder.Entity<ToDoList>()
+            //    .Property(e => e.Status)
+            //    .IsFixedLength()
+            //    .IsUnicode(false);
         }
     }
 }

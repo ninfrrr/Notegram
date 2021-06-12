@@ -32,11 +32,11 @@ namespace Notegram
         private void btnTambah_Click(object sender, EventArgs e)
         {
             
-            _judul = tb_judul.Text;
-            _mataKuliah = tb_mataKuliah.Text;
-            _tipe = cb_tipe.Text;
-            _keterangan = tb_keterangan.Text;
-            _deadLine = dtp_deadLine.Text;
+            c._judul = tb_judul.Text;
+            c._mataKuliah = tb_mataKuliah.Text;
+            c._tipe = cb_tipe.Text;
+            c._keterangan = tb_keterangan.Text;
+            c._deadLine = dtp_deadLine.Text;
 
             bool success = c.Insert(c);
             if (success == true)
@@ -51,19 +51,19 @@ namespace Notegram
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            _id = int.Parse(tb_id.Text);
-            _judul = tb_judul.Text;
-            _mataKuliah = tb_mataKuliah.Text;
-            _tipe = cb_tipe.Text;
-            _keterangan = tb_keterangan.Text;
-            _deadLine = dtp_deadLine.Text;            
+            c._id = int.Parse(tb_id.Text);
+            c._judul = tb_judul.Text;
+            c._mataKuliah = tb_mataKuliah.Text;
+            c._tipe = cb_tipe.Text;
+            c._keterangan = tb_keterangan.Text;
+            c._deadLine = dtp_deadLine.Text;            
 
             bool success = c.Edit(c);
             if (success == true)
             {
                 MessageBox.Show("Reservation has been successfully edited.");
                 DataTable dt = c.Select();
-                dataGridView1.DataSource = dt;
+                //dataGridView1.DataSource = dt;
                 Clear();
             }
             else

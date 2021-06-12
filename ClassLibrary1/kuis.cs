@@ -8,11 +8,11 @@ namespace ClassLibrary1
 {
     public class Kuis : Agenda
     {
-        public Kuis (Matkul mataKuliah)
+        public Kuis (string mataKuliah)
         {
             this._tipe = "Kuis";
             this._mataKuliah = mataKuliah;
-            mataKuliah.AddAgendaToDaftar(this);
+            //mataKuliah.AddAgendaToDaftar(this);
         }
     }
 }

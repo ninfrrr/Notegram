@@ -9,11 +9,11 @@ namespace ClassLibrary1
     public class PR : Agenda
     {   
         //DateTime? _deadline;
-        public PR(Matkul mataKuliah)
+        public PR(string mataKuliah)
         {
             this._tipe = "PR";
             this._mataKuliah = mataKuliah;
-            mataKuliah.AddAgendaToDaftar(this);
+            //mataKuliah.AddAgendaToDaftar(this);
         }
     }
 }

@@ -9,16 +9,17 @@ using System.Data;
 
 namespace ClassLibrary1
 {
-    public abstract class Agenda
+    public class Agenda
     {
-        protected int _id { get; set; }
-        protected string _judul { get; set; }
-        protected Matkul _mataKuliah { get; set; }
-        protected string _tipe { get; set; }
-        protected bool _sudahDikerjakan { get; set; }
-        protected string _keterangan { get; set; }
-        protected Reminder _reminder { get; set; }
-        protected string _deadLine { get; set; }
+        public int _id { get; set; }
+        public string _judul { get; set; }
+        //public Matkul _mataKuliah { get; set; }
+        public string _mataKuliah { get; set; }
+        public string _tipe { get; set; }
+        public bool _sudahDikerjakan { get; set; }
+        public string _keterangan { get; set; }
+        public Reminder _reminder { get; set; }
+        public string _deadLine { get; set; }
 
 
 

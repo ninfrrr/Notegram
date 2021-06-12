@@ -49,13 +49,13 @@ namespace Notegram
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            checkBox_sudahDikerjakan.Text = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
-            dtp_deadLine.Text = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
-            cb_tipe.Text = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
-            tb_judul.Text = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-            tb_mataKuliah.Text = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
-            tb_keterangan.Text = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
+            //int rowIndex = e.RowIndex;
+            //checkBox_sudahDikerjakan.Text = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+            //dtp_deadLine.Text = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+            //cb_tipe.Text = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+            //tb_judul.Text = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+            //tb_mataKuliah.Text = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+            //tb_keterangan.Text = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
         }
     }
 }
