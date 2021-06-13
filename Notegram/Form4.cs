@@ -31,13 +31,11 @@ namespace Notegram
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            
             c._judul = tb_judul.Text;
             c._mataKuliah = tb_mataKuliah.Text;
             c._tipe = cb_tipe.Text;
             c._keterangan = tb_keterangan.Text;
             c._deadLine = dtp_deadLine.Text;
-
             bool success = c.Insert(c);
             if (success == true)
             {
@@ -57,7 +55,6 @@ namespace Notegram
             c._tipe = cb_tipe.Text;
             c._keterangan = tb_keterangan.Text;
             c._deadLine = dtp_deadLine.Text;            
-
             bool success = c.Edit(c);
             if (success == true)
             {

@@ -22,13 +22,11 @@ namespace Notegram
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
-
             bool success = c.Delete(c);
             if (success == true)
             {
                 MessageBox.Show("List berhasil dihapus.");
             }
-
             else
             {
                 MessageBox.Show("List gagal dihapus. Coba lagi");

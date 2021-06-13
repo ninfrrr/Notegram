@@ -109,6 +109,7 @@ namespace Notegram
             btnBuat.Text = "Buat";
             btnHapus.Enabled = false;
         }
+
         private void toDoListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
@@ -296,7 +297,6 @@ namespace Notegram
                 {
                     MessageBox.Show(ex.Message);
                 }
-            
             }
         }
 
@@ -352,6 +352,5 @@ namespace Notegram
                 tbJamSelesai.Text = "HH:MM";
             }
         }
-
     }
 }
