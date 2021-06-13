@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Notegram
 {
@@ -19,7 +20,7 @@ namespace Notegram
         }
 
         Agenda c = new Agenda();
-
+        
         private void Clear()
         {
             tb_judul.Text = "";
@@ -58,7 +59,7 @@ namespace Notegram
             if (success == true)
             {
                 MessageBox.Show("Reservation has been successfully edited.");
-                DataTable dt = c.Select();
+                //DataTable dt = c.Select();
                 //dataGridView1.DataSource = dt;
                 Clear();
             }
@@ -104,6 +105,12 @@ namespace Notegram
         {
             minimizedagenda.BalloonTipText = "Application is minimized";
             minimizedagenda.BalloonTipTitle = "Notegram: AGENDA";
+
+            
+
+            
         }
+
+        
     }
 }

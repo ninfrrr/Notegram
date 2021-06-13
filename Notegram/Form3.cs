@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Notegram
 {
@@ -18,6 +19,7 @@ namespace Notegram
             InitializeComponent();
         }
 
+        string myNgDBModel = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\NotegramDB.mdf;integrated security=True;MultipleActiveResultSets=True;";
         Agenda c = new Agenda();
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -77,6 +79,26 @@ namespace Notegram
         {
             minimizetodolist.BalloonTipText = "Application is minimized";
             minimizetodolist.BalloonTipTitle = "Notegram: TO DO LIST";
+
+            SqlConnection conn = new SqlConnection(myNgDBModel);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT * FROM ToDoList";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            dataGridView1.DataSource = dt;
         }
     }
 }
