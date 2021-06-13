@@ -143,11 +143,11 @@ namespace Notegram
                 tbJamMulai.ForeColor = Color.Black;
                 tbJamSelesai.ForeColor = Color.Black;
 
-                /*tbNamaMatkul.Text*/ string nama = dgvMatkul.Rows[e.RowIndex].Cells[0].Value.ToString();
+                tbNamaMatkul.Text = dgvMatkul.Rows[e.RowIndex].Cells[0].Value.ToString();
 
                 using (var db = new NotegramDBModel())
                 {
-                    var pilih = db.MataKuliahs.SingleOrDefault(item => item.Nama == /*tbNamaMatkul.Text*/ nama);
+                    var pilih = db.MataKuliahs.SingleOrDefault(item => item.Nama == tbNamaMatkul.Text);
                     string jamMulai = pilih.Jam_Mulai.ToString();
                     jamMulai = jamMulai.Substring(0, 5);
                     string jamSelesai = pilih.Jam_Selesai.ToString();
