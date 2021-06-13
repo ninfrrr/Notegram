@@ -49,7 +49,6 @@ namespace Notegram
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            c._id = int.Parse(tb_id.Text);
             c._judul = tb_judul.Text;
             c._mataKuliah = tb_mataKuliah.Text;
             c._tipe = cb_tipe.Text;
@@ -76,7 +75,6 @@ namespace Notegram
             cb_tipe.Text = "";
             tb_keterangan.Text = "";
             dtp_deadLine.Text = "";
-            tb_id.Text = "";
         }
 
         private void btnList_Click(object sender, EventArgs e)

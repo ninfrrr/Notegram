@@ -31,13 +31,11 @@ namespace Notegram
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
-            this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_judul = new System.Windows.Forms.Label();
             this.lbl_mataKuliah = new System.Windows.Forms.Label();
             this.lbl_tipe = new System.Windows.Forms.Label();
             this.lbl_keterangan = new System.Windows.Forms.Label();
             this.lbl_deadLine = new System.Windows.Forms.Label();
-            this.tb_id = new System.Windows.Forms.TextBox();
             this.tb_judul = new System.Windows.Forms.TextBox();
             this.tb_mataKuliah = new System.Windows.Forms.TextBox();
             this.cb_tipe = new System.Windows.Forms.ComboBox();
@@ -55,22 +53,11 @@ namespace Notegram
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_id
-            // 
-            this.lbl_id.AutoSize = true;
-            this.lbl_id.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_id.Location = new System.Drawing.Point(19, 224);
-            this.lbl_id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_id.Name = "lbl_id";
-            this.lbl_id.Size = new System.Drawing.Size(68, 40);
-            this.lbl_id.TabIndex = 0;
-            this.lbl_id.Text = "ID :";
-            // 
             // lbl_judul
             // 
             this.lbl_judul.AutoSize = true;
             this.lbl_judul.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_judul.Location = new System.Drawing.Point(19, 292);
+            this.lbl_judul.Location = new System.Drawing.Point(30, 219);
             this.lbl_judul.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_judul.Name = "lbl_judul";
             this.lbl_judul.Size = new System.Drawing.Size(120, 40);
@@ -81,7 +68,7 @@ namespace Notegram
             // 
             this.lbl_mataKuliah.AutoSize = true;
             this.lbl_mataKuliah.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mataKuliah.Location = new System.Drawing.Point(19, 372);
+            this.lbl_mataKuliah.Location = new System.Drawing.Point(30, 329);
             this.lbl_mataKuliah.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_mataKuliah.Name = "lbl_mataKuliah";
             this.lbl_mataKuliah.Size = new System.Drawing.Size(227, 40);
@@ -92,7 +79,7 @@ namespace Notegram
             // 
             this.lbl_tipe.AutoSize = true;
             this.lbl_tipe.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipe.Location = new System.Drawing.Point(19, 437);
+            this.lbl_tipe.Location = new System.Drawing.Point(30, 437);
             this.lbl_tipe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tipe.Name = "lbl_tipe";
             this.lbl_tipe.Size = new System.Drawing.Size(99, 40);
@@ -121,19 +108,10 @@ namespace Notegram
             this.lbl_deadLine.TabIndex = 5;
             this.lbl_deadLine.Text = "Tenggat waktu :";
             // 
-            // tb_id
-            // 
-            this.tb_id.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_id.Location = new System.Drawing.Point(257, 216);
-            this.tb_id.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_id.Name = "tb_id";
-            this.tb_id.Size = new System.Drawing.Size(351, 48);
-            this.tb_id.TabIndex = 6;
-            // 
             // tb_judul
             // 
             this.tb_judul.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_judul.Location = new System.Drawing.Point(257, 284);
+            this.tb_judul.Location = new System.Drawing.Point(257, 219);
             this.tb_judul.Margin = new System.Windows.Forms.Padding(4);
             this.tb_judul.Name = "tb_judul";
             this.tb_judul.Size = new System.Drawing.Size(351, 48);
@@ -142,7 +120,7 @@ namespace Notegram
             // tb_mataKuliah
             // 
             this.tb_mataKuliah.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_mataKuliah.Location = new System.Drawing.Point(257, 372);
+            this.tb_mataKuliah.Location = new System.Drawing.Point(257, 329);
             this.tb_mataKuliah.Margin = new System.Windows.Forms.Padding(4);
             this.tb_mataKuliah.Name = "tb_mataKuliah";
             this.tb_mataKuliah.Size = new System.Drawing.Size(351, 48);
@@ -152,7 +130,7 @@ namespace Notegram
             // 
             this.cb_tipe.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_tipe.FormattingEnabled = true;
-            this.cb_tipe.Location = new System.Drawing.Point(257, 437);
+            this.cb_tipe.Location = new System.Drawing.Point(257, 429);
             this.cb_tipe.Margin = new System.Windows.Forms.Padding(4);
             this.cb_tipe.Name = "cb_tipe";
             this.cb_tipe.Size = new System.Drawing.Size(351, 48);
@@ -281,13 +259,11 @@ namespace Notegram
             this.Controls.Add(this.cb_tipe);
             this.Controls.Add(this.tb_mataKuliah);
             this.Controls.Add(this.tb_judul);
-            this.Controls.Add(this.tb_id);
             this.Controls.Add(this.lbl_deadLine);
             this.Controls.Add(this.lbl_keterangan);
             this.Controls.Add(this.lbl_tipe);
             this.Controls.Add(this.lbl_mataKuliah);
             this.Controls.Add(this.lbl_judul);
-            this.Controls.Add(this.lbl_id);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form4";
             this.Text = "Agenda";
@@ -301,14 +277,11 @@ namespace Notegram
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Label lbl_judul;
         private System.Windows.Forms.Label lbl_mataKuliah;
         private System.Windows.Forms.Label lbl_tipe;
         private System.Windows.Forms.Label lbl_keterangan;
         private System.Windows.Forms.Label lbl_deadLine;
-        private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.TextBox tb_judul;
         private System.Windows.Forms.TextBox tb_mataKuliah;
         private System.Windows.Forms.ComboBox cb_tipe;
