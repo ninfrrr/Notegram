@@ -46,7 +46,6 @@
     <Compile Include="Agenda.cs" />
     <Compile Include="Jadwal.cs" />
     <Compile Include="ListJadwal.cs" />
-    <Compile Include="Mahasiswa.cs" />
     <Compile Include="Matkul.cs" />
     <Compile Include="PR.cs" />
     <Compile Include="Reminder.cs" />

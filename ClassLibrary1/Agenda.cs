@@ -77,15 +77,10 @@ namespace ClassLibrary1
                 {
                     isSuccess = false;
                 }
-
-
             }
-
             catch (Exception ex)
             {
-
             }
-
             finally
             {
                 conn.Close();
