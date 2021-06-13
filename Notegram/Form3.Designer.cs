@@ -48,18 +48,20 @@ namespace Notegram
             // 
             this.lblCari.AutoSize = true;
             this.lblCari.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCari.Location = new System.Drawing.Point(68, 125);
+            this.lblCari.Location = new System.Drawing.Point(91, 154);
+            this.lblCari.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(75, 28);
+            this.lblCari.Size = new System.Drawing.Size(93, 37);
             this.lblCari.TabIndex = 0;
             this.lblCari.Text = "Cari :";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(181, 123);
+            this.textBox1.Location = new System.Drawing.Point(241, 151);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(497, 37);
+            this.textBox1.Size = new System.Drawing.Size(661, 44);
             this.textBox1.TabIndex = 1;
             // 
             // dataGridView1
@@ -67,20 +69,22 @@ namespace Notegram
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(73, 181);
+            this.dataGridView1.Location = new System.Drawing.Point(97, 223);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(604, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(805, 363);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnTambah
             // 
             this.btnTambah.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTambah.Location = new System.Drawing.Point(73, 496);
+            this.btnTambah.Location = new System.Drawing.Point(97, 610);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(116, 47);
+            this.btnTambah.Size = new System.Drawing.Size(155, 58);
             this.btnTambah.TabIndex = 3;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = true;
@@ -89,9 +93,10 @@ namespace Notegram
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(314, 496);
+            this.btnEdit.Location = new System.Drawing.Point(316, 610);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(116, 47);
+            this.btnEdit.Size = new System.Drawing.Size(155, 58);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -100,9 +105,10 @@ namespace Notegram
             // btnHapus
             // 
             this.btnHapus.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHapus.Location = new System.Drawing.Point(560, 496);
+            this.btnHapus.Location = new System.Drawing.Point(535, 610);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(116, 47);
+            this.btnHapus.Size = new System.Drawing.Size(155, 58);
             this.btnHapus.TabIndex = 5;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
@@ -111,10 +117,10 @@ namespace Notegram
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Notegram.Properties.Resources.judultodolist;
-            this.pictureBox1.Location = new System.Drawing.Point(130, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(173, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(486, 88);
+            this.pictureBox1.Size = new System.Drawing.Size(648, 108);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -129,9 +135,10 @@ namespace Notegram
             // btnSelesai
             // 
             this.btnSelesai.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelesai.Location = new System.Drawing.Point(680, 189);
+            this.btnSelesai.Location = new System.Drawing.Point(747, 610);
+            this.btnSelesai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelesai.Name = "btnSelesai";
-            this.btnSelesai.Size = new System.Drawing.Size(73, 33);
+            this.btnSelesai.Size = new System.Drawing.Size(155, 58);
             this.btnSelesai.TabIndex = 7;
             this.btnSelesai.Text = "Selesai";
             this.btnSelesai.UseVisualStyleBackColor = true;
@@ -139,10 +146,10 @@ namespace Notegram
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(151)))), ((int)(((byte)(163)))));
-            this.ClientSize = new System.Drawing.Size(758, 561);
+            this.ClientSize = new System.Drawing.Size(1097, 690);
             this.Controls.Add(this.btnSelesai);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnHapus);
@@ -151,6 +158,7 @@ namespace Notegram
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblCari);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.Text = "To-Do List";
             this.Load += new System.EventHandler(this.Form3_Load);
