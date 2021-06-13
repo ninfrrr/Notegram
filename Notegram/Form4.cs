@@ -102,12 +102,12 @@ namespace Notegram
             dtp_deadLine.Text = "";
         }
 
-        private void btnList_Click(object sender, EventArgs e)
+/*        private void btnList_Click(object sender, EventArgs e)
         {
             Form3 listfunc = new Form3();
             listfunc.Show();
             Hide();
-        }
+        }*/
 
         private void minimizedagenda_MouseDoubleClick(object sender, MouseEventArgs e)
         {

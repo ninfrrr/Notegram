@@ -44,7 +44,6 @@ namespace Notegram
             this.btnTambah = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
-            this.btnList = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.minimizedagenda = new System.Windows.Forms.NotifyIcon(this.components);
@@ -111,7 +110,7 @@ namespace Notegram
             // 
             this.tb_judul.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_judul.Location = new System.Drawing.Point(257, 219);
-            this.tb_judul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_judul.Margin = new System.Windows.Forms.Padding(4);
             this.tb_judul.Name = "tb_judul";
             this.tb_judul.Size = new System.Drawing.Size(351, 48);
             this.tb_judul.TabIndex = 7;
@@ -120,7 +119,7 @@ namespace Notegram
             // 
             this.tb_mataKuliah.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_mataKuliah.Location = new System.Drawing.Point(257, 329);
-            this.tb_mataKuliah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_mataKuliah.Margin = new System.Windows.Forms.Padding(4);
             this.tb_mataKuliah.Name = "tb_mataKuliah";
             this.tb_mataKuliah.Size = new System.Drawing.Size(351, 48);
             this.tb_mataKuliah.TabIndex = 8;
@@ -134,7 +133,7 @@ namespace Notegram
             "PR",
             "Quiz"});
             this.cb_tipe.Location = new System.Drawing.Point(257, 430);
-            this.cb_tipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_tipe.Margin = new System.Windows.Forms.Padding(4);
             this.cb_tipe.Name = "cb_tipe";
             this.cb_tipe.Size = new System.Drawing.Size(351, 48);
             this.cb_tipe.TabIndex = 9;
@@ -143,7 +142,7 @@ namespace Notegram
             // 
             this.tb_keterangan.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_keterangan.Location = new System.Drawing.Point(947, 197);
-            this.tb_keterangan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_keterangan.Margin = new System.Windows.Forms.Padding(4);
             this.tb_keterangan.Multiline = true;
             this.tb_keterangan.Name = "tb_keterangan";
             this.tb_keterangan.Size = new System.Drawing.Size(452, 214);
@@ -153,7 +152,7 @@ namespace Notegram
             // 
             this.dtp_deadLine.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_deadLine.Location = new System.Drawing.Point(947, 442);
-            this.dtp_deadLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_deadLine.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_deadLine.Name = "dtp_deadLine";
             this.dtp_deadLine.Size = new System.Drawing.Size(452, 48);
             this.dtp_deadLine.TabIndex = 11;
@@ -161,8 +160,8 @@ namespace Notegram
             // btnTambah
             // 
             this.btnTambah.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTambah.Location = new System.Drawing.Point(257, 526);
-            this.btnTambah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTambah.Location = new System.Drawing.Point(257, 552);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(4);
             this.btnTambah.Name = "btnTambah";
             this.btnTambah.Size = new System.Drawing.Size(155, 58);
             this.btnTambah.TabIndex = 12;
@@ -173,8 +172,8 @@ namespace Notegram
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(453, 526);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Location = new System.Drawing.Point(453, 552);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(155, 58);
             this.btnEdit.TabIndex = 13;
@@ -185,26 +184,14 @@ namespace Notegram
             // btnHapus
             // 
             this.btnHapus.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHapus.Location = new System.Drawing.Point(947, 526);
-            this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHapus.Location = new System.Drawing.Point(649, 552);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(4);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(155, 58);
             this.btnHapus.TabIndex = 14;
-            this.btnHapus.Text = "Hapus";
+            this.btnHapus.Text = "Batal";
             this.btnHapus.UseVisualStyleBackColor = true;
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
-            // 
-            // btnList
-            // 
-            this.btnList.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.Location = new System.Drawing.Point(1244, 526);
-            this.btnList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(155, 58);
-            this.btnList.TabIndex = 15;
-            this.btnList.Text = "List";
-            this.btnList.UseVisualStyleBackColor = true;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // pictureBox2
             // 
@@ -243,7 +230,6 @@ namespace Notegram
             this.ClientSize = new System.Drawing.Size(1470, 711);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnList);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnTambah);
@@ -257,7 +243,7 @@ namespace Notegram
             this.Controls.Add(this.lbl_tipe);
             this.Controls.Add(this.lbl_mataKuliah);
             this.Controls.Add(this.lbl_judul);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form4";
             this.Text = "Agenda";
             this.Load += new System.EventHandler(this.Form4_Load);
@@ -283,7 +269,6 @@ namespace Notegram
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnHapus;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.NotifyIcon minimizedagenda;
