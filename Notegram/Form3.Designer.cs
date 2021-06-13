@@ -134,7 +134,7 @@ namespace Notegram
             // 
             // btnSelesai
             // 
-            this.btnSelesai.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelesai.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelesai.Location = new System.Drawing.Point(747, 610);
             this.btnSelesai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelesai.Name = "btnSelesai";
@@ -149,7 +149,7 @@ namespace Notegram
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(151)))), ((int)(((byte)(163)))));
-            this.ClientSize = new System.Drawing.Size(1097, 690);
+            this.ClientSize = new System.Drawing.Size(987, 690);
             this.Controls.Add(this.btnSelesai);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnHapus);
