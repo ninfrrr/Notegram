@@ -1,4 +1,4 @@
-﻿using ClassLibrary1;
+﻿/*using ClassLibrary1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +47,8 @@ namespace Notegram
             {
                 MessageBox.Show("Agenda gagal ditambahkan. Coba lagi.");
             }
+            //DataTable dt = c.Select();
+            //dataGridView1.DataSource = dt;
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -60,7 +62,7 @@ namespace Notegram
             {
                 MessageBox.Show("List has been successfully edited.");
                 DataTable dt = c.Select();
-                Form3.dataGridView1.DataSource = dt;
+                //Form3.dataGridView1.DataSource = dt;
                 Clear();
             }
             else
@@ -71,11 +73,7 @@ namespace Notegram
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
-            tb_judul.Text = "";
-            tb_mataKuliah.Text = "";
-            cb_tipe.Text = "";
-            tb_keterangan.Text = "";
-            dtp_deadLine.Text = "";
+            Clear();
         }
 
         private void btnList_Click(object sender, EventArgs e)
@@ -111,3 +109,4 @@ namespace Notegram
         
     }
 }
+*/

@@ -9,7 +9,6 @@ namespace Notegram
     [Table("ToDoList")]
     public partial class ToDoList
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]

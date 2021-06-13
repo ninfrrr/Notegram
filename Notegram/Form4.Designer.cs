@@ -1,4 +1,4 @@
-﻿
+﻿/*
 namespace Notegram
 {
     partial class Form4
@@ -286,4 +286,4 @@ namespace Notegram
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.NotifyIcon minimizedagenda;
     }
-}
+}*/

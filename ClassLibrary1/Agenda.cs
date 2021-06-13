@@ -13,10 +13,8 @@ namespace ClassLibrary1
     {
         public int _id { get; set; }
         public string _judul { get; set; }
-        //public Matkul _mataKuliah { get; set; }
         public string _mataKuliah { get; set; }
         public string _tipe { get; set; }
-        public bool _sudahDikerjakan { get; set; }
         public string _keterangan { get; set; }
         public Reminder _reminder { get; set; }
         public string _deadLine { get; set; }
@@ -56,9 +54,8 @@ namespace ClassLibrary1
 
             try
             {
-                string sql = "INSERT INTO ToDoList(_sudahDikerjakan, _deadLine, _tipe, _judul, _mataKuliah, _keterangan) VALUES (@Status, @DueDate, @Type, @Task, @Course, @Description)";
+                string sql = "INSERT INTO ToDoList(_deadLine, _tipe, _judul, _mataKuliah, _keterangan) VALUES (@Status, @DueDate, @Type, @Task, @Course, @Description)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Status", c._sudahDikerjakan);
                 cmd.Parameters.AddWithValue("@DueDate", c._deadLine);
                 cmd.Parameters.AddWithValue("@Type", c._tipe);
                 cmd.Parameters.AddWithValue("@Task", c._judul);
@@ -80,6 +77,7 @@ namespace ClassLibrary1
             }
             catch (Exception ex)
             {
+
             }
             finally
             {
@@ -94,14 +92,14 @@ namespace ClassLibrary1
             SqlConnection conn = new SqlConnection(myNgDBModel);
             try
             {
-                string sql = "UPDATE ToDoList SET _sudahDikerjakan=@Status, _deadLine=@DueDate, _tipe=@Type, _judul=@Task, _mataKuliah=@Course, _keterangan=@Description WHERE _id=@Id";
+                string sql = "UPDATE ToDoList SET _deadLine=@DueDate, _tipe=@Type, _judul=@Task, _mataKuliah=@Course, _keterangan=@Description WHERE _id=@Id";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@Status", c._sudahDikerjakan);
                 cmd.Parameters.AddWithValue("@DueDate", c._deadLine);
                 cmd.Parameters.AddWithValue("@Type", c._tipe);
                 cmd.Parameters.AddWithValue("@Task", c._judul);
                 cmd.Parameters.AddWithValue("@Course", c._mataKuliah);
                 cmd.Parameters.AddWithValue("@Description", c._keterangan);
+                cmd.Parameters.AddWithValue("@Id", c._id);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
