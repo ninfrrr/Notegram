@@ -274,7 +274,7 @@ namespace Notegram
             this.dgvMatkul.Name = "dgvMatkul";
             this.dgvMatkul.ReadOnly = true;
             this.dgvMatkul.RowHeadersWidth = 51;
-            this.dgvMatkul.Size = new System.Drawing.Size(651, 421);
+            this.dgvMatkul.Size = new System.Drawing.Size(606, 421);
             this.dgvMatkul.TabIndex = 2;
             this.dgvMatkul.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatkul_CellClick);
             // 
@@ -288,7 +288,7 @@ namespace Notegram
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Notegram.Properties.Resources.judul;
-            this.pictureBox2.Location = new System.Drawing.Point(214, 51);
+            this.pictureBox2.Location = new System.Drawing.Point(194, 51);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(474, 161);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

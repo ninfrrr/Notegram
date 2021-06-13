@@ -296,5 +296,6 @@ namespace Notegram
             form2.Show();
             Hide();
         }
+
     }
 }

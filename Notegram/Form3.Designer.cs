@@ -59,20 +59,20 @@ namespace Notegram
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(679, 147);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(636, 161);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(577, 437);
+            this.dataGridView1.Size = new System.Drawing.Size(869, 437);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnTambah
             // 
             this.btnTambah.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTambah.Location = new System.Drawing.Point(296, 610);
-            this.btnTambah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTambah.Location = new System.Drawing.Point(277, 608);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(4);
             this.btnTambah.Name = "btnTambah";
             this.btnTambah.Size = new System.Drawing.Size(155, 58);
             this.btnTambah.TabIndex = 3;
@@ -83,8 +83,8 @@ namespace Notegram
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(693, 610);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Location = new System.Drawing.Point(674, 608);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(155, 58);
             this.btnEdit.TabIndex = 4;
@@ -95,8 +95,8 @@ namespace Notegram
             // btnHapus
             // 
             this.btnHapus.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHapus.Location = new System.Drawing.Point(893, 608);
-            this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHapus.Location = new System.Drawing.Point(874, 606);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(4);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(155, 58);
             this.btnHapus.TabIndex = 5;
@@ -107,10 +107,10 @@ namespace Notegram
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Notegram.Properties.Resources.judultodolist;
-            this.pictureBox1.Location = new System.Drawing.Point(337, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(203, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(648, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(1118, 144);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -125,8 +125,8 @@ namespace Notegram
             // btnSelesai
             // 
             this.btnSelesai.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelesai.Location = new System.Drawing.Point(1101, 608);
-            this.btnSelesai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelesai.Location = new System.Drawing.Point(1082, 606);
+            this.btnSelesai.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelesai.Name = "btnSelesai";
             this.btnSelesai.Size = new System.Drawing.Size(155, 58);
             this.btnSelesai.TabIndex = 7;
@@ -137,8 +137,8 @@ namespace Notegram
             // tb_judul
             // 
             this.tb_judul.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_judul.Location = new System.Drawing.Point(296, 177);
-            this.tb_judul.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_judul.Location = new System.Drawing.Point(277, 177);
+            this.tb_judul.Margin = new System.Windows.Forms.Padding(4);
             this.tb_judul.Name = "tb_judul";
             this.tb_judul.Size = new System.Drawing.Size(351, 48);
             this.tb_judul.TabIndex = 8;
@@ -147,7 +147,7 @@ namespace Notegram
             // 
             this.lbl_judul.AutoSize = true;
             this.lbl_judul.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_judul.Location = new System.Drawing.Point(26, 180);
+            this.lbl_judul.Location = new System.Drawing.Point(5, 177);
             this.lbl_judul.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_judul.Name = "lbl_judul";
             this.lbl_judul.Size = new System.Drawing.Size(120, 40);
@@ -158,7 +158,7 @@ namespace Notegram
             // 
             this.lbl_mataKuliah.AutoSize = true;
             this.lbl_mataKuliah.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mataKuliah.Location = new System.Drawing.Point(26, 268);
+            this.lbl_mataKuliah.Location = new System.Drawing.Point(5, 265);
             this.lbl_mataKuliah.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_mataKuliah.Name = "lbl_mataKuliah";
             this.lbl_mataKuliah.Size = new System.Drawing.Size(227, 40);
@@ -169,7 +169,7 @@ namespace Notegram
             // 
             this.lbl_tipe.AutoSize = true;
             this.lbl_tipe.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipe.Location = new System.Drawing.Point(26, 368);
+            this.lbl_tipe.Location = new System.Drawing.Point(5, 360);
             this.lbl_tipe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tipe.Name = "lbl_tipe";
             this.lbl_tipe.Size = new System.Drawing.Size(99, 40);
@@ -180,7 +180,7 @@ namespace Notegram
             // 
             this.lbl_keterangan.AutoSize = true;
             this.lbl_keterangan.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_keterangan.Location = new System.Drawing.Point(26, 459);
+            this.lbl_keterangan.Location = new System.Drawing.Point(5, 445);
             this.lbl_keterangan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_keterangan.Name = "lbl_keterangan";
             this.lbl_keterangan.Size = new System.Drawing.Size(225, 40);
@@ -191,7 +191,7 @@ namespace Notegram
             // 
             this.lbl_deadLine.AutoSize = true;
             this.lbl_deadLine.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_deadLine.Location = new System.Drawing.Point(26, 533);
+            this.lbl_deadLine.Location = new System.Drawing.Point(5, 527);
             this.lbl_deadLine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_deadLine.Name = "lbl_deadLine";
             this.lbl_deadLine.Size = new System.Drawing.Size(273, 40);
@@ -201,8 +201,8 @@ namespace Notegram
             // tb_mataKuliah
             // 
             this.tb_mataKuliah.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_mataKuliah.Location = new System.Drawing.Point(296, 265);
-            this.tb_mataKuliah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_mataKuliah.Location = new System.Drawing.Point(277, 265);
+            this.tb_mataKuliah.Margin = new System.Windows.Forms.Padding(4);
             this.tb_mataKuliah.Name = "tb_mataKuliah";
             this.tb_mataKuliah.Size = new System.Drawing.Size(351, 48);
             this.tb_mataKuliah.TabIndex = 14;
@@ -215,8 +215,8 @@ namespace Notegram
             this.cb_tipe.Items.AddRange(new object[] {
             "PR",
             "Quiz"});
-            this.cb_tipe.Location = new System.Drawing.Point(296, 360);
-            this.cb_tipe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_tipe.Location = new System.Drawing.Point(277, 352);
+            this.cb_tipe.Margin = new System.Windows.Forms.Padding(4);
             this.cb_tipe.Name = "cb_tipe";
             this.cb_tipe.Size = new System.Drawing.Size(351, 48);
             this.cb_tipe.TabIndex = 15;
@@ -224,18 +224,18 @@ namespace Notegram
             // tb_keterangan
             // 
             this.tb_keterangan.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_keterangan.Location = new System.Drawing.Point(296, 436);
-            this.tb_keterangan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_keterangan.Location = new System.Drawing.Point(277, 437);
+            this.tb_keterangan.Margin = new System.Windows.Forms.Padding(4);
             this.tb_keterangan.Multiline = true;
             this.tb_keterangan.Name = "tb_keterangan";
-            this.tb_keterangan.Size = new System.Drawing.Size(351, 63);
+            this.tb_keterangan.Size = new System.Drawing.Size(351, 48);
             this.tb_keterangan.TabIndex = 16;
             // 
             // dtp_deadLine
             // 
             this.dtp_deadLine.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_deadLine.Location = new System.Drawing.Point(296, 527);
-            this.dtp_deadLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_deadLine.Location = new System.Drawing.Point(277, 527);
+            this.dtp_deadLine.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_deadLine.Name = "dtp_deadLine";
             this.dtp_deadLine.Size = new System.Drawing.Size(351, 48);
             this.dtp_deadLine.TabIndex = 17;
@@ -243,8 +243,8 @@ namespace Notegram
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(492, 608);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(473, 606);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 58);
             this.button1.TabIndex = 18;
@@ -256,7 +256,7 @@ namespace Notegram
             // 
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(23, 33);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(155, 58);
             this.button2.TabIndex = 19;
@@ -269,7 +269,7 @@ namespace Notegram
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(151)))), ((int)(((byte)(163)))));
-            this.ClientSize = new System.Drawing.Size(1269, 679);
+            this.ClientSize = new System.Drawing.Size(1518, 679);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtp_deadLine);
@@ -288,7 +288,7 @@ namespace Notegram
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Text = "To-Do List";
             this.Load += new System.EventHandler(this.Form3_Load);
