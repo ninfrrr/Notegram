@@ -62,11 +62,7 @@ namespace Notegram
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
-            tb_judul.Text = "";
-            tb_mataKuliah.Text = "";
-            cb_tipe.Text = "";
-            tb_keterangan.Text = "";
-            dtp_deadLine.Text = "";
+            Clear();
         }
 
         private void minimizedagenda_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -117,8 +113,6 @@ namespace Notegram
                         };
                         db.ToDoList.Add(toDo);
                         db.SaveChanges();
-;
-                        Close();
                     }
                 }
                 catch (Exception ex)
@@ -149,7 +143,6 @@ namespace Notegram
                         db.SaveChanges();
                     }
                     MessageBox.Show("Agenda berhasil diperbarui");
-                    Close();
                 }
                 catch (Exception ex)
                 {

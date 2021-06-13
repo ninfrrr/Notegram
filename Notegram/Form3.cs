@@ -32,16 +32,12 @@ namespace Notegram
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            Form4 formagenda = new Form4();
-            formagenda.Show();
-            Close();
+            BuatToDo();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Form4 formagenda = new Form4(toDo);
-            formagenda.Show();
-            Close();
+            EditToDo();
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -191,6 +187,85 @@ namespace Notegram
                 MessageBox.Show(ex.Message);
             }
             btnSelesai.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void BuatToDo()
+        {
+            if (tb_judul.Text != "" && tb_mataKuliah.Text != "" && cb_tipe.Text != "")
+            {
+                try
+                {
+                    using (var db = new NotegramDBModel())
+                    {
+                        toDo = new ToDoList()
+                        {
+                            Type = cb_tipe.Text,
+                            Task = tb_judul.Text,
+                            Description = tb_keterangan.Text,
+                            Course = tb_mataKuliah.Text,
+                            DueDate = dtp_deadLine.Value.Date,
+                            Status = "Belum",
+                        };
+                        db.ToDoList.Add(toDo);
+                        db.SaveChanges();
+                        Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kolom Judul, Tipe, dan Mata Kuliah wajib diisi");
+            }
+        }
+
+        private void EditToDo()
+        {
+            if (tb_judul.Text != "" && tb_mataKuliah.Text != "" && cb_tipe.Text != "")
+            {
+                try
+                {
+                    using (var db = new NotegramDBModel())
+                    {
+                        var edit = db.ToDoList.SingleOrDefault(item => item.Task == toDo.Task);
+                        edit.Task = tb_judul.Text;
+                        edit.Type = cb_tipe.Text;
+                        edit.Course = tb_mataKuliah.Text;
+                        edit.Description = tb_keterangan.Text;
+                        edit.DueDate = dtp_deadLine.Value.Date;
+                        db.SaveChanges();
+                    }
+                    MessageBox.Show("Agenda berhasil diperbarui");
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Kolom Judul, Tipe, dan Mata Kuliah wajib diisi");
+            }
+
+        }
+
+        private void Clear()
+        {
+            tb_judul.Text = "";
+            tb_mataKuliah.Text = "";
+            cb_tipe.Text = "";
+            tb_keterangan.Text = "";
+            dtp_deadLine.Text = "";
         }
     }
 }
