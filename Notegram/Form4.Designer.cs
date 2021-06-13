@@ -29,6 +29,8 @@ namespace Notegram
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_judul = new System.Windows.Forms.Label();
             this.lbl_mataKuliah = new System.Windows.Forms.Label();
@@ -48,6 +50,7 @@ namespace Notegram
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.minimizedagenda = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +73,7 @@ namespace Notegram
             this.lbl_judul.Location = new System.Drawing.Point(19, 292);
             this.lbl_judul.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_judul.Name = "lbl_judul";
-            this.lbl_judul.Size = new System.Drawing.Size(122, 40);
+            this.lbl_judul.Size = new System.Drawing.Size(120, 40);
             this.lbl_judul.TabIndex = 1;
             this.lbl_judul.Text = "Judul :";
             // 
@@ -81,7 +84,7 @@ namespace Notegram
             this.lbl_mataKuliah.Location = new System.Drawing.Point(19, 372);
             this.lbl_mataKuliah.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_mataKuliah.Name = "lbl_mataKuliah";
-            this.lbl_mataKuliah.Size = new System.Drawing.Size(231, 40);
+            this.lbl_mataKuliah.Size = new System.Drawing.Size(227, 40);
             this.lbl_mataKuliah.TabIndex = 2;
             this.lbl_mataKuliah.Text = "Mata Kuliah :";
             // 
@@ -92,7 +95,7 @@ namespace Notegram
             this.lbl_tipe.Location = new System.Drawing.Point(19, 437);
             this.lbl_tipe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tipe.Name = "lbl_tipe";
-            this.lbl_tipe.Size = new System.Drawing.Size(100, 40);
+            this.lbl_tipe.Size = new System.Drawing.Size(99, 40);
             this.lbl_tipe.TabIndex = 3;
             this.lbl_tipe.Text = "Tipe :";
             // 
@@ -103,7 +106,7 @@ namespace Notegram
             this.lbl_keterangan.Location = new System.Drawing.Point(633, 219);
             this.lbl_keterangan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_keterangan.Name = "lbl_keterangan";
-            this.lbl_keterangan.Size = new System.Drawing.Size(232, 40);
+            this.lbl_keterangan.Size = new System.Drawing.Size(225, 40);
             this.lbl_keterangan.TabIndex = 4;
             this.lbl_keterangan.Text = "Keterangan :";
             // 
@@ -114,7 +117,7 @@ namespace Notegram
             this.lbl_deadLine.Location = new System.Drawing.Point(633, 442);
             this.lbl_deadLine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_deadLine.Name = "lbl_deadLine";
-            this.lbl_deadLine.Size = new System.Drawing.Size(282, 40);
+            this.lbl_deadLine.Size = new System.Drawing.Size(273, 40);
             this.lbl_deadLine.TabIndex = 5;
             this.lbl_deadLine.Text = "Tenggat waktu :";
             // 
@@ -253,6 +256,13 @@ namespace Notegram
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // minimizedagenda
+            // 
+            this.minimizedagenda.Icon = ((System.Drawing.Icon)(resources.GetObject("minimizedagenda.Icon")));
+            this.minimizedagenda.Text = "notifyIcon1";
+            this.minimizedagenda.Visible = true;
+            this.minimizedagenda.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.minimizedagenda_MouseDoubleClick);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -281,6 +291,8 @@ namespace Notegram
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form4";
             this.Text = "Agenda";
+            this.Load += new System.EventHandler(this.Form4_Load);
+            this.Resize += new System.EventHandler(this.Form4_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -309,5 +321,6 @@ namespace Notegram
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.NotifyIcon minimizedagenda;
     }
 }

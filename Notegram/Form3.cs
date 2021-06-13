@@ -57,5 +57,28 @@ namespace Notegram
             //tb_mataKuliah.Text = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
             //tb_keterangan.Text = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
         }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowInTaskbar = true;
+            minimizetodolist.Visible = false;
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void Form3_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                ShowIcon = false;
+                minimizetodolist.Visible = true;
+                minimizetodolist.ShowBalloonTip(1000);
+            }
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            minimizetodolist.BalloonTipText = "Application is minimized";
+            minimizetodolist.BalloonTipTitle = "Notegram: TO DO LIST";
+        }
     }
 }

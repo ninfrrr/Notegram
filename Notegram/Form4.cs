@@ -88,6 +88,27 @@ namespace Notegram
             listfunc.Show();
         }
 
-        
+        private void minimizedagenda_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ShowInTaskbar = true;
+            minimizedagenda.Visible = false;
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void Form4_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                ShowIcon = false;
+                minimizedagenda.Visible = true;
+                minimizedagenda.ShowBalloonTip(1000);
+            }
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            minimizedagenda.BalloonTipText = "Application is minimized";
+            minimizedagenda.BalloonTipTitle = "Notegram: AGENDA";
+        }
     }
 }
