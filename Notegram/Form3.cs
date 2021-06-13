@@ -39,12 +39,14 @@ namespace Notegram
         {
             Form4 formagenda = new Form4();
             formagenda.Show();
+            Hide();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Form4 formagenda = new Form4();
             formagenda.Show();
+            Hide();
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

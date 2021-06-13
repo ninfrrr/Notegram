@@ -58,9 +58,9 @@ namespace Notegram
             bool success = c.Edit(c);
             if (success == true)
             {
-                MessageBox.Show("Reservation has been successfully edited.");
-                //DataTable dt = c.Select();
-                //dataGridView1.DataSource = dt;
+                MessageBox.Show("List has been successfully edited.");
+                DataTable dt = c.Select();
+                Form3.dataGridView1.DataSource = dt;
                 Clear();
             }
             else
@@ -82,6 +82,7 @@ namespace Notegram
         {
             Form3 listfunc = new Form3();
             listfunc.Show();
+            Hide();
         }
 
         private void minimizedagenda_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -105,10 +106,6 @@ namespace Notegram
         {
             minimizedagenda.BalloonTipText = "Application is minimized";
             minimizedagenda.BalloonTipTitle = "Notegram: AGENDA";
-
-            
-
-            
         }
 
         
