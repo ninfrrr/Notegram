@@ -9,9 +9,7 @@ namespace Notegram
     [Table("MataKuliah")]
     public partial class MataKuliah
     {
-        public int Id { get; set; }
-
-        [Required]
+        [Key]
         [StringLength(50)]
         public string Nama { get; set; }
 
