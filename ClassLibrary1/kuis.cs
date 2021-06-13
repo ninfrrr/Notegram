@@ -12,7 +12,6 @@ namespace ClassLibrary1
         {
             this._tipe = "Kuis";
             this._mataKuliah = mataKuliah;
-            //mataKuliah.AddAgendaToDaftar(this);
         }
     }
 }

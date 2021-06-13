@@ -28,18 +28,6 @@ namespace ClassLibrary1
         public void AddMataKuliahToJadwal(Matkul mataKuliah)
         {
             this._jadwalMatkul.Add(mataKuliah);
-
-            // Kode yg dikomen di bawah hanya utk memastikan program berjalan lancar
-            //MessageBox.Show($"Berhasil menambahkan {mataKuliah.Nama} ke Jadwal {this.Nama}");
         }
-
-        // Metode yg dikomen di bawah hanya untuk memastikan program berjalan lancar
-        //public void ShowMataKuliah()
-        //{
-        //    foreach (MataKuliah matkul in _daftarMatkul)
-        //    {
-        //        MessageBox.Show(matkul.Nama);
-        //    }
-        //}
     }
 }
