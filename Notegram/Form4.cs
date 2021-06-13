@@ -52,45 +52,12 @@ namespace Notegram
             BuatToDo();
             BukaForm3();
             Close();
-
-            //c._judul = tb_judul.Text;
-            //c._mataKuliah = tb_mataKuliah.Text;
-            //c._tipe = cb_tipe.Text;
-            //c._keterangan = tb_keterangan.Text;
-            //c._deadLine = dtp_deadLine.Text;
-            //bool success = c.Insert(c);
-            //if (success == true)
-            //{
-            //    MessageBox.Show("Agenda berhasil ditambahkan.");
-            //    Clear();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Agenda gagal ditambahkan. Coba lagi.");
-            //}
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
             EditToDo();
             BukaForm3();
             Close();
-            //c._judul = tb_judul.Text;
-            //c._mataKuliah = tb_mataKuliah.Text;
-            //c._tipe = cb_tipe.Text;
-            //c._keterangan = tb_keterangan.Text;
-            //c._deadLine = dtp_deadLine.Text;            
-            //bool success = c.Edit(c);
-            //if (success == true)
-            //{
-            //    MessageBox.Show("List has been successfully edited.");
-            //    //DataTable dt = c.Select();
-            //    //Form3.dataGridView1.DataSource = dt;
-            //    Clear();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Edit failed. Please try again.");
-            //}
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -101,13 +68,6 @@ namespace Notegram
             tb_keterangan.Text = "";
             dtp_deadLine.Text = "";
         }
-
-/*        private void btnList_Click(object sender, EventArgs e)
-        {
-            Form3 listfunc = new Form3();
-            listfunc.Show();
-            Hide();
-        }*/
 
         private void minimizedagenda_MouseDoubleClick(object sender, MouseEventArgs e)
         {

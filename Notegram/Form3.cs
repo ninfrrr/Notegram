@@ -28,15 +28,6 @@ namespace Notegram
         private void btnHapus_Click(object sender, EventArgs e)
         {
             HapusAgenda();
-            //bool success = c.Delete(c);
-            //if (success == true)
-            //{
-            //    MessageBox.Show("List berhasil dihapus.");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("List gagal dihapus. Coba lagi");
-            //}
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -51,17 +42,6 @@ namespace Notegram
             Form4 formagenda = new Form4(toDo);
             formagenda.Show();
             Close();
-        }
-
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            //int rowIndex = e.RowIndex;
-            //checkBox_sudahDikerjakan.Text = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
-            //dtp_deadLine.Text = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
-            //cb_tipe.Text = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
-            //tb_judul.Text = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-            //tb_mataKuliah.Text = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
-            //tb_keterangan.Text = dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -87,25 +67,6 @@ namespace Notegram
             minimizetodolist.BalloonTipTitle = "Notegram: TO DO LIST";
 
             UpdateDataGridView();
-            //SqlConnection conn = new SqlConnection(myNgDBModel);
-            //DataTable dt = new DataTable();
-            //try
-            //{
-            //    string sql = "SELECT Task, Course, Type, Status, Description FROM ToDoList";
-            //    SqlCommand cmd = new SqlCommand(sql, conn);
-            //    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            //    conn.Open();
-            //    adapter.Fill(dt);
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
-            //finally
-            //{
-            //    conn.Close();
-            //}
-            //dataGridView1.DataSource = dt;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
