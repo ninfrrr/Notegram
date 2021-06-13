@@ -13,15 +13,12 @@ namespace ClassLibrary1
     {
         public int _id { get; set; }
         public string _judul { get; set; }
-        //public Matkul _mataKuliah { get; set; }
         public string _mataKuliah { get; set; }
         public string _tipe { get; set; }
         public string _sudahDikerjakan { get; set; }
         public string _keterangan { get; set; }
         public Reminder _reminder { get; set; }
         public DateTime _deadLine { get; set; }
-
-
 
         static string myNgDBModel = ConfigurationManager.ConnectionStrings["NgDBModel"].ConnectionString;
 
@@ -45,7 +42,6 @@ namespace ClassLibrary1
             {
                 conn.Close();
             }
-
             return dt;
         }
 
@@ -53,7 +49,6 @@ namespace ClassLibrary1
         {
             bool isSuccess = false;
             SqlConnection conn = new SqlConnection(myNgDBModel);
-
             try
             {
                 string sql = "INSERT INTO ToDoList(_sudahDikerjakan, _deadLine, _tipe, _judul, _mataKuliah, _keterangan) VALUES (@Status, @DueDate, @Type, @Task, @Course, @Description)";
@@ -72,7 +67,6 @@ namespace ClassLibrary1
                 {
                     isSuccess = true;
                 }
-
                 else
                 {
                     isSuccess = false;
@@ -156,7 +150,6 @@ namespace ClassLibrary1
             {
                 conn.Close();
             }
-
             return isSuccess;
         }
     }
