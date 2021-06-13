@@ -211,7 +211,25 @@ namespace Notegram
         }
         private void KembaliTandaiBelum()
         {
-
+            try
+            {
+                using (var db = new NotegramDBModel())
+                {
+                    var cancel = db.ToDoList.SingleOrDefault(item => item.Id == toDo.Id);
+                    cancel.Status = "Belum";
+                    db.SaveChanges();
+                }
+                UpdateDataGridView();
+            }
+            catch (System.Reflection.TargetException ex)
+            {
+                MessageBox.Show("Anda harus meng-klik salah satu agenda di tabel terlebih dahulu");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            btnSelesai.Enabled = false;
         }
     }
 }
