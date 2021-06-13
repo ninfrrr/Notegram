@@ -16,10 +16,10 @@ namespace ClassLibrary1
         //public Matkul _mataKuliah { get; set; }
         public string _mataKuliah { get; set; }
         public string _tipe { get; set; }
-        public bool _sudahDikerjakan { get; set; }
+        public string _sudahDikerjakan { get; set; }
         public string _keterangan { get; set; }
         public Reminder _reminder { get; set; }
-        public string _deadLine { get; set; }
+        public DateTime _deadLine { get; set; }
 
 
 

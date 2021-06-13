@@ -20,7 +20,9 @@ namespace Notegram
         }
 
         Agenda c = new Agenda();
-        
+        ToDoList toDo;
+        enum Mode { Buat, Edit}
+        Mode mode;
         private void Clear()
         {
             tb_judul.Text = "";
@@ -30,43 +32,65 @@ namespace Notegram
             dtp_deadLine.Text = "";
         }
 
+        public Form4(ToDoList toDo)
+        {
+            InitializeComponent();
+            mode = Mode.Edit;
+            this.toDo = toDo;
+
+            tb_judul.Text = toDo.Task;
+            tb_mataKuliah.Text = toDo.Course;
+            cb_tipe.Text = toDo.Type;
+            tb_keterangan.Text = toDo.Description;
+            dtp_deadLine.Value = toDo.DueDate;
+
+            btnTambah.Enabled = false;
+        }
+
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            c._judul = tb_judul.Text;
-            c._mataKuliah = tb_mataKuliah.Text;
-            c._tipe = cb_tipe.Text;
-            c._keterangan = tb_keterangan.Text;
-            c._deadLine = dtp_deadLine.Text;
-            bool success = c.Insert(c);
-            if (success == true)
-            {
-                MessageBox.Show("Agenda berhasil ditambahkan.");
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show("Agenda gagal ditambahkan. Coba lagi.");
-            }
+            BuatToDo();
+            BukaForm3();
+            Close();
+
+            //c._judul = tb_judul.Text;
+            //c._mataKuliah = tb_mataKuliah.Text;
+            //c._tipe = cb_tipe.Text;
+            //c._keterangan = tb_keterangan.Text;
+            //c._deadLine = dtp_deadLine.Text;
+            //bool success = c.Insert(c);
+            //if (success == true)
+            //{
+            //    MessageBox.Show("Agenda berhasil ditambahkan.");
+            //    Clear();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Agenda gagal ditambahkan. Coba lagi.");
+            //}
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            c._judul = tb_judul.Text;
-            c._mataKuliah = tb_mataKuliah.Text;
-            c._tipe = cb_tipe.Text;
-            c._keterangan = tb_keterangan.Text;
-            c._deadLine = dtp_deadLine.Text;            
-            bool success = c.Edit(c);
-            if (success == true)
-            {
-                MessageBox.Show("List has been successfully edited.");
-                DataTable dt = c.Select();
-                Form3.dataGridView1.DataSource = dt;
-                Clear();
-            }
-            else
-            {
-                MessageBox.Show("Edit failed. Please try again.");
-            }
+            EditToDo();
+            BukaForm3();
+            Close();
+            //c._judul = tb_judul.Text;
+            //c._mataKuliah = tb_mataKuliah.Text;
+            //c._tipe = cb_tipe.Text;
+            //c._keterangan = tb_keterangan.Text;
+            //c._deadLine = dtp_deadLine.Text;            
+            //bool success = c.Edit(c);
+            //if (success == true)
+            //{
+            //    MessageBox.Show("List has been successfully edited.");
+            //    //DataTable dt = c.Select();
+            //    //Form3.dataGridView1.DataSource = dt;
+            //    Clear();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Edit failed. Please try again.");
+            //}
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -108,6 +132,76 @@ namespace Notegram
             minimizedagenda.BalloonTipTitle = "Notegram: AGENDA";
         }
 
-        
+        private void BukaForm3()
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
+
+        private void BuatToDo()
+        {
+            if (tb_judul.Text != "" && tb_mataKuliah.Text != "" && cb_tipe.Text != "")
+            {
+                try
+                {
+                    using (var db = new NotegramDBModel())
+                    {
+                        toDo = new ToDoList()
+                        {
+                            Type = cb_tipe.Text,
+                            Task = tb_judul.Text,
+                            Description = tb_keterangan.Text,
+                            Course = tb_mataKuliah.Text,
+                            DueDate = dtp_deadLine.Value.Date,
+                            Status = "Belum",
+                        };
+                        db.ToDoList.Add(toDo);
+                        db.SaveChanges();
+;
+                        Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kolom Judul, Tipe, dan Mata Kuliah wajib diisi");
+            }
+        }
+
+        private void EditToDo()
+        {
+            if (tb_judul.Text != "" && tb_mataKuliah.Text != "" && cb_tipe.Text != "")
+            {
+                try
+                {
+                    using (var db = new NotegramDBModel())
+                    {
+                        var edit = db.ToDoList.SingleOrDefault(item => item.Task == toDo.Task);
+                        edit.Task = tb_judul.Text;
+                        edit.Type = cb_tipe.Text;
+                        edit.Course = tb_mataKuliah.Text;
+                        edit.Description = tb_keterangan.Text;
+                        edit.DueDate = dtp_deadLine.Value.Date;
+                        db.SaveChanges();
+                    }
+                    MessageBox.Show("Agenda berhasil diperbarui");
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Kolom Judul, Tipe, dan Mata Kuliah wajib diisi");
+            }
+
+        }
     }
 }

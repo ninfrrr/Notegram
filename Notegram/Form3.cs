@@ -17,36 +17,40 @@ namespace Notegram
         public Form3()
         {
             InitializeComponent();
+            btnEdit.Enabled = false;
+            btnSelesai.Enabled = false;
         }
 
+        ToDoList toDo;
         string myNgDBModel = @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\NotegramDB.mdf;integrated security=True;MultipleActiveResultSets=True;";
         Agenda c = new Agenda();
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
-            bool success = c.Delete(c);
-            if (success == true)
-            {
-                MessageBox.Show("List berhasil dihapus.");
-            }
-            else
-            {
-                MessageBox.Show("List gagal dihapus. Coba lagi");
-            }
+            HapusAgenda();
+            //bool success = c.Delete(c);
+            //if (success == true)
+            //{
+            //    MessageBox.Show("List berhasil dihapus.");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("List gagal dihapus. Coba lagi");
+            //}
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
             Form4 formagenda = new Form4();
             formagenda.Show();
-            Hide();
+            Close();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Form4 formagenda = new Form4();
+            Form4 formagenda = new Form4(toDo);
             formagenda.Show();
-            Hide();
+            Close();
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -82,25 +86,132 @@ namespace Notegram
             minimizetodolist.BalloonTipText = "Application is minimized";
             minimizetodolist.BalloonTipTitle = "Notegram: TO DO LIST";
 
-            SqlConnection conn = new SqlConnection(myNgDBModel);
-            DataTable dt = new DataTable();
+            UpdateDataGridView();
+            //SqlConnection conn = new SqlConnection(myNgDBModel);
+            //DataTable dt = new DataTable();
+            //try
+            //{
+            //    string sql = "SELECT Task, Course, Type, Status, Description FROM ToDoList";
+            //    SqlCommand cmd = new SqlCommand(sql, conn);
+            //    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            //    conn.Open();
+            //    adapter.Fill(dt);
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
+            //finally
+            //{
+            //    conn.Close();
+            //}
+            //dataGridView1.DataSource = dt;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PilihAgenda(e);
+        }
+
+        private void PilihAgenda(DataGridViewCellEventArgs e)
+        {
             try
             {
-                string sql = "SELECT * FROM ToDoList";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                conn.Open();
-                adapter.Fill(dt);
+                toDo = new ToDoList();
+                string judul = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                using (var db = new NotegramDBModel())
+                {
+                    var pilih = db.ToDoList.SingleOrDefault(item => item.Task == judul);
+                    toDo.Id = pilih.Id;
+                    toDo.Task = pilih.Task;
+                    toDo.DueDate = pilih.DueDate;
+                    toDo.Status = pilih.Status;
+                    toDo.Type = pilih.Type;
+                    toDo.Course = pilih.Course;
+                    toDo.Description = pilih.Description;
+                }
+                if (toDo.Status == "Sudah")
+                    btnSelesai.Text = "Urungkan";
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+            btnSelesai.Enabled = true;
+            btnEdit.Enabled = true;
+        }
 
-            }
-            finally
+        private void UpdateDataGridView()
+        {
+            try
             {
-                conn.Close();
+                DataTable dt = new DataTable();
+                using (SqlConnection conn = new SqlConnection(myNgDBModel))
+                {
+                    string query = "SELECT Task, Course, Type, DueDate, Status  FROM ToDoList ORDER BY Status, DueDate";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
             }
-            dataGridView1.DataSource = dt;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[4].Value.ToString() == "Sudah")
+                    row.DefaultCellStyle.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void btnSelesai_Click(object sender, EventArgs e)
+        {
+            if (toDo.Status == "Belum")
+                TandaiSudah();
+            else
+                KembaliTandaiBelum();
+        }
+
+        private void HapusAgenda()
+        {
+            using(var db = new NotegramDBModel())
+            {
+                db.ToDoList.RemoveRange(db.ToDoList.Where(item => item.Id == toDo.Id));
+                db.SaveChanges();
+            }
+            UpdateDataGridView();
+            btnHapus.Enabled = false;
+            btnEdit.Enabled = false;
+            btnSelesai.Enabled = false;
+        }
+
+        private void TandaiSudah()
+        {
+            try
+            {
+                using (var db = new NotegramDBModel())
+                {
+                    var accomplished = db.ToDoList.SingleOrDefault(item => item.Id == toDo.Id);
+                    accomplished.Status = "Sudah";
+                    db.SaveChanges();
+                }
+                UpdateDataGridView();
+            }
+            catch (System.Reflection.TargetException ex)
+            {
+                MessageBox.Show("Anda harus meng-klik salah satu agenda di tabel terlebih dahulu");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            btnSelesai.Enabled = false;
+        }
+        private void KembaliTandaiBelum()
+        {
+
         }
     }
 }

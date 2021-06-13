@@ -9,14 +9,14 @@ namespace Notegram
     [Table("ToDoList")]
     public partial class ToDoList
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
-        [StringLength(1)]
+        [StringLength(5)]
         public string Status { get; set; }
 
-        public TimeSpan DueDate { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime DueDate { get; set; }
 
         [Required]
         [StringLength(20)]
