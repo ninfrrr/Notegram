@@ -8,7 +8,6 @@ namespace ClassLibrary1
 {
     public class ListJadwal
     {
-        // PERLU DIUBAH KE PRIVATE
         public List<Jadwal> _list;
         
         public ListJadwal()

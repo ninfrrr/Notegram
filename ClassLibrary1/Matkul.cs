@@ -9,16 +9,12 @@ namespace ClassLibrary1
 {
     public class Matkul
     {
-        int _id;
         string _nama;
         int _hari;
         TimeSpan _waktuMulai;
         TimeSpan _waktuSelesai;
         string _warna;
-        List<string> _dosen;
         List<Agenda> _daftarAgenda;
-        Reminder _reminder;
-
         public string Nama
         {
             get { return _nama; }
@@ -53,7 +49,6 @@ namespace ClassLibrary1
             this._warna = warna;
             this._waktuMulai = waktuMulai;
             this._waktuSelesai = waktuSelesai;
-            // Kode yg dikomen di bawah hanya utk memastikan program berjalan lancar
             MessageBox.Show($"Berhasil membuat Mata Kuliah {this.Nama} pada hari {this.Hari} mulai {this.WaktuMulai.ToString()} & selesai {this.WaktuSelesai.ToString()} berwarna {this.Warna}");
         }
         public void AddAgendaToDaftar(Agenda agenda)
