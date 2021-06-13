@@ -28,16 +28,21 @@ namespace Notegram
         private void btnHapus_Click(object sender, EventArgs e)
         {
             HapusAgenda();
+            Clear();
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
             BuatToDo();
+            UpdateDataGridView();
+            Clear();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             EditToDo();
+            UpdateDataGridView();
+            Clear();
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -63,11 +68,6 @@ namespace Notegram
             minimizetodolist.BalloonTipTitle = "Notegram: TO DO LIST";
 
             UpdateDataGridView();
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            PilihAgenda(e);
         }
 
         private void PilihAgenda(DataGridViewCellEventArgs e)
@@ -106,7 +106,7 @@ namespace Notegram
                 DataTable dt = new DataTable();
                 using (SqlConnection conn = new SqlConnection(myNgDBModel))
                 {
-                    string query = "SELECT Task, Course, Type, DueDate, Status  FROM ToDoList ORDER BY Status, DueDate";
+                    string query = "SELECT Task, Course, Type, DueDate, Description, Status FROM ToDoList ORDER BY Status, DueDate";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     adapter.Fill(dt);
                     dataGridView1.DataSource = dt;
@@ -126,9 +126,15 @@ namespace Notegram
         private void btnSelesai_Click(object sender, EventArgs e)
         {
             if (toDo.Status == "Belum")
+            {
                 TandaiSudah();
+                Clear();
+            }
             else
+            {
                 KembaliTandaiBelum();
+                Clear();
+            }
         }
 
         private void HapusAgenda()
@@ -213,7 +219,6 @@ namespace Notegram
                         };
                         db.ToDoList.Add(toDo);
                         db.SaveChanges();
-                        Close();
                     }
                 }
                 catch (Exception ex)
@@ -244,7 +249,6 @@ namespace Notegram
                         db.SaveChanges();
                     }
                     MessageBox.Show("Agenda berhasil diperbarui");
-                    Close();
                 }
                 catch (Exception ex)
                 {
@@ -266,6 +270,31 @@ namespace Notegram
             cb_tipe.Text = "";
             tb_keterangan.Text = "";
             dtp_deadLine.Text = "";
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PilihAgenda(e);
+            try
+            {
+                tb_judul.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                tb_mataKuliah.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cb_tipe.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tb_keterangan.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                dtp_deadLine.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            Hide();
         }
     }
 }

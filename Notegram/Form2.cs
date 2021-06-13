@@ -114,6 +114,7 @@ namespace Notegram
         {
             Form3 form3 = new Form3();
             form3.Show();
+            Hide();
         }
 
         private void Form2_Load(object sender, EventArgs e)
