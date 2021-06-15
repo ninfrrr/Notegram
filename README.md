@@ -1,12 +1,33 @@
-# Notegram
-Praktikum 3:
-Berikut adalah class diagram untuk Notegram
-![Notegram-Class Diagram (2)](https://user-images.githubusercontent.com/79208746/116586525-c5b7eb80-a943-11eb-9a6d-c4f7fec33c52.png)
+link github: https://github.com/ninfrrr/Notegram
 
-Praktikum 5:
-Berikut adalah database diagram untuk Notegram sejauh ini
+# CARA MENGGUNAKAN APLIKASI NOTEGRAM:
 
-![Diagram Basis Data](https://user-images.githubusercontent.com/79208746/117415390-76c11600-af42-11eb-8d42-2626a66eb7aa.png)
+## JADWAL:
+### MEMBUAT JADWAL MATA KULIAH
+1. pada form jadwal mata kuliah anda dapat menginput nama, hari, jam mulai, jam selesai, serta warna matkul yang diinginkan
+2. klik button tambah dan lihat jadwal telah tertampil pada tabel di sebelah kiri
+3. jika anda salah menginput dan ingin menghapus seluruh isi inputan, klik button "batal" dan akan terhapus semua inputan anda.
 
-Untuk sekarang, database hanya terdiri atas satu tabel bernama 'MataKuliah', yang nantinya akan menyimpan data nama mata kuliah, hari pertemuannya, jam mulainya dan jam selesainya. Selain itu, juga kolom warna yang berfungsi untuk menyimpan warna preferensi pengguna akan suatu mata kuliah selama pengguna tersebut menggunakan Notegram. 
-Untuk pengembangan selanjutnya, database akan lebih menyerupai struktur class diagram yang ditampilkan di sebelah atas README.md
+### MENGHAPUS JADWAL MATA KULIAH
+1. klik tabel nama mata kuliah yang ingin dihapus
+2. klik button hapus
+
+
+## TO DO LIST:
+### MEMBUAT TO DO LIST
+1. klik menu "to do list" pada pojok kiri atas form jadwal mata kuliah dan anda akan diteruskan pada form to do list
+2. klik button "tambah" untuk membuat to do list
+3. input nama mata kuliah, tipe todolist (PR/QUIZ), keterangan mengenai todolist tersebut, dan deadline atau tenggat waktu to do list tersebut
+5. klik button "tambah" dan akan muncul form todolist dengan tabel agenda sesuai inputan yang anda masukkan
+
+### MENGEDIT TO DO LIST
+1. pilih nama todolist yang ingin diedit pada tabel di samping
+2. jika sudah selesai mengdit, klik button edit
+
+### MENANDAI TO DO LIST TELAH SELESAI
+1. pilih to do list yang ingin ditandai
+2. klik button selesai dan baris to do list akan berubah menjadi abu-abu yang menandakan telah selesai dilakukan.
+
+### MENGHAPUS TO DO LIST
+1. pilih todolist yang ingin dihapus
+2. klik button hapus
